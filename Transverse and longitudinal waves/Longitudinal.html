@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Longitudinal Wave</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="main">
+		<div class="content">
+			<div class="screen">
+				<h1 class="heading" id="myHeading">Longitudinal Waves</h1>
+				<div class="waves-content image-background" id="waveBackground">
+					<svg id="main" width="100%" height="100%" viewBox="-1 -1 501 301" text-anchor="end" font-size="16"
+						font-family="roboto" xmlns="https://www.w3.org/2000/svg"
+						xmlns:xlink="https://www.w3.org/1999/xlink" onload="init()">
+
+						<script type="text/ecmascript">< ![CDATA[]] ></script>
+
+						<desc>Whole Page is shifted down 150 (half of the height); all y values are '-' in real time
+						</desc>
+
+						<!--Whole_page start ...-->
+						<g id="whole page" fill="none" stroke-width="1" text-anchor="middle"
+							transform="translate (250, 50)">
+
+							<g id="graph" transform="scale(1, 1)">
+
+								<g id="curves">
+									<path class="ball" id="curve_2" stroke="palevioletred" fill="white" stroke-width="2"
+										transform="translate(0 80)" />
+								</g>
+
+							</g> <!--... end of graph-->>
+						</g> <!--... end Whole_page -->>
+						Sorry, your browser does not support inline SVG.
+					</svg>
+				</div>
+			</div>
+			<div class="action-buttons">
+				<div>
+					<p>Click a particle to highlight it</p>
+				</div>
+				<div>
+					<label for="amplitude">Amplitude</label>
+					<input type="range" name="amplitude" id="amplitude" value="20" step="10" min="0" max="130">
+					<p id="amplitude-v"></p>
+				</div>
+				<div>
+					<label for="wave-length">Wavelength</label>
+					<input type="range" name="wave-length" id="wave-length" value="300" step="10" min="100" max="700">
+					<p id="wavel-v"></p>
+				</div>
+				<div>
+					<label for="frequency">Frequency</label>
+					<input type="range" name="frequency" id="frequency" value="0.1" step="0.05" min="0" max="1">
+					<p id="frequency-v"></p>
+				</div>
+				<div>
+					<label for="toggle-grid" title="Hide/Show Grid" class="display-grid">
+						<img src="images/grid.PNG" alt="">
+					</label>
+					<input type="checkbox" name="toggle-grid" id="toggle-grid" onchange="displayGrid(this)">
+				</div>
+			</div>
+			<div class="interface">
+				<button type="button" name="button" onclick="renew()" id="startButton">stop</button>
+				<button type="button" name="button" onclick="solve()" id="solveButton">Solve</button>
+				<button onclick="resetAll()" type="button" name="button">reset</button>
+				<button onmouseover="hideHelp()" onmouseout="hideHelp()" type="button" name="button">help</button>
+			</div>
+
+		</div>
+		<div class="help-text" id="help-text" style="display:none">
+			<p>Select either 'transverse' or 'longitudinal' to see a
+				simulation of that type of wave. For each type of wave, use the number scrollers to change the
+				amplitude, wavelength and frequency of the wave. Press the grey box to the right of these scrollers to
+				hide/show the grid. Press any of the
+				particles to highlight them.
+			</p>
+			<p>Press reset to return to the start screen and choose another wave type.
+			</p>
+		</div>
+	</div>
+	<script src="longitudinal.js"></script>
+	<!-- <script src="test.js"></script> -->
+	<script src="script.js"></script>
+</body>
+
+</html>

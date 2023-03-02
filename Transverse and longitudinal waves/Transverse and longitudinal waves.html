@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transverse & Longitudinal Waves</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="content">
+            <div class="screen">
+                <h1 class="heading" id="myHeading">Transverse & Longitudinal Waves</h1>
+                <div class="options">
+                    <div class="select-type">
+                        <p>Select a type of wave to simulate.</p>
+                    </div>
+                    <div class="selections">
+                        <div>
+                            <a href="transverse.html">
+                                <img src="/images/transverse.PNG" alt="An image of a transverse wave">
+                                <p>Transverse Wave</p>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="longitudinal.html">
+                                <img src="/images/longitudinal.PNG" alt="An image of a longitudinal wave">
+                                <p>Longitudinal Wave</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="interface">
+                <button type="button" name="button" onclick="start()" id="startButton">start</button>
+                <button type="button" name="button" onclick="solve()" id="solveButton">Solve</button>
+                <button type="button" name="button" onclick="check()" id="checkButton">Check</button>
+                <button onmouseover="hideHelp()" onmouseout="hideHelp()" type="button" name="button">help</button>
+                <button onclick="resetAll()" type="button" name="button">reset</button>
+            </div>
+
+        </div>
+        <div class="help-text" id="help-text" style="display:none">
+            <p>Select either 'transverse' or 'longitudinal' to see a
+                simulation of that type of wave. For each type of wave, use the number scrollers to change the
+                amplitude, wavelength and frequency of the wave. Press the grey box to the right of these scrollers to
+                hide/show the grid. Press any of the
+                particles to highlight them.
+            </p>
+            <p>Press reset to return to the start screen and choose another wave type.
+            </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
