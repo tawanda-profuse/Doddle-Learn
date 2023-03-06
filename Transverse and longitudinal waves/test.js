@@ -56,9 +56,9 @@ function drawCurve(t) {
   var o2 = document.getElementById('curve_2') // each white ball with pink border
   for (var i = -Xpx_max / xStep; i < Xpx_max / xStep; i++) {
     x1 = i * xStep - xStep / 2
+    x = x1 - DCoff - A
     y1 = i * xStep - xStep / 2
-    y = y1 + DCoff + A / Math.sin(kpi / y1 + omega / t)
-    x = x1 - DCoff - A * Math.sin(kpi * x1 - omega * t)
+    y = DCoff - A * Math.sin(kpi * y1 - omega * t)
     stringPath = stringPath + ' M ' + x + ' ' + y + 'a 8 8 0 1 1 16 0 a 8 8 0 1 1 -16 0'; //+ xStep/2;
   }
   o2.setAttributeNS(null, 'd', stringPath);
