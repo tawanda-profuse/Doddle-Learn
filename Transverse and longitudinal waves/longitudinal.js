@@ -85,6 +85,11 @@ changeBalls();
 
 function adjustAmpUnits(amp) {
 
+  if (amp.value == 0) {
+    DCoff, A = 0
+  } else {
+    DCoff = 0.0 * Ypx_max;
+    A = 1 * xStep
     if (amp.value == 10) {
       xStep = 21
     } else if (amp.value == 20) {
@@ -111,96 +116,101 @@ function adjustAmpUnits(amp) {
       xStep = 10
     }
   }
+}
 
-  function adjustWLUnits(waveLength){
-    if(waveLength.value == 100){
-      xStep = 8
-    } else if(waveLength.value == 150){
-      xStep = 10
-    } else if(waveLength.value == 200){
-      xStep = 12
-    } else if(waveLength.value == 250){
-      xStep = 14
-    } else if(waveLength.value == 350){
-      xStep = 16
-    } else if(waveLength.value == 400){
-      xStep = 18
-    } else if(waveLength.value == 450){
-      xStep = 22
-    } else if(waveLength.value == 500){
-      xStep = 24
-    } else if(waveLength.value == 550){
-      xStep = 26
-    } else if(waveLength.value == 600){
-      xStep = 28
-    } else if(waveLength.value == 650){
-      xStep = 30
-    } else if(waveLength.value == 700){
-      xStep = 32
-    }
+function adjustWLUnits(waveLength) {
+  if (waveLength.value == 100) {
+    xStep = 8
+  } else if (waveLength.value == 150) {
+    xStep = 10
+  } else if (waveLength.value == 200) {
+    xStep = 12
+  } else if (waveLength.value == 250) {
+    xStep = 14
+  } else if (waveLength.value == 350) {
+    xStep = 16
+  } else if (waveLength.value == 400) {
+    xStep = 18
+  } else if (waveLength.value == 450) {
+    xStep = 22
+  } else if (waveLength.value == 500) {
+    xStep = 24
+  } else if (waveLength.value == 550) {
+    xStep = 26
+  } else if (waveLength.value == 600) {
+    xStep = 28
+  } else if (waveLength.value == 650) {
+    xStep = 30
+  } else if (waveLength.value == 700) {
+    xStep = 32
   }
+}
 
-  function adjustFUnits(f){
-    if(f.value == 0){
-      clearInterval(timer);
-    } else if(f.value == 0.05){
+function adjustFUnits(f) {
+  if (f.value == 0) {
+    DCoff, A = 0
+  } else {
+    DCoff = 0.0 * Ypx_max;
+    A = 1 * xStep
+    if (f.value == 0.05) {
       cps = 1200 / delay
-    } else if(f.value == 0.1){
+    } else if (f.value == 0.1) {
       cps = 1000 / delay
-    } else if(f.value == 0.15){
+    } else if (f.value == 0.15) {
       cps = 850 / delay
-    } else if(f.value == 0.2){
+    } else if (f.value == 0.2) {
       cps = 800 / delay
-    } else if(f.value == 0.25){
+    } else if (f.value == 0.25) {
       cps = 750 / delay
-    } else if(f.value == 0.3){
+    } else if (f.value == 0.3) {
       cps = 700 / delay
-    } else if(f.value == 0.35){
+    } else if (f.value == 0.35) {
       cps = 650 / delay
-    } else if(f.value == 0.4){
+    } else if (f.value == 0.4) {
       cps = 600 / delay
-    } else if(f.value == 0.45){
+    } else if (f.value == 0.45) {
       cps = 550 / delay
-    } else if(f.value == 0.5){
+    } else if (f.value == 0.5) {
       cps = 500 / delay
-    } else if(f.value == 0.55){
+    } else if (f.value == 0.55) {
       cps = 450 / delay
-    } else if(f.value == 0.6){
+    } else if (f.value == 0.6) {
       cps = 400 / delay
-    } else if(f.value == 0.65){
+    } else if (f.value == 0.65) {
       cps = 350 / delay
-    } else if(f.value == 0.7){
+    } else if (f.value == 0.7) {
       cps = 300 / delay
-    } else if(f.value == 0.75){
+    } else if (f.value == 0.75) {
       cps = 450 / delay
-    } else if(f.value == 0.8){
+    } else if (f.value == 0.8) {
       cps = 400 / delay
-    } else if(f.value == 0.85){
+    } else if (f.value == 0.85) {
       cps = 350 / delay
-    } else if(f.value == 0.9){
+    } else if (f.value == 0.9) {
       cps = 300 / delay
-    } else if(f.value == 0.95){
+    } else if (f.value == 0.95) {
       cps = 250 / delay
-    } else if(f.value == 0.1){
+    } else if (f.value == 0.1) {
       cps = 200 / delay
     }
   }
+}
 
-  function adjustUnits(){
-    amplitude.addEventListener("input", function(){
-      adjustAmpUnits(amplitude);
-    });
+function adjustUnits() {
+  amplitude.addEventListener("input", function () {
+    adjustAmpUnits(amplitude);
+  });
 
-    waveLength.addEventListener("input", function(){
-      adjustWLUnits(waveLength);
-    });
-    
-    frequency.addEventListener("input", function(){
-      adjustFUnits(frequency);
-    });
+  waveLength.addEventListener("input", function () {
+    adjustWLUnits(waveLength);
+  });
 
-  }
+  frequency.addEventListener("input", function () {
+    adjustFUnits(frequency);
+  });
 
-  adjustUnits();
+}
+
+adjustUnits();
 
 
