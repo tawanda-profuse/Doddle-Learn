@@ -148,10 +148,9 @@ function adjustWLUnits(waveLength) {
 
 function adjustFUnits(f) {
   if (f.value == 0) {
-    DCoff, A = 0
+    omega = 0
   } else {
-    DCoff = 0.0 * Ypx_max;
-    A = 1 * xStep
+    omega = tpi / period
     if (f.value == 0.05) {
       cps = 1200 / delay
     } else if (f.value == 0.1) {
@@ -190,7 +189,7 @@ function adjustFUnits(f) {
       cps = 300 / delay
     } else if (f.value == 0.95) {
       cps = 250 / delay
-    } else if (f.value == 0.1) {
+    } else if (f.value == 1) {
       cps = 200 / delay
     }
   }
