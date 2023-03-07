@@ -39,17 +39,10 @@ function doAnim() {
   showTime(Math.floor(t) % 12, Math.floor(10 * t) % 10)
 }
 
-// function drawCurve(t) {
-//   var stringPath = ' '
-//   var o2 = document.getElementById('curve_2') // each white ball with pink border
-//   for (var i = -Xpx_max / xStep; i < Xpx_max / xStep; i++) {
-//     x1 = i * xStep - xStep / 2
-//     x = x1 - DCoff - A * Math.sin(kpi * x1 - omega * t)
-//     y = 0
-//     stringPath = stringPath + ' M ' + x + ' ' + y + 'a 8 8 0 1 1 16 0 a 8 8 0 1 1 -16 0'; //+ xStep/2;
-//   }
-//   o2.setAttributeNS(null, 'd', stringPath);
-// }
+/*
+1. Change the value of A for amplitude
+2. Reduce the value of period to increase frequency/speed
+*/
 
 function drawCurve(t) {
   var stringPath = ' '
