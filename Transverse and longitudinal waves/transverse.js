@@ -36,7 +36,6 @@ function doAnim() {
   count += 1
   t = count / cps
   drawCurve(t)
-  showTime(Math.floor(t) % 12, Math.floor(10 * t) % 10)
 }
 
 function drawCurve(t) {
