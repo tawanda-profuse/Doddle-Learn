@@ -3,7 +3,7 @@ var Xmax = 0.5 //{Xmax}
 
 var Ymin = -Ymax
 var Ypx_max = 150
-var Xpx_max = 500 
+var Xpx_max = 500
 
 var pi = Math.PI
 var tpi = 0.9 * pi
@@ -18,7 +18,7 @@ var cps = 1000 / delay // anim intervals per second
 var count = 0
 var countOld = 0
 var toggle = false
-var xStep = 16 
+var xStep = 16
 var A = 1.8 * xStep //{Amplitude} as a fraction of xStep
 var period = 2 //{T} in ds;
 var omega = tpi / period // angular frequency
@@ -118,29 +118,31 @@ function adjustAmpUnits(amp) {
 // The function below adjusts the wave length of the transverse waves
 function adjustWLUnits(waveLength) {
   if (waveLength.value == 100) {
-    xStep = 14
+    Xpx_max = 350
   } else if (waveLength.value == 150) {
-    xStep = 15
+    Xpx_max = 400
   } else if (waveLength.value == 200) {
-    xStep = 15.2
+    Xpx_max = 410
   } else if (waveLength.value == 250) {
-    xStep = 15.4
+    Xpx_max = 430
+  } else if (waveLength.value == 300) {
+    Xpx_max = 450
   } else if (waveLength.value == 350) {
-    xStep = 16.5
+    Xpx_max = 500
   } else if (waveLength.value == 400) {
-    xStep = 17
+    Xpx_max = 520
   } else if (waveLength.value == 450) {
-    xStep = 17.5
+    Xpx_max = 530
   } else if (waveLength.value == 500) {
-    xStep = 18
+    Xpx_max = 540
   } else if (waveLength.value == 550) {
-    xStep = 18.5
+    Xpx_max = 550
   } else if (waveLength.value == 600) {
-    xStep = 19
+    Xpx_max = 560
   } else if (waveLength.value == 650) {
-    xStep = 19.5
+    Xpx_max = 570
   } else if (waveLength.value == 700) {
-    xStep = 20
+    Xpx_max = 600
   }
 }
 
