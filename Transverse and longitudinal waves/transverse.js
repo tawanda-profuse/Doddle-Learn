@@ -39,12 +39,6 @@ function doAnim() {
   showTime(Math.floor(t) % 12, Math.floor(10 * t) % 10)
 }
 
-/*
-1. Change the value of A for amplitude
-2. Reduce the value of period to increase frequency/speed
-3. Change the value of xStep for wavelength
-*/
-
 function drawCurve(t) {
   var stringPath = ' '
   var o2 = document.getElementById('curve_2') // each white ball with pink border
@@ -58,12 +52,7 @@ function drawCurve(t) {
   o2.setAttributeNS(null, 'd', stringPath);
 }
 
-function showTime(a, b) {
-  var CLCK = document.getElementById('time')
-  var nT = document.createTextNode(a + '.' + b + ' s')
-  // CLCK.replaceChild(nT, CLCK.firstChild)
-}
-
+// The function below manages pause/play state of the animation
 function renew() {
   toggle ^= true;
   countOld = count
@@ -77,6 +66,7 @@ function renew() {
   }
 }
 
+// The function below changes the color of the ball in the waves
 function changeBalls() {
   var balls = document.getElementsByClassName('ball');
   for (var i = 0; i < balls.length; i++) {
@@ -90,6 +80,7 @@ function changeColor(ball) {
 
 changeBalls();
 
+// The function below adjusts the amplitude of the transverse waves
 function adjustAmpUnits(amp) {
 
   if (amp.value == 0) {
@@ -124,6 +115,7 @@ function adjustAmpUnits(amp) {
   }
 }
 
+// The function below adjusts the wave length of the transverse waves
 function adjustWLUnits(waveLength) {
   if (waveLength.value == 100) {
     xStep = 14
@@ -152,6 +144,7 @@ function adjustWLUnits(waveLength) {
   }
 }
 
+// The function below adjusts the frequency of the transverse waves
 function adjustFUnits(f) {
   if (f.value == 0) {
     omega = 0
@@ -201,6 +194,7 @@ function adjustFUnits(f) {
   }
 }
 
+// Function below manages changes in frequency, amplitude and wave length by using recursion
 function adjustUnits() {
   amplitude.addEventListener("input", function () {
     adjustAmpUnits(amplitude);

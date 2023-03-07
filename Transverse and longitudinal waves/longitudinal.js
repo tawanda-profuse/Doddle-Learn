@@ -51,12 +51,7 @@ function drawCurve(t) {
   o2.setAttributeNS(null, 'd', stringPath);
 }
 
-function showTime(a, b) {
-  var CLCK = document.getElementById('time')
-  var nT = document.createTextNode(a + '.' + b + ' s')
-  // CLCK.replaceChild(nT, CLCK.firstChild)
-}
-
+// The function below manages pause/play state of the animation
 function renew() {
   toggle ^= true;
   countOld = count
@@ -70,6 +65,7 @@ function renew() {
   }
 }
 
+// The function below changes the color of the ball in the waves
 function changeBalls() {
   var balls = document.getElementsByClassName('ball');
   for (var i = 0; i < balls.length; i++) {
@@ -83,6 +79,7 @@ function changeColor(ball) {
 
 changeBalls();
 
+// The function below adjusts the amplitude of the longitudinal waves
 function adjustAmpUnits(amp) {
 
   if (amp.value == 0) {
@@ -118,6 +115,7 @@ function adjustAmpUnits(amp) {
   }
 }
 
+// The function below adjusts the wave length of the longitudinal waves
 function adjustWLUnits(waveLength) {
   if (waveLength.value == 100) {
     xStep = 8
@@ -146,6 +144,7 @@ function adjustWLUnits(waveLength) {
   }
 }
 
+// The function below adjusts the frequency of the longitudinal waves
 function adjustFUnits(f) {
   if (f.value == 0) {
     omega = 0
@@ -195,6 +194,7 @@ function adjustFUnits(f) {
   }
 }
 
+// Function below manages changes in frequency, amplitude and wave length by using recursion
 function adjustUnits() {
   amplitude.addEventListener("input", function () {
     adjustAmpUnits(amplitude);
