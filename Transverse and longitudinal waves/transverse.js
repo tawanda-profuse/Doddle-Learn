@@ -40,7 +40,7 @@ function doAnim() {
 
 function drawCurve(t) {
   var stringPath = ' '
-  var o2 = document.getElementById('curve_2') // each white ball with pink border
+  var o2 = document.getElementById('curve_2') // white balls with pink border
   for (var i = -Xpx_max / xStep; i < Xpx_max / xStep; i++) {
     x1 = i * xStep - xStep / 2
     x = x1 - DCoff - A
@@ -67,14 +67,19 @@ function renew() {
 
 // The function below changes the color of the ball in the waves
 function changeBalls() {
-  var balls = document.getElementsByClassName('ball');
-  for (var i = 0; i < balls.length; i++) {
-    balls[i].setAttribute('onclick', 'changeColor(this)');
-  }
+  // var balls = document.getElementsByClassName('ball');
+  var o2 = document.getElementById('curve_2') // white balls with pink border
+  // for (var i = 0; i < balls.length; i++) {
+  // for (var i = 0; i < o2.length; i++) {
+    o2.setAttribute('onclick', 'changeColor(this)');
+    // balls[i].setAttribute('onclick', 'changeColor(this)');
+  // }
 }
 
 function changeColor(ball) {
-  ball.classList.toggle('change-color');
+  // ball.classList.toggle('change-color');
+  // console.log(ball.getAttribute('d'))
+  console.log(ball.getAttributeNS(null, 'd'))
 }
 
 changeBalls();
