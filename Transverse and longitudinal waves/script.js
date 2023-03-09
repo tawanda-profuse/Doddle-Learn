@@ -22,7 +22,8 @@ function hideHelp() {
 }
 
 function resetAll() {
-  window.location.href = "Transverse and longitudinal waves.html";
+  // window.location.href = "Transverse and longitudinal waves.html";
+  window.location.href = "index.html"; // Changed for deployment to GitHub
   return false;
 }
 
