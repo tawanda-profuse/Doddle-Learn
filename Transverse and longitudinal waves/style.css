@@ -125,7 +125,7 @@ body {
   height: 400px;
   width: 800px;
   overflow: hidden;
-  border: 3px solid navy;
+  border: 3px solid #444444;
 }
 
 .action-buttons {
@@ -134,7 +134,7 @@ body {
   height: 200px;
   top: 60%;
   left: 12%;
-  color: navy;
+  color: #444444;
 }
 
 .action-buttons div {
@@ -197,7 +197,7 @@ body {
 
 .select-type p {
   text-align: center;
-  color: navy;
+  color: #444444;
   font-size: 1.2rem;
 }
 
@@ -231,7 +231,7 @@ body {
 
 .selections div p,
 .action-buttons div p {
-  color: navy;
+  color: #444444;
 }
 
 .box:hover {
