@@ -8,10 +8,7 @@
     <title>1 Fraction Counter</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome Link: -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="stylesheet" href="https://kit.fontawesome.com/1c74eec648.css" crossorigin="anonymous">
 </head>
 
@@ -27,76 +24,82 @@
                         step size
                     </div>
                     <div class="inputs">
-                        <span class="input-number-decrement">-</span><input class="input-number" type="number" min="0" max="10" name="numeratorI" id="numeratorI"
-                            placeholder="Numerator"><span class="input-number-increment">+</span>
+                        <span class="input-number-decrement">-</span><input class="input-number" type="number" min="0"
+                            max="10" name="numeratorI" id="numeratorI" placeholder="Numerator"><span
+                            class="input-number-increment">+</span>
                     </div>
                     <div class="inputs">
-                        <span class="input-number-decrement">-</span><input type="number" min="0" max="10" name="denominatorI"
-                            id="denominatorI" placeholder="Denominator"><span class="input-number-increment">+</span>
-                            <button title="Done" id="showCover"><i class="fas fa-check"></i></button>
+                        <span class="input-number-decrement">-</span><input type="number" min="0" max="10"
+                            name="denominatorI" id="denominatorI" placeholder="Denominator"><span
+                            class="input-number-increment">+</span>
+                        <button title="Done" id="showCover"><i class="fas fa-check"></i></button>
                     </div>
                     <div class="clock-controls">
                         <i class="fas fa-arrow-circle-left" title="Rotate left"></i>
                         <i class="fas fa-arrow-circle-right" title="Rotate right"></i>
                     </div>
                     <div class="clock">
-                        <img src="images/clock-removebg.png" alt="An image of a clock">
-                        <img class="arrow" src="images/arrow-large-removebg.png" alt="The clocks arrow">
-                        <div class="display"><span id="numerator">1</span>/<span id="denominator">2</span></div>
+                        <div class="clock_face">
+
+                            <div class="hour_hand hand"></div>
+                            <div class="min_hand hand" id="clicker"></div>
+                            <div class="sec_hand hand"></div>
+                            <div class="center"></div>
+                            <div class="display"><span id="numerator">1</span>/<span id="denominator">2</span></div>
+                        </div>
+
                     </div>
-
                 </div>
-            </div>
-            <div class="interface">
-                <button type="button" name="button" onclick="start()" id="startButton">start</button>
-                <button type="button" name="button" onclick="solve()" id="solveButton">Solve</button>
-                <button type="button" name="button" onclick="check()" id="checkButton">Check</button>
-                <button onmouseover="hideHelp()" onmouseout="hideHelp()" type="button" name="button">help</button>
-                <button onclick="resetAll()" type="button" name="button">reset</button>
-            </div>
+                <div class="interface">
+                    <button type="button" name="button" onclick="start()" id="startButton">start</button>
+                    <button type="button" name="button" onclick="solve()" id="solveButton">Solve</button>
+                    <button type="button" name="button" onclick="check()" id="checkButton">Check</button>
+                    <button onmouseover="hideHelp()" onmouseout="hideHelp()" type="button" name="button">help</button>
+                    <button onclick="resetAll()" type="button" name="button">reset</button>
+                </div>
 
+            </div>
+            <div class="help-text" id="help-text" style="display:none">
+                <p>Type help text here</p>
+            </div>
         </div>
-        <div class="help-text" id="help-text" style="display:none">
-            <p>Type help text here</p>
-        </div>
-    </div>
 
-    <script type="text/javascript">
-        // General_____________________________________________
-        var checkButton = document.getElementById('checkButton');
-        var solveButton = document.getElementById('solveButton');
-        var startButton = document.getElementById('startButton');
-        var startPanel = document.getElementById('startPanel');
-        function hideHelp() {
-            var x = document.getElementById("help-text");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
+        <script type="text/javascript">
+            // General_____________________________________________
+            var checkButton = document.getElementById('checkButton');
+            var solveButton = document.getElementById('solveButton');
+            var startButton = document.getElementById('startButton');
+            var startPanel = document.getElementById('startPanel');
+            function hideHelp() {
+                var x = document.getElementById("help-text");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
             }
-        }
 
-        function resetAll() {
-            window.location.reload();
-            return false;
-        }
+            function resetAll() {
+                window.location.reload();
+                return false;
+            }
 
-        function check() {
-            console.log('check initiated');
-        }
+            function check() {
+                console.log('check initiated');
+            }
 
-        function solve() {
-            console.log('solve initiated');
-        }
+            function solve() {
+                console.log('solve initiated');
+            }
 
-        function start() {
-            startPanel.style.display = 'none';
-            startButton.style.display = 'none';
-        }
+            function start() {
+                startPanel.style.display = 'none';
+                startButton.style.display = 'none';
+            }
       // Bespoke funcitons_____________________________________
 
-    </script>
-    <script src="script.js"></script>
+        </script>
+        <script src="script.js"></script>
 </body>
 
 </html>
