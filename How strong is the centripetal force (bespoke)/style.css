@@ -1,0 +1,217 @@
+body {
+    color: #444;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+  }
+
+  .main {
+    background-color: #444444;
+    border-radius: 10px;
+    border-style: none;
+    height: 783px;
+    position: fixed;
+    width: 1280px;
+  }
+
+  .content {
+    margin: 10px;
+    text-align: center;
+    position: relative;
+  }
+
+  .heading {
+    color: #444;
+    left: 50%;
+    margin-left: -257px; /*change this value to half the width of the element*/
+    text-align: center;
+  }
+
+  .interface button, .endGame button{
+    background-color: #ff6600;
+    border-radius: 10px;
+    border-style: none;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 15px;
+    margin-left: 10px;
+    transition: 0.1s;
+  }
+
+  .interface button:hover, .endGame button:hover {
+    background-color: #444444;
+    box-shadow: 0 0 0 3px #fff;
+    cursor: pointer;
+  }
+
+  .interface {
+    margin: 20px 10px 10px auto;
+    text-align: right;
+  }
+
+  .screen {
+    background-color: #b3cf99;
+    height: 680px;
+    margin: 5px;
+    width: 1250px;
+  }
+
+  .help-text {
+    background-color: #fff;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #444;
+    border-radius: 5px;
+    top: 530px;
+    right: 22px;
+    padding: 10px;
+    width: 400px;
+  }
+  .intro {
+    background-color: #fff;
+    border-radius: 5px;
+    border-color: #444;
+    border-width: 3px;
+    border-style: solid;
+    font-size: 24px;
+    left: 50%;
+    margin: -200px 0 0 -400px;
+    top: 50%;
+    height: 400px;
+    width: 800px;
+  }
+
+  .intro p {
+    margin: 80px auto;
+    width: 100%;
+  }
+
+  .intro,.help-text,.heading,.sliders,.rotationDiv,.road, .endGame{
+    position: absolute;
+  }
+
+  .endGame{
+    background-color: #fff;
+    border-radius: 10px;
+    border-style: solid;
+    border-width:3px;
+    font-size: 36px;
+    top: 50%;
+    left: 290px;
+    margin: -124px;
+    width: 400px;
+  }
+  .endGame button{
+    margin-bottom: 35px;
+  }
+
+  /* Content_________________________________________________________________ */
+  .road{
+    height: 680px;
+    left: 5px;
+  }
+  .rotationDiv{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 150px;
+    width: 240px;
+    left: 95px;
+    top:290px;
+    transform-origin: 278px;
+  }
+  .myarrow{
+    position: relative;
+    left: 30px;
+    width: 14.8%;
+  }
+  .truck{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    left: 50px;
+    width: 80px;
+  }
+  .truck img{
+    width: 70px;
+  }
+  .myarrow,.truck{
+    display: inline-block;
+    margin: auto 10px;
+  }
+
+  .sliders{
+    background-color: #fff;
+    border-color: #444;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 3px;
+    top: 130px;
+    left: 780px;
+    width: 420px;
+  }
+  .slider{
+    text-align: center;
+  }
+  .slidebar{
+    background-color: #fff;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #444;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    margin: 40px auto 0;
+    height: 30px;
+    width:380px;
+    position: relative;
+  }
+  .slider-control{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    width: 300px;
+  }
+  .slider-control button{
+    background-color: #ff6600;
+    border-radius: 30px;
+    border-style: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    height: 30px;
+    width: 30px;
+    transition: 0.1s;
+  }
+  .slider-control button:hover{
+    box-shadow: 0 0 0 3px #444;
+  }
+  .slider-control p{
+    font-size: 24px;
+  }
+  .knob{
+    background-color: #444;
+    border-radius: 20px;
+    margin:auto 10px;
+    height: 20px;
+    width: 20px;
+  }
+
+  #radiusknob, #speedknob, #massknob{
+    position: absolute;
+    left: 170px;
+  }
+
+  .rotate {
+    animation: rotation 40s infinite linear ;
+  }
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
