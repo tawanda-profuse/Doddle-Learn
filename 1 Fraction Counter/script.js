@@ -114,42 +114,42 @@ function second() {
 }
 
 // Hour hand
-function hour() {
-  const now = new Date();
-  const hours = now.getHours();
-  const click = ((hours / 12) * 360 + 90);
-  hourHand.style.transform = `rotate(${click}deg)`;
-  // console.log(hours);
-  // console.log(hours);
-}
+// function hour() {
+//   const now = new Date();
+//   const hours = now.getHours();
+//   const click = ((hours / 12) * 360 + 90);
+//   hourHand.style.transform = `rotate(${click}deg)`;
+//   // console.log(hours);
+//   // console.log(hours);
+// }
 
 // Minute hand
-function minute() {
-  const now = new Date();
-  const minutes = now.getMinutes();
-  // console.log(minutes);
-  const click = ((minute / 60) * 360 + 90);
-  minHand.style.transform = `rotate(${click}deg)`;
-  var ran = Math.round(Math.random());
-  // console.log(click);
-  if (minute % 2 === 0) {
-    bg.style.backgroundColor = `rgb(${ran * 2},${minutes * 8},${minutes * 7})`;
-    // test
-    center.style.border = "20px solid white";
-    center.style.backgroundColor = "white";
-    rim.style.border = "30px solid black";
-    // test
-  } else if (minute % 2 == !0) {
-    bg.style.backgroundColor = `rgb(${ran * 4},${minutes * 4},${minutes * 6})`;
-    // test
-    center.style.border = "20px solid black";
-    center.style.backgroundColor = "black";
-    rim.style.border = "30px solid white";
-    // test
-  }
-}
+// function minute() {
+//   const now = new Date();
+//   const minutes = now.getMinutes();
+//   // console.log(minutes);
+//   const click = ((minute / 60) * 360 + 90);
+//   minHand.style.transform = `rotate(${click}deg)`;
+//   var ran = Math.round(Math.random());
+//   // console.log(click);
+//   if (minute % 2 === 0) {
+//     bg.style.backgroundColor = `rgb(${ran * 2},${minutes * 8},${minutes * 7})`;
+//     // test
+//     center.style.border = "20px solid white";
+//     center.style.backgroundColor = "white";
+//     rim.style.border = "30px solid black";
+//     // test
+//   } else if (minute % 2 == !0) {
+//     bg.style.backgroundColor = `rgb(${ran * 4},${minutes * 4},${minutes * 6})`;
+//     // test
+//     center.style.border = "20px solid black";
+//     center.style.backgroundColor = "black";
+//     rim.style.border = "30px solid white";
+//     // test
+//   }
+// }
 
-setInterval(hour);
+// setInterval(hour);
 setInterval(second);
-setInterval(minute);
+// setInterval(minute);
 
