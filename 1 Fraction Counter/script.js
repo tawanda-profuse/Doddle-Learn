@@ -55,14 +55,10 @@ function displayDigits() {
     if (number2 < 10) {
       number2++;
       stepSizeDenominator.innerText = number2;
-    } else if(number2 === 0){
-      number2 = 1;
-      stepSizeDenominator.innerText = number2;
     } else {
       number2 = 1;
       stepSizeDenominator.innerText = number2;
     }
-    console.log(number2)
   });
 
   // Decreases the value of the denominator step size
@@ -70,14 +66,10 @@ function displayDigits() {
     if (number2 < 1) {
       number2 = 10
       stepSizeDenominator.innerText = number2;
-    } else if(number2 == 0){
-      number2 = 1;
-      stepSizeDenominator.innerText = number2;
-    } else {
+    } else if (number2 > 0) {
       number2--;
       stepSizeDenominator.innerText = number2;
-    }
-    console.log(number2)
+    } 
   });
 }
 
