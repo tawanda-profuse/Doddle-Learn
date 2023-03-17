@@ -101,15 +101,17 @@ function second() {
   face.style.backgroundColor = `rgb(${r},${g},${b})`;
 
   if (now % 2 === 0) {
-    center.style.border = "20px solid white";
+    center.style.border = "10px solid white";
     center.style.backgroundColor = "white";
     rim.style.border = "30px solid black";
-    secondHand.style.backgroundColor = "black";
+    // secondHand.style.backgroundColor = "black";
+    secondHand.style.fill = "black";
   } else if (now % 2 == !0) {
-    center.style.border = "20px solid black";
+    center.style.border = "10px solid black";
     center.style.backgroundColor = "black";
     rim.style.backgroundColor = "30px solid white";
-    secondHand.style.backgroundColor = "white";
+    // secondHand.style.backgroundColor = "white";
+    secondHand.style.fill = "white";
   }
 }
 
