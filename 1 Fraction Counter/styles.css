@@ -111,7 +111,7 @@ body {
   z-index: 6;
   cursor: pointer;
   transition: ease-in-out 0.2s;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   font-size: 1.6rem;
   margin-left: 25px;
 }
@@ -127,23 +127,24 @@ body {
   top: 50%;
   z-index: 5;
 }
+
 .inputs:nth-child(2) {
   top: 58%;
 }
 
 .clock-controls {
   position: absolute;
-  right: 67%;
+  right: 65%;
   top: 78%;
   display: flex;
   justify-content: space-around;
-  width: 150px;
+  width: 200px;
   padding: 10px;
 }
 
 .clock-controls i {
-  padding: 14px;
-  font-size: 1.3rem;
+  padding: 20px;
+  font-size: 2rem;
   border: 1px solid navy;
   border-radius: 50%;
   color: darkblue;
@@ -155,18 +156,62 @@ body {
   transform: scale(1.1);
 }
 
-.inputs input {
+.inputs .place-holder {
   width: 90px;
-  vertical-align: top;
+  height: 40px;
+  padding: 5px;
+  vertical-align: center;
   text-align: center;
   outline: none;
   font-size: 0.8rem;
   font-weight: bold;
+  border: none;
+  display: inline-block;
+  line-height: 38px;
+  font-size: 1.5rem;
 }
 
-.inputs input::-webkit-outer-spin-button,
-.inputs input::-webkit-inner-spin-button {
-  display: none;
+.input-number-decrement,
+.input-number-increment {
+  display: inline-block;
+  width: 30px;
+  height: 40px;
+  line-height: 38px;
+  background: #f1f1f1;
+  color: #444;
+  text-align: center;
+  vertical-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: 2px solid #444;
+  user-select: none;
+  transition: 0.1s ease-in-out;
+}
+
+.input-number-decrement:active,
+.input-number-increment:active {
+  background: #ddd;
+}
+
+.input-number-decrement:hover {
+  background-color: tomato;
+  transform: scale(1.2);
+}
+
+.input-number-increment:hover {
+  background-color: springgreen;
+  transform: scale(1.2);
+}
+
+.input-number-decrement {
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.input-number-increment {
+  border-left: none;
+  border-radius: 0 4px 4px 0;
 }
 
 .inputs button {
@@ -183,51 +228,6 @@ body {
 
 .inputs button:hover {
   transform: scale(1.1);
-}
-
-.inputs input,
-.input-number-decrement,
-.input-number-increment {
-  border: 2px solid #444;
-  height: 40px;
-  user-select: none;
-}
-
-.input-number-decrement,
-.input-number-increment {
-  display: inline-block;
-  width: 30px;
-  line-height: 38px;
-  background: #f1f1f1;
-  color: #444;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.input-number-decrement:active,
-.input-number-increment:active {
-  background: #ddd;
-}
-
-.input-number-decrement:hover {
-  background-color: tomato;
-  transform: scale(1.1);
-}
-
-.input-number-increment:hover {
-  background-color: springgreen;
-  transform: scale(1.1);
-}
-
-.input-number-decrement {
-  border-right: none;
-  border-radius: 4px 0 0 4px;
-}
-
-.input-number-increment {
-  border-left: none;
-  border-radius: 0 4px 4px 0;
 }
 
 /* Clock body */

@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome Link: -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    <link rel="stylesheet" href="https://kit.fontawesome.com/1c74eec648.css" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://kit.fontawesome.com/1c74eec648.css" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://kit.fontawesome.com/1c74eec648.css">
 </head>
 
 <body>
@@ -23,42 +24,38 @@
                         step size
                     </div>
                     <div class="inputs">
-                        <span class="input-number-decrement">-</span><input class="input-number" type="number" min="0"
-                            max="10" name="numeratorI" id="numeratorI" placeholder="Numerator"><span
-                            class="input-number-increment">+</span>
+                        <span class="input-number-decrement" id="minusD">—</span>
+                        <div class="place-holder" id="denominatorI">2</div>
+                        <span class="input-number-increment" id="addD">+</span>
                     </div>
                     <div class="inputs">
-                        <span class="input-number-decrement">-</span><input type="number" min="0" max="10"
-                            name="denominatorI" id="denominatorI" placeholder="Denominator"><span
-                            class="input-number-increment">+</span>
+                        <span class="input-number-decrement" id="minusN">—</span>
+                        <div class="place-holder" id="numeratorI">1</div>
+                        <span class="input-number-increment" id="addN">+</span>
                         <button title="Done" id="showCover"><i class="fas fa-check"></i></button>
                     </div>
                     <div class="clock-controls">
-                        <i class="fas fa-arrow-circle-left" title="Rotate left"></i>
-                        <i class="fas fa-arrow-circle-right" title="Rotate right"></i>
+                        <i class="fas fa-arrow-circle-left" title="Rotate anti-clockwise"></i>
+                        <i class="fas fa-arrow-circle-right" title="Rotate clockwise"></i>
                     </div>
                     <div class="clock">
                         <div class="clock_face">
-
                             <div class="hour_hand hand"></div>
                             <div class="min_hand hand" id="clicker"></div>
                             <div class="sec_hand hand"></div>
                             <div class="center"></div>
                             <div class="display"><span id="numerator">1</span>/<span id="denominator">2</span></div>
                         </div>
-
                     </div>
                 </div>
             </div>
             <div class="interface">
-                <button type="button" name="button" onclick="start()" id="startButton">start</button>
-                <button type="button" name="button" onclick="solve()" id="solveButton">Solve</button>
-                <button type="button" name="button" onclick="check()" id="checkButton">Check</button>
                 <button onmouseover="hideHelp()" onmouseout="hideHelp()" type="button" name="button">help</button>
                 <button onclick="resetAll()" type="button" name="button">reset</button>
             </div>
             <div class="help-text" id="help-text" style="display:none">
-                <p>Type help text here</p>
+                <p>Press the blue button on the left to show then change the step size. Then press the clockwise or
+                    anticlockwise buttons to activate the counter.</p>
             </div>
         </div>
 
@@ -94,7 +91,7 @@
                 startPanel.style.display = 'none';
                 startButton.style.display = 'none';
             }
-      // Bespoke funcitons_____________________________________
+      // Bespoke functions_____________________________________
 
         </script>
         <script src="script.js"></script>
