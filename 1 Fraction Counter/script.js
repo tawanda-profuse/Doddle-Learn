@@ -152,6 +152,6 @@ function second() {
 // }
 
 // setInterval(hour);
-setInterval(second);
+// setInterval(second);
 // setInterval(minute);
 

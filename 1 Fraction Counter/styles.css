@@ -129,7 +129,7 @@ body {
 }
 
 .inputs:nth-child(2) {
-  top: 58%;
+  top: 57%;
 }
 
 .clock-controls {
@@ -196,12 +196,10 @@ body {
 
 .input-number-decrement:hover {
   background-color: tomato;
-  transform: scale(1.2);
 }
 
 .input-number-increment:hover {
   background-color: springgreen;
-  transform: scale(1.2);
 }
 
 .input-number-decrement {
@@ -216,18 +214,20 @@ body {
 
 .inputs button {
   display: block;
-  width: 50%;
+  width: 100%;
   border-radius: 5px;
   border: none;
   background-color: springgreen;
   cursor: pointer;
   position: absolute;
-  margin-top: 60px;
-  left: 25%;
+  margin: 50px auto;
+  font-size: 1.2rem;
+  color: white;
 }
 
 .inputs button:hover {
-  transform: scale(1.1);
+  background-color: rgb(163, 255, 209);
+  color: #444444;
 }
 
 /* Clock body */
@@ -252,6 +252,7 @@ body {
   left: 45%;
   width: 1px;
   height: 1px;
+  /* border: 10px solid black; */
   border: 10px solid black;
   border-radius: 50%;
   background-color: black;
@@ -288,17 +289,19 @@ body {
 
 .sec_hand{
   z-index: 1;
-  top: 44%;
-  left: 8.5%;
+  /* top: 44%;
+  left: 8.5%; */
+  top: 47%;
+  left: 4%;
   width: 45%;
-  /* background-color: white;
-  fill: white; */
-  /* background-color: black; */
+  /* width: 139px;  */
+  background-color: green;
   fill: black;
   transform-origin: 99%;
   transition: all 0.05s;
   transform: rotate(90deg);
   transition-timing-function: cubic-bezier(.39, 1.95, .41, 1.67);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .display {
@@ -311,7 +314,7 @@ body {
   left: 34%;
   margin: auto;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 800;
   box-shadow: 2px 2px black;
 }
