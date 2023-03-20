@@ -154,6 +154,7 @@ body {
 .clock-controls i:hover {
   cursor: pointer;
   transform: scale(1.1);
+  background-color: gray;
 }
 
 .inputs .place-holder {
@@ -239,9 +240,9 @@ body {
   margin: 10% auto;
   width: 25rem;
   height: 25rem;
-  border: 20px solid black;
-  border-radius: 50%;
-  background-color: rgb(255, 255, 255);
+  border: 20px ridge navy;
+  border-radius: 50%; 
+  background-color: lime;
   padding: 1rem;
 }
 
@@ -289,19 +290,23 @@ body {
 
 .sec_hand{
   z-index: 1;
-  /* top: 44%;
-  left: 8.5%; */
   top: 47%;
-  left: 4%;
+  left: 3.5%;
   width: 45%;
-  /* width: 139px;  */
-  background-color: green;
+  height: 3%;
+  background-color: navy;
   fill: black;
   transform-origin: 99%;
   transition: all 0.05s;
+  /* transition: all 0.05s; */
+  /* transform: rotate(90deg); */
   transform: rotate(90deg);
+  /* transform: rotate(180deg); */
+  /* transform: rotate(270deg); */
+  /* transform: rotate(360deg); */
   transition-timing-function: cubic-bezier(.39, 1.95, .41, 1.67);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  box-shadow: -5px -5px 5px 2px black;
 }
 
 .display {
@@ -316,5 +321,5 @@ body {
   text-align: center;
   font-size: 2rem;
   font-weight: 800;
-  box-shadow: 2px 2px black;
+  box-shadow: 8px 8px black;
 }
