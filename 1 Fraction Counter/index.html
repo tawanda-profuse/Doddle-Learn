@@ -39,21 +39,18 @@
                     </div>
                     <div class="clock">
                         <div class="clock_face">
-                            <!-- <div class="hour_hand hand"></div>
-                            <div class="min_hand hand" id="clicker"></div>
-                            <div class="sec_hand hand"></div> -->
                             <div class="sec_hand hand">
-                                <!-- <svg width="169" height="39" viewBox="0 0 169 39" fill="none"> -->
-                                <svg width="169" height="39" fill="none" transform="translate(-10, -14)">
-                                <!-- <svg width="169" height="78" viewBox="0 0 169 78" fill="none"> -->
-                                    <!-- <rect x="168.75" y="11.75" width="9" height="148" -->
-                                    <!-- <rect x="169.75" y="11.75" width="12" height="148"
-                                        transform="rotate(90 168.75 11.75)" fill="black" /> -->
+                                <svg width="169" height="39" fill="none" transform="translate(-80, 45), rotate(90)">
+                                    <path d="M0 19L38.5 0L22 19L38.5 39L0 19Z" fill="black" />
                                     <path d="M0 19L38.5 0L22 19L38.5 39L0 19Z" fill="navy" />
                                 </svg>
                             </div>
                             <div class="center"></div>
-                            <div class="display"><span id="numerator">1</span>/<span id="denominator">2</span></div>
+                            <div class="display">
+                                <span id="numerator"></span>
+                                <span id="divider">0</span>
+                                <span id="denominator"></span>
+                            </div>
                         </div>
                     </div>
                 </div>

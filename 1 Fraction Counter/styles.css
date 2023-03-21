@@ -249,14 +249,13 @@ body {
 .center{
   z-index: 4;
   position: relative;
-  top: 45%;
-  left: 45%;
+  top: 3%;
+  left: 45.5%;
   width: 1px;
   height: 1px;
-  /* border: 10px solid black; */
-  border: 10px solid black;
+  border: 12px solid goldenrod;
   border-radius: 50%;
-  background-color: black;
+  background-color: goldenrod;
 }
 
 .hand{
@@ -290,36 +289,31 @@ body {
 
 .sec_hand{
   z-index: 1;
-  top: 47%;
-  left: 3.5%;
-  width: 45%;
-  height: 3%;
+  top: 8%;
+  left: 47%;
+  width: 3%;
+  height: 45%;
   background-color: navy;
   fill: black;
-  transform-origin: 99%;
+  transform-origin: bottom;
+  transform-box: fill-box;
   transition: all 0.05s;
-  /* transition: all 0.05s; */
-  /* transform: rotate(90deg); */
-  transform: rotate(90deg);
-  /* transform: rotate(180deg); */
-  /* transform: rotate(270deg); */
-  /* transform: rotate(360deg); */
   transition-timing-function: cubic-bezier(.39, 1.95, .41, 1.67);
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-  box-shadow: -5px -5px 5px 2px black;
+  box-shadow: 2px -2px 5px 2px black;
 }
 
 .display {
   z-index: 4;
-  padding: 15px 40px;
+  width: 155px;
+  height: 75px;
   background-color: white;
   border: 2px solid navy;
   position: absolute;
   top: 60%;
-  left: 34%;
-  margin: auto;
+  left: 32%;
   text-align: center;
-  font-size: 2rem;
+  line-height: 2;
+  font-size: 2.2rem;
   font-weight: 800;
   box-shadow: 8px 8px black;
 }

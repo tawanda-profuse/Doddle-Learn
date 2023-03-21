@@ -15,6 +15,10 @@ var minusDenominator = document.getElementById("minusD"); // Subtraction icon fo
 var stepSizeDenominator = document.getElementById("denominatorI"); // Displayed value of denominator
 var clockWise = document.getElementById("clockwise"); // Clockwise button
 var antiClockWise = document.getElementById("anti-clockwise"); // Anti-clockwise button
+var topNum = document.getElementById("numerator");
+var divider = document.getElementById("divider");
+var bottomNum = document.getElementById("denominator");
+var fraction;
 
 // Hides the step size container
 stepSize.addEventListener('click', function () {
@@ -78,25 +82,45 @@ function displayDigits() {
 
 displayDigits();
 
-function rotateArm() {
-  console.log(number);
+clockWise.addEventListener("click", function () {
+  rotateArmClockwise(180);
+});
+
+antiClockWise.addEventListener("click", function () {
+  rotateArmAntiClockwise(-180);
+});
+
+function rotateArmClockwise(rotation) {
+  secondHand.animate([
+    { transform: `rotate(${rotation}deg)` }
+  ], {
+    duration: 2000,
+    // easing: 'linear',
+    easing: 'ease',
+    iterations: 1,
+    direction: 'normal',
+    // fill: 'forwards'
+    fill: 'both'
+  });
+  topNum.textContent = stepSizeNumerator.innerText;
+  divider.innerText = '/';
+  bottomNum.innerText = stepSizeDenominator.innerText;
 }
 
-// Seconds hand
-function second() {
-  var now = new Date().getSeconds();
-
-  const click = ((now / 60) * 360 + 90);
-  secondHand.style.transform = "rotate(" + click + "deg)";
-  console.log(now);
-  // console.log(click);
+function rotateArmAntiClockwise(rotation) {
+  secondHand.animate([
+    { transform: `rotate(${rotation}deg)` }
+  ], {
+    duration: 2000,
+    // easing: 'linear',
+    easing: 'ease',
+    iterations: 1,
+    direction: 'normal',
+    // fill: 'forwards'
+    fill: 'both'
+  });
+  topNum.textContent = stepSizeNumerator.innerText;
+  divider.innerText = '/';
+  bottomNum.innerText = stepSizeDenominator.innerText;
 }
-
-// setInterval(hour);
-// setInterval(second);
-// setInterval(minute);
-
-// setInterval(() => {
-//   second();
-// }, 1000);
 
