@@ -98,6 +98,7 @@ body {
   flex-wrap: wrap;
   padding-top: 150px;
   position: relative;
+  /* animation-play-state: ; */
 }
 
 .step-size {
@@ -316,4 +317,25 @@ body {
   font-size: 2.2rem;
   font-weight: 800;
   box-shadow: 8px 8px black;
+  display: flex;
+  justify-content: center;  
+}
+
+.fraction{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.8rem;
+  justify-content: center;
+  line-height: 0.2;
+}
+
+.fraction hr{
+  width: 50%;
+  border: 2px solid #444444;
+}
+
+.fraction span{
+  margin: 0;
+  padding: 0;
 }

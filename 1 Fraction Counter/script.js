@@ -15,6 +15,7 @@ var minusDenominator = document.getElementById("minusD"); // Subtraction icon fo
 var stepSizeDenominator = document.getElementById("denominatorI"); // Displayed value of denominator
 var clockWise = document.getElementById("clockwise"); // Clockwise button
 var antiClockWise = document.getElementById("anti-clockwise"); // Anti-clockwise button
+var constantNum = document.getElementById("constant");
 var topNum = document.getElementById("numerator");
 var divider = document.getElementById("divider");
 var bottomNum = document.getElementById("denominator");
@@ -82,45 +83,145 @@ function displayDigits() {
 
 displayDigits();
 
+// Object used for fractional/decimal values in the rotation
+const rotation = {
+  '1': 360, // 1/1, 2/2, 3/3, 4/4, 5/5, 6/6, 7/7, 8/8, 9/9, 10/10
+  '0.5': 180, // 1/2, 2/4, 3/6, 4/8, 5/10
+  '0.3333333333333333': 120, // 1/3, 2/6, 3/9
+  '0.25': 90, // 1/4, 2/8
+  '0.2': 72, // 1/5, 2/10
+  '0.16666666666666666': 60, // 1/6
+  '0.14285714285714285': 51.4285714, // 1/7
+  '0.125': 45, // 1/8
+  '0.1111111111111111': 40, // 1/9
+  '0.1': 36, // 1/10
+  '2': 720, // 2/1, 4/2, 6/3, 8/4, 10/5
+  '0.6666666666666666': 240, // 2/3, 4/6
+  '0.4': 144, // 2/5, 4/10
+  '0.2857142857142857': 102.857143, // 2/7
+  '0.2222222222222222': 80, // 2/9
+  '3': 1080, // 3/1, 6/2, 9/3
+  '1.5': 540, // 3/2, 6/4, 9/6
+  '0.75': 270, // 3/4, 6/8
+  '0.6': 216, // 3/5, 6/10
+  '0.42857142857142855': 154.285714, // 3/7
+  '0.375': 135, // 3/8
+  '0.3': 108, // 3/10
+  '4': 1440, // 4/1, 8/2
+  '1.3333333333333333': 480, // 4/3, 8/6
+  '0.8': 288, // 4/5, 8/10
+  '0.5714285714285714': 205.714286, // 4/7
+  '0.4444444444444444': 160, // 4/9
+  '5': 1800, // 5/1
+  '2.5': 900, // 5/2, 10/4
+  '1.6666666666666667': 600, // 5/3, 10/6
+  '1.25': 450, // 5/4, 10/8
+  '0.8333333333333334': 300, // 5/6
+  '0.7142857142857143': 257.14285714285717, // 5/7
+  '0.625': 225, // 5/8
+  '0.5555555555555556': 200, // 5/9
+  '6': 2160, // 6/1
+  '1.2': 432, // 6/5
+  '0.8571428571428571': 308.57142857142856, // 6/7
+  '0.6666666666666666': 240, // 6/9
+  '7': 2520, // 7/1
+  '3.5': 1260, // 7/2
+  '2.3333333333333335': 840, // 7/3
+  '1.75': 630, // 7/4
+  '1.4': 503.99999999999994, // 7/5
+  '1.1666666666666667': 420, // 7/6
+  '0.875': 315, // 7/8
+  '0.7777777777777778': 280, // 7/9
+  '0.7': 251.99999999999997, // 7/10
+  '8': 2880, // 8/1
+  '2.6666666666666665': 960, // 8/3
+  '1.6': 576, // 8/5
+  '1.1428571428571428': 411.4285714285714, // 8/7
+  '0.8888888888888888': 320, // 8/9
+  '9': 3240, // 9/1
+  '4.5': 1620, // 9/2
+  '2.25': 810, // 9/4
+  '1.8': 648, // 9/5
+  '1.2857142857142858': 462.8571428571429, // 9/7
+  '1.125': 405, // 9/8
+  '0.9': 324, // 9/10
+  '10': 3600, // 10/1
+  '3.3333333333333335': 1200, // 10/3
+  '1.4285714285714286': 514.2857142857143, // 10/7
+  '1.1111111111111112': 400, // 10/9
+}
+
+//colors: blue, yellow, red, purple
+
+/* Consider applying 3 different animations:
+  1. onclick
+  2. onmouseup
+  3. other direction
+*/
+
+var currentState = '';
+function rotateArmClockwise(rotationObject) {
+  fraction = eval(stepSizeNumerator.innerText / stepSizeDenominator.innerText);
+  
+  if (rotationObject.hasOwnProperty(fraction)) {
+    secondHand.animate([
+      { transform: `rotate(${rotationObject[fraction]}deg)`}
+    ], {
+      duration: 1000,
+      easing: 'linear',
+      iterations: 1,
+      direction: 'normal',
+      fill: 'both'
+    });
+      currentState.style.transform = `rotate(${-rotationObject[fraction]}deg)`;
+  } else {
+    console.log("False");
+  }
+  // currentState.style.transform = `rotate(${rotationObject[fraction]}deg)`;
+  constantNum.innerText = '';
+  topNum.textContent = stepSizeNumerator.innerText;
+  divider.innerHTML = '<hr/>';
+  bottomNum.innerText = stepSizeDenominator.innerText;
+}
+
+function rotateArmAntiClockwise(rotationObject) {
+  fraction = eval(stepSizeNumerator.innerText / stepSizeDenominator.innerText);
+  
+  if (rotationObject.hasOwnProperty(fraction)) {
+    secondHand.animate([
+      { transform: `rotate(${-rotationObject[fraction]}deg)`}
+    ], {
+      duration: 1000,
+      easing: 'linear',
+      iterations: 1,
+      direction: 'normal',
+      fill: 'both'
+    });
+      currentState.style.transform = `rotate(${-rotationObject[fraction]}deg)`;
+  } else {
+    console.log("False");
+  }
+  // currentState.style.transform = `rotate(${-rotationObject[fraction]}deg)`;
+  constantNum.innerText = '—';
+  topNum.textContent = stepSizeNumerator.innerText;
+  divider.innerHTML = '<hr/>';
+  bottomNum.innerText = stepSizeDenominator.innerText;
+}
+
 clockWise.addEventListener("click", function () {
-  rotateArmClockwise(180);
+  rotateArmClockwise(rotation);
+});
+
+//Test
+clockWise.addEventListener("mouseout", function () {
+  // currentState.style.transform = `rotate(${-rotationObject[fraction]}deg)`;
+  console.log(secondHand.CSSKeyframeRule);
+  secondHand.style.an
 });
 
 antiClockWise.addEventListener("click", function () {
-  rotateArmAntiClockwise(-180);
+  rotateArmAntiClockwise(rotation);
 });
 
-function rotateArmClockwise(rotation) {
-  secondHand.animate([
-    { transform: `rotate(${rotation}deg)` }
-  ], {
-    duration: 2000,
-    // easing: 'linear',
-    easing: 'ease',
-    iterations: 1,
-    direction: 'normal',
-    // fill: 'forwards'
-    fill: 'both'
-  });
-  topNum.textContent = stepSizeNumerator.innerText;
-  divider.innerText = '/';
-  bottomNum.innerText = stepSizeDenominator.innerText;
-}
 
-function rotateArmAntiClockwise(rotation) {
-  secondHand.animate([
-    { transform: `rotate(${rotation}deg)` }
-  ], {
-    duration: 2000,
-    // easing: 'linear',
-    easing: 'ease',
-    iterations: 1,
-    direction: 'normal',
-    // fill: 'forwards'
-    fill: 'both'
-  });
-  topNum.textContent = stepSizeNumerator.innerText;
-  divider.innerText = '/';
-  bottomNum.innerText = stepSizeDenominator.innerText;
-}
 
