@@ -153,17 +153,59 @@ const rotation = {
 
 //colors: blue, yellow, red, purple
 
-/* Consider applying 3 different animations:
+/* Consider applying 3 different animations/classes:
   1. onclick
   2. onmouseup
   3. other direction
 */
 
 var currentState = '';
+
+// https://gist.github.com/redteam-snippets/3934258
+
+function displayFraction(_decimal){
+  var numArray
+  if(_decimal.includes(".") == true){
+    divider.innerHTML = '<hr/>'; // fraction divider
+    numArray = _decimal.split(".");
+    if(numArray[0] > 0){
+      constantNum.innerText = numArray[0];
+      checkFrac(numArray[1], topNum, bottomNum)
+    } else{
+      constantNum.innerText = '';
+      checkFrac(numArray[1], topNum, bottomNum)
+    }
+    
+  } else {
+    divider.innerHTML = ''; // fraction divider
+    constantNum.innerText = _decimal;
+  }
+  console.log(numArray[0]);
+}
+
+function checkFrac(num, first, second) {
+  if(num == "25"){
+    first.innerText = 1;
+    second.innerText = 4;
+  } else if(num == "5"){
+    first.innerText = 1;
+    second.innerText = 2;
+  } else if(num == "75"){
+    first.innerText = 3;
+    second.innerText = 4;
+  }
+}
+
+function arithmetic(anyNum){
+  var counter = 0;
+  counter += anyNum;
+}
+
 function rotateArmClockwise(rotationObject) {
   fraction = eval(stepSizeNumerator.innerText / stepSizeDenominator.innerText);
-  
+
   if (rotationObject.hasOwnProperty(fraction)) {
+    arithmetic(fraction);
     secondHand.animate([
       { transform: `rotate(${rotationObject[fraction]}deg)`}
     ], {
@@ -173,23 +215,20 @@ function rotateArmClockwise(rotationObject) {
       direction: 'normal',
       fill: 'both'
     });
-      currentState.style.transform = `rotate(${-rotationObject[fraction]}deg)`;
+    displayFraction(fraction.toString());
+    // secondHand.style.transform = `rotate(${rotation[fraction]}deg)`;
+    // secondHand.style.transition = 'transform 2s linear';
   } else {
     console.log("False");
   }
-  // currentState.style.transform = `rotate(${rotationObject[fraction]}deg)`;
-  constantNum.innerText = '';
-  topNum.textContent = stepSizeNumerator.innerText;
-  divider.innerHTML = '<hr/>';
-  bottomNum.innerText = stepSizeDenominator.innerText;
 }
 
 function rotateArmAntiClockwise(rotationObject) {
   fraction = eval(stepSizeNumerator.innerText / stepSizeDenominator.innerText);
-  
+
   if (rotationObject.hasOwnProperty(fraction)) {
     secondHand.animate([
-      { transform: `rotate(${-rotationObject[fraction]}deg)`}
+      { transform: `rotate(${-rotationObject[fraction]}deg)` }
     ], {
       duration: 1000,
       easing: 'linear',
@@ -197,15 +236,10 @@ function rotateArmAntiClockwise(rotationObject) {
       direction: 'normal',
       fill: 'both'
     });
-      currentState.style.transform = `rotate(${-rotationObject[fraction]}deg)`;
+    displayFraction(fraction.toString());
   } else {
     console.log("False");
   }
-  // currentState.style.transform = `rotate(${-rotationObject[fraction]}deg)`;
-  constantNum.innerText = '—';
-  topNum.textContent = stepSizeNumerator.innerText;
-  divider.innerHTML = '<hr/>';
-  bottomNum.innerText = stepSizeDenominator.innerText;
 }
 
 clockWise.addEventListener("click", function () {
@@ -214,9 +248,7 @@ clockWise.addEventListener("click", function () {
 
 //Test
 clockWise.addEventListener("mouseout", function () {
-  // currentState.style.transform = `rotate(${-rotationObject[fraction]}deg)`;
-  console.log(secondHand.CSSKeyframeRule);
-  secondHand.style.an
+    
 });
 
 antiClockWise.addEventListener("click", function () {
