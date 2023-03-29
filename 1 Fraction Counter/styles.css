@@ -237,17 +237,17 @@ body {
   position: relative;
 }
 
-.clock_face{
+.clock_face {
   margin: 10% auto;
   width: 25rem;
   height: 25rem;
   border: 20px ridge navy;
-  border-radius: 50%; 
+  border-radius: 50%;
   background-color: lime;
   padding: 1rem;
 }
 
-.center{
+.center {
   z-index: 4;
   position: relative;
   top: 3%;
@@ -259,7 +259,7 @@ body {
   background-color: goldenrod;
 }
 
-.hand{
+.hand {
   transform-origin: 100%;
   position: relative;
   top: 49%;
@@ -267,17 +267,17 @@ body {
   height: 6px;
 }
 
-.hour_hand{
+.hour_hand {
   background-color: black;
   left: 23%;
   width: 27%;
   z-index: 2;
   transition: all 0.05s;
   transform: rotate(90deg);
-  transition-timing-function: cubic-bezier(.39, 1.95, .41, 1.67);
+  transition-timing-function: cubic-bezier(0.39, 1.95, 0.41, 1.67);
 }
 
-.min_hand{
+.min_hand {
   z-index: 3;
   left: 10%;
   width: 41%;
@@ -285,10 +285,10 @@ body {
   transform-origin: 100%;
   transition: all 0.05s;
   transform: rotate(90deg);
-  transition-timing-function: cubic-bezier(.39, 1.95, .41, 1.67);
+  transition-timing-function: cubic-bezier(0.39, 1.95, 0.41, 1.67);
 }
 
-.sec_hand{
+.sec_hand {
   z-index: 1;
   top: 8%;
   left: 47%;
@@ -299,7 +299,7 @@ body {
   transform-origin: bottom;
   transform-box: fill-box;
   transition: all 0.05s;
-  transition-timing-function: cubic-bezier(.39, 1.95, .41, 1.67);
+  transition-timing-function: cubic-bezier(0.39, 1.95, 0.41, 1.67);
   box-shadow: 2px -2px 5px 2px black;
 }
 
@@ -318,10 +318,10 @@ body {
   font-weight: 800;
   box-shadow: 8px 8px black;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
 }
 
-.fraction{
+.fraction {
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -330,12 +330,12 @@ body {
   line-height: 0.2;
 }
 
-.fraction hr{
+.fraction hr {
   width: 50%;
   border: 2px solid #444444;
 }
 
-.fraction span{
+.fraction span {
   margin: 0;
   padding: 0;
 }

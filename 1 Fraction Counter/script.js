@@ -2,11 +2,6 @@ var stepSize = document.getElementById('stepSize');
 var showCover = document.getElementById('showCover');
 var secondHand = document.querySelector('.sec_hand');
 var face = document.querySelector(".clock_face");
-var hourHand = document.querySelector(".hour_hand");
-var minHand = document.querySelector(".min_hand");
-var bg = document.querySelector("body");
-var center = document.querySelector(".center");
-var rim = document.querySelector(".clock_face");
 var addNumerator = document.getElementById("addN"); // Addition icon for numerator
 var minusNumerator = document.getElementById("minusN"); // Subtraction icon for numerator
 var stepSizeNumerator = document.getElementById("numeratorI"); // Displayed value of numerator
@@ -19,7 +14,7 @@ var constantNum = document.getElementById("constant");
 var topNum = document.getElementById("numerator");
 var divider = document.getElementById("divider");
 var bottomNum = document.getElementById("denominator");
-var fraction;
+var fraction; // Calculated value of numerator / denominator
 
 // Hides the step size container
 stepSize.addEventListener('click', function () {
@@ -31,57 +26,58 @@ showCover.addEventListener('click', function () {
   stepSize.classList.remove('hide');
 });
 
+// Function below generates a random color every time the web page loads
+window.addEventListener("load", function () {
+  let randomColor = colors[Math.floor(Math.random() * colors.length)];
+  face.style.backgroundColor = randomColor;
+});
+
 var number = 1;
 var number2 = 2;
 
-function displayDigits() {
+// Increases the value of the numerator step size
+addNumerator.addEventListener("click", function () {
+  if (number < 10) {
+    number++;
+    stepSizeNumerator.innerText = number;
+  } else {
+    number = 0;
+    stepSizeNumerator.innerText = number;
+  }
+});
 
-  // Increases the value of the numerator step size
-  addNumerator.addEventListener("click", function () {
-    if (number < 10) {
-      number++;
-      stepSizeNumerator.innerText = number;
-    } else {
-      number = 0;
-      stepSizeNumerator.innerText = number;
-    }
-  });
+// Decreases the value of the numerator step size
+minusNumerator.addEventListener("click", function () {
+  if (number < 1) {
+    number = 10
+    stepSizeNumerator.innerText = number;
+  } else {
+    number--;
+    stepSizeNumerator.innerText = number;
+  }
+});
 
-  // Decreases the value of the numerator step size
-  minusNumerator.addEventListener("click", function () {
-    if (number < 1) {
-      number = 10
-      stepSizeNumerator.innerText = number;
-    } else {
-      number--;
-      stepSizeNumerator.innerText = number;
-    }
-  });
+// Increases the value of the denominator step size
+addDenominator.addEventListener("click", function () {
+  if (number2 < 10) {
+    number2++;
+    stepSizeDenominator.innerText = number2;
+  } else {
+    number2 = 1;
+    stepSizeDenominator.innerText = number2;
+  }
+});
 
-  // Increases the value of the denominator step size
-  addDenominator.addEventListener("click", function () {
-    if (number2 < 10) {
-      number2++;
-      stepSizeDenominator.innerText = number2;
-    } else {
-      number2 = 1;
-      stepSizeDenominator.innerText = number2;
-    }
-  });
-
-  // Decreases the value of the denominator step size
-  minusDenominator.addEventListener("click", function () {
-    if (number2 < 1) {
-      number2 = 10
-      stepSizeDenominator.innerText = number2;
-    } else if (number2 > 0) {
-      number2--;
-      stepSizeDenominator.innerText = number2;
-    }
-  });
-}
-
-displayDigits();
+// Decreases the value of the denominator step size
+minusDenominator.addEventListener("click", function () {
+  if (number2 < 1) {
+    number2 = 10
+    stepSizeDenominator.innerText = number2;
+  } else if (number2 > 0) {
+    number2--;
+    stepSizeDenominator.innerText = number2;
+  }
+});
 
 // Object used for fractional/decimal values in the rotation
 const rotation = {
@@ -96,7 +92,7 @@ const rotation = {
   '0.1111111111111111': 40, // 1/9
   '0.1': 36, // 1/10
   '2': 720, // 2/1, 4/2, 6/3, 8/4, 10/5
-  '0.6666666666666666': 240, // 2/3, 4/6
+  '0.6666666666666666': 240, // 2/3, 4/6, 6/9
   '0.4': 144, // 2/5, 4/10
   '0.2857142857142857': 102.857143, // 2/7
   '0.2222222222222222': 80, // 2/9
@@ -123,7 +119,7 @@ const rotation = {
   '6': 2160, // 6/1
   '1.2': 432, // 6/5
   '0.8571428571428571': 308.57142857142856, // 6/7
-  '0.6666666666666666': 240, // 6/9
+  // '0.6666666666666666': 240, // 6/9
   '7': 2520, // 7/1
   '3.5': 1260, // 7/2
   '2.3333333333333335': 840, // 7/3
@@ -151,106 +147,206 @@ const rotation = {
   '1.1111111111111112': 400, // 10/9
 }
 
-//colors: blue, yellow, red, purple
+// The colors array is used to generate a random color
+const colors = ["blue", "yellow", "red", "purple"];
 
-/* Consider applying 3 different animations/classes:
-  1. onclick
-  2. onmouseup
-  3. other direction
-*/
+var counter = 0; // A dynamic value used to rotate the needle
 
-var currentState = '';
-
-// https://gist.github.com/redteam-snippets/3934258
-
-function displayFraction(_decimal){
+// The function below calls the checkFrac function below and displays the values for constant, numerator, and denominator
+function displayFraction(_decimal) {
   var numArray
-  if(_decimal.includes(".") == true){
+  if (_decimal.includes(".") == true) {
+    // Fractions have a dot (.)
     divider.innerHTML = '<hr/>'; // fraction divider
     numArray = _decimal.split(".");
-    if(numArray[0] > 0){
-      constantNum.innerText = numArray[0];
-      checkFrac(numArray[1], topNum, bottomNum)
-    } else{
-      constantNum.innerText = '';
-      checkFrac(numArray[1], topNum, bottomNum)
-    }
-    
+    constantNum.innerText = `${numArray[0]}`;
+    checkFrac(numArray[0], numArray[1], constantNum, topNum, bottomNum);
   } else {
+    // Constants don't have a dot (.)
     divider.innerHTML = ''; // fraction divider
-    constantNum.innerText = _decimal;
+    constantNum.innerText = `${_decimal}`;
+    topNum.innerText = '';
+    bottomNum.innerText = '';
   }
-  console.log(numArray[0]);
 }
 
-function checkFrac(num, first, second) {
-  if(num == "25"){
+// The function below verifies a decimal number and outputs the fraction value in the DOM
+function checkFrac(prev, num, single, first, second) {
+  if (num == "25") {
     first.innerText = 1;
     second.innerText = 4;
-  } else if(num == "5"){
+  } else if (num == "5") {
     first.innerText = 1;
     second.innerText = 2;
-  } else if(num == "75"){
+  } else if (num == "75") {
     first.innerText = 3;
     second.innerText = 4;
+  } else if (num == "3333333333333333") {
+    first.innerText = 1;
+    second.innerText = 3;
+  } else if (num == "2") {
+    if (prev == "1") {
+      single.innerText = '';
+      first.innerText = 6;
+    } else {
+      first.innerText = 1;
+    }
+    second.innerText = 5;
+  } else if (num == "16666666666666666") {
+    first.innerText = 1;
+    second.innerText = 6;
+  } else if (num == "14285714285714285") {
+    first.innerText = 1;
+    second.innerText = 7;
+  } else if (num == "125") {
+    first.innerText = 1;
+    second.innerText = 8;
+  } else if (num == "1111111111111111") {
+    first.innerText = 1;
+    second.innerText = 9;
+  } else if (num == "1") {
+    first.innerText = 1;
+    second.innerText = 10;
+  } else if (num == "6666666666666666") {
+    first.innerText = 2;
+    second.innerText = 3;
+  } else if (num == "4") {
+    first.innerText = 2;
+    second.innerText = 5;
+  } else if (num == "2857142857142857") {
+    first.innerText = 2;
+    second.innerText = 7;
+  } else if (num == "2222222222222222") {
+    first.innerText = 2;
+    second.innerText = 9;
+  } else if (num == "6") {
+    first.innerText = 3;
+    second.innerText = 5;
+  } else if (num == "42857142857142855") {
+    first.innerText = 3;
+    second.innerText = 7;
+  } else if (num == "375") {
+    first.innerText = 3;
+    second.innerText = 8;
+  } else if (num == "3") {
+    first.innerText = 3;
+    second.innerText = 10;
+  } else if (num == "8") {
+    first.innerText = 4;
+    second.innerText = 5;
+  } else if (num == "5714285714285714") {
+    first.innerText = 4;
+    second.innerText = 7;
+  } else if (num == "4444444444444444") {
+    first.innerText = 4;
+    second.innerText = 9;
+  } else if (num == "6666666666666667") {
+    first.innerText = 5;
+    second.innerText = 3;
+  } else if (num == "8333333333333334") {
+    first.innerText = 5;
+    second.innerText = 6;
+  } else if (num == "7142857142857143") {
+    first.innerText = 5;
+    second.innerText = 7;
+  } else if (num == "625") {
+    first.innerText = 5;
+    second.innerText = 8;
+  } else if (num == "5555555555555556") {
+    first.innerText = 5;
+    second.innerText = 9;
+  } else if (num == "8571428571428571") {
+    first.innerText = 6;
+    second.innerText = 7;
+  } else if (num == "3333333333333335") {
+    first.innerText = 1;
+    second.innerText = 3;
+  } else if (num == "1666666666666667") {
+    first.innerText = 1;
+    second.innerText = 6;
+  } else if (num == "875") {
+    first.innerText = 7;
+    second.innerText = 8;
+  } else if (num == "7777777777777778") {
+    first.innerText = 7;
+    second.innerText = 9;
+  } else if (num == "7") {
+    first.innerText = 7;
+    second.innerText = 10;
+  } else if (num == "6666666666666665") {
+    first.innerText = 2;
+    second.innerText = 3;
+  } else if (num == "1428571428571428") {
+    first.innerText = 1;
+    second.innerText = 7;
+  } else if (num == "8888888888888888") {
+    first.innerText = 8;
+    second.innerText = 9;
+  } else if (num == "2857142857142858") {
+    first.innerText = 2;
+    second.innerText = 7;
+  } else if (num == "9") {
+    first.innerText = 9;
+    second.innerText = 10;
+  } else if (num == "4285714285714286") {
+    first.innerText = 3;
+    second.innerText = 7;
+  } else if (num == "1111111111111112") {
+    first.innerText = 1;
+    second.innerText = 9;
   }
 }
 
-function arithmetic(anyNum){
-  var counter = 0;
-  counter += anyNum;
-}
-
+// This function will activate the clockwise rotation of the needle
 function rotateArmClockwise(rotationObject) {
+  let randomColor = colors[Math.floor(Math.random() * colors.length)];
   fraction = eval(stepSizeNumerator.innerText / stepSizeDenominator.innerText);
-
+  counter += fraction;
   if (rotationObject.hasOwnProperty(fraction)) {
-    arithmetic(fraction);
+    face.style.backgroundColor = randomColor;
     secondHand.animate([
-      { transform: `rotate(${rotationObject[fraction]}deg)`}
+      { transform: `rotate(${counter * 360}deg)` }
     ], {
-      duration: 1000,
+      duration: counter * 360 >= 1800 ? 5000 : 1000,
       easing: 'linear',
       iterations: 1,
       direction: 'normal',
       fill: 'both'
     });
-    displayFraction(fraction.toString());
-    // secondHand.style.transform = `rotate(${rotation[fraction]}deg)`;
-    // secondHand.style.transition = 'transform 2s linear';
+    displayFraction(counter.toString());
   } else {
     console.log("False");
   }
 }
 
+// This function will activate the anti-clockwise rotation of the needle
 function rotateArmAntiClockwise(rotationObject) {
+  let randomColor = colors[Math.floor(Math.random() * colors.length)];
   fraction = eval(stepSizeNumerator.innerText / stepSizeDenominator.innerText);
-
+  counter -= fraction;
   if (rotationObject.hasOwnProperty(fraction)) {
+    face.style.backgroundColor = randomColor;
     secondHand.animate([
-      { transform: `rotate(${-rotationObject[fraction]}deg)` }
+      { transform: `rotate(${counter * 360}deg)` }
     ], {
-      duration: 1000,
+      duration: counter * 360 >= 1800 ? 5000 : 1000,
       easing: 'linear',
       iterations: 1,
       direction: 'normal',
       fill: 'both'
     });
-    displayFraction(fraction.toString());
+    displayFraction(counter.toString());
   } else {
     console.log("False");
   }
 }
 
+// Event listener for clockwise rotation
 clockWise.addEventListener("click", function () {
   rotateArmClockwise(rotation);
 });
 
-//Test
-clockWise.addEventListener("mouseout", function () {
-    
-});
-
+// Event listener for anti-clockwise rotation
 antiClockWise.addEventListener("click", function () {
   rotateArmAntiClockwise(rotation);
 });
