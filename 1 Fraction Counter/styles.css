@@ -241,7 +241,7 @@ body {
   margin: 10% auto;
   width: 25rem;
   height: 25rem;
-  border: 20px ridge navy;
+  border: 20px solid #444444;
   border-radius: 50%;
   background-color: lime;
   padding: 1rem;
