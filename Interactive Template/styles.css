@@ -52,12 +52,14 @@ html{
   margin-top: 10px;
   transition: 0.1s;
   text-transform: capitalize;
+  box-shadow: 3px 3px 3px 3px black;
 }
 
 .interface button:hover{
   background-color: var(--doddle-gray);
-  box-shadow: 3px 3px 3px 3px black;
   cursor: pointer;
+  box-shadow: 0px 0px 0px 0px;
+  border: 1px solid black;
 }
 
 .interface {
