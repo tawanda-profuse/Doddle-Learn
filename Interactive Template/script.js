@@ -31,4 +31,4 @@ function start() {
     startPanel.style.display = 'none';
     startButton.style.display = 'none';
 }
-    // Bespoke functions_____________________________________
+// Bespoke functions_____________________________________

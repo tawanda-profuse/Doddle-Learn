@@ -5,6 +5,9 @@
   <meta charset="utf-8">
   <title>Insert title here</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome Link: -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <link rel="shortcut icon" href="images/" type="image/x-icon">
 </head>
 
 <body>
@@ -19,11 +22,11 @@
       </div>
       <div class="interface">
         <!-- Optional buttons that can be removed -->
-        <button type="button" name="button" onclick="start()" id="startButton">start</button>
-        <button type="button" name="button" onclick="solve()" id="solveButton">Solve</button>
-        <button type="button" name="button" onclick="check()" id="checkButton">Check</button>
-        <button onmouseover="hideHelp()" onmouseout="hideHelp()" type="button" name="button">help</button>
-        <button onclick="resetAll()" type="button" name="button">reset</button>
+        <button type="button" name="button" onclick="start()" id="startButton" title="Start"><i class="fas fa-play"></i></button>
+        <button type="button" name="button" onclick="solve()" id="solveButton" title="Step Forward"><i class="fas fa-forward-step"></i></button>
+        <button type="button" name="button" onclick="check()" id="checkButton" title="Check Solution"><i class="fas fa-check"></i></button>
+        <button onmouseover="hideHelp()" onmouseout="hideHelp()" type="button" name="button" title="Help"><i class="fas fa-question"></i></button>
+        <button onclick="resetAll()" type="button" name="button" title="Reset"><i class="fas fa-rotate-left"></i></button>
       </div>
 
     </div>
