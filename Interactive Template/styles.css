@@ -1,17 +1,29 @@
+:root{
+  /* Global variables */
+  --doddle-gray: #444444;
+  --doddle-roboto: 'Roboto', sans-serif;
+  --doddle-orange: #ff6600;
+  --doddle-white: #ffffff;
+}
+
 body {
-  color: #444;
-  font-family: 'Roboto', sans-serif;
+  color: var(--doddle-gray);
+  font-family: var(--doddle-roboto);
   margin: 0;
   padding: 0;
 }
 
+html{
+  font-size: 16px;
+}
+
 .main {
-  background-color: #444444;
+  background-color: var(--doddle-gray);
   border-radius: 10px;
   border-style: none;
-  height: 783px;
   position: relative;
-  width: 78.15rem;
+  width: 98vw;
+  height: 120vh;
   margin: auto;
 }
 
@@ -23,10 +35,10 @@ body {
 }
 
 .interface button{
-  background-color: #ff6600;
+  background-color: var(--doddle-orange);
   border-radius: 10px;
   border-style: none;
-  color: #fff;
+  color: var(--doddle-white);
   font-size: 1.5rem;
   font-weight: bold;
   padding: 10px 15px;
@@ -36,33 +48,33 @@ body {
 }
 
 .interface button:hover{
-  background-color: #444444;
-  box-shadow: 0 0 0 3px #fff;
+  background-color: var(--doddle-gray);
+  box-shadow: 0 0 0 3px var(--doddle-white);
   cursor: pointer;
 }
 
 .interface {
   margin: 20px auto;
-  text-align: right;
 }
 
 .screen {
-  background-color: #fff;
-  height: 680px;
+  background-color: var(--doddle-white);
+  width: 90%;
+  height: 100vh;
   margin: 5px auto;
-  width: 75rem;
   text-transform: capitalize;
 }
 
 .help-text {
-  background-color: #fff;
+  background-color: var(--doddle-white);
   border-style: solid;
   border-width: 3px;
-  border-color: #444;
+  border-color: var(--doddle-gray);
   border-radius: 5px;
   bottom: 100px;
   right: 30px;
   width: 25rem;
+  box-shadow: 5px 5px 5px 5px black;
 }
 
 .help-text p{
@@ -70,9 +82,9 @@ body {
 }
 
 .startPanel {
-  background-color: #fff;
+  background-color: var(--doddle-white);
   border-radius: 5px;
-  border-color: #444;
+  border-color: var(--doddle-gray);
   border-width: 3px;
   border-style: solid;
   font-size: 1.5rem;
@@ -81,6 +93,7 @@ body {
   transform: translate(-50%,-50%);
   height: 400px;
   width: 50rem;
+  box-shadow: 5px 5px 5px 5px black;
 }
 
 .startPanel p {
@@ -92,7 +105,7 @@ body {
 }
 
 .heading {
-  color: #444;
+  color: var(--doddle-gray);
   left: 50%;
   transform: translate(-50%);
   text-align: center;
