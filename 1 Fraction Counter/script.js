@@ -91,7 +91,7 @@ const rotation = {
   '0.125': 45, // 1/8
   '0.1111111111111111': 40, // 1/9
   '0.1': 36, // 1/10
-  '2': 720, // 2/1, 4/2, 6/3, 8/4, 10/5
+  '2': 720, // 2/1, 4/2, 6/3, 8/4, 10/5 
   '0.6666666666666666': 240, // 2/3, 4/6, 6/9
   '0.4': 144, // 2/5, 4/10
   '0.2857142857142857': 102.857143, // 2/7
@@ -104,13 +104,13 @@ const rotation = {
   '0.375': 135, // 3/8
   '0.3': 108, // 3/10
   '4': 1440, // 4/1, 8/2
-  '1.3333333333333333': 480, // 4/3, 8/6
+  // '1.3333333333333333': 480, // 4/3, 8/6
   '0.8': 288, // 4/5, 8/10
   '0.5714285714285714': 205.714286, // 4/7
   '0.4444444444444444': 160, // 4/9
   '5': 1800, // 5/1
   '2.5': 900, // 5/2, 10/4
-  '1.6666666666666667': 600, // 5/3, 10/6
+  '1.6666666666666665': 600,
   '1.25': 450, // 5/4, 10/8
   '0.8333333333333334': 300, // 5/6
   '0.7142857142857143': 257.14285714285717, // 5/7
@@ -152,7 +152,7 @@ const colors = ["blue", "yellow", "red", "purple"];
 
 var counter = 0; // A dynamic value used to rotate the needle
 
-// The function below calls the checkFrac function below and displays the values for constant, numerator, and denominator
+// The function below calls the checkFraction function below and displays the values for constant, numerator, and denominator
 function displayFraction(_decimal) {
   var numArray
   if (_decimal.includes(".") == true) {
@@ -160,18 +160,20 @@ function displayFraction(_decimal) {
     divider.innerHTML = '<hr/>'; // fraction divider
     numArray = _decimal.split(".");
     constantNum.innerText = `${numArray[0]}`;
-    checkFrac(numArray[0], numArray[1], constantNum, topNum, bottomNum);
+    checkFraction(numArray[0], numArray[1], constantNum, topNum, bottomNum, divider);
   } else {
     // Constants don't have a dot (.)
     divider.innerHTML = ''; // fraction divider
     constantNum.innerText = `${_decimal}`;
+    console.log(constantNum.innerText);
     topNum.innerText = '';
     bottomNum.innerText = '';
   }
 }
 
 // The function below verifies a decimal number and outputs the fraction value in the DOM
-function checkFrac(prev, num, single, first, second) {
+function checkFraction(prev, num, single, first, second, splitter) {
+  // Denominator of 2 & 4
   if (num == "25") {
     first.innerText = 1;
     second.innerText = 4;
@@ -181,119 +183,91 @@ function checkFrac(prev, num, single, first, second) {
   } else if (num == "75") {
     first.innerText = 3;
     second.innerText = 4;
-  } else if (num == "3333333333333333") {
+  } else if (num == "3333333333333333" || num == '33333333333333' || num == '333333333333333' || num == '3333333333333335' || num == '333333333333332' || num == '333333333333331') {
+    // Denominator of 3
     first.innerText = 1;
     second.innerText = 3;
-  } else if (num == "2") {
-    if (prev == "1") {
-      single.innerText = '';
-      first.innerText = 6;
-    } else {
-      first.innerText = 1;
-    }
-    second.innerText = 5;
-  } else if (num == "16666666666666666") {
-    first.innerText = 1;
-    second.innerText = 6;
-  } else if (num == "14285714285714285") {
-    first.innerText = 1;
-    second.innerText = 7;
-  } else if (num == "125") {
-    first.innerText = 1;
-    second.innerText = 8;
-  } else if (num == "1111111111111111") {
-    first.innerText = 1;
-    second.innerText = 9;
-  } else if (num == "1") {
-    first.innerText = 1;
-    second.innerText = 10;
-  } else if (num == "6666666666666666") {
+  } else if (num == "6666666666666666" || num == '6666666666666665' || num == '666666666666667' || num == '666666666666666' || num == '666666666666665' || num == '666666666666664' || num == '666666666666663') {
     first.innerText = 2;
     second.innerText = 3;
-  } else if (num == "4") {
+  } else if(prev == '1' && num == '9999999999999998'){
+    single.innerText = 2;
+    first.innerText = '';
+    second.innerText = '';
+    splitter.innerText = '';
+  } else if(prev == '4' && num == '999999999999999'){
+    single.innerText = 5;
+    first.innerText = '';
+    second.innerText = '';
+    splitter.innerText = '';
+  } else if(prev == '5' && num == '999999999999998'){
+    single.innerText = 6;
+    first.innerText = '';
+    second.innerText = '';
+    splitter.innerText = '';
+  } else if(prev == '6' && num == '999999999999997'){
+    single.innerText = 7;
+    first.innerText = '';
+    second.innerText = '';
+    splitter.innerText = '';
+  } else if(prev == '7' && num == '9999999999999964'){
+    single.innerText = 8;
+    first.innerText = '';
+    second.innerText = '';
+    splitter.innerText = '';
+  } else if(prev == '8' && num == '999999999999998'){
+    single.innerText = 9;
+    first.innerText = '';
+    second.innerText = '';
+    splitter.innerText = '';
+  } else if(num == '2' || num == '1999999999999997' || num == '2000000000000006' || num == '200000000000001' || num == '200000000000002' || num == '200000000000003' || num == '200000000000004'){
+    // Denominator of 5
+    first.innerText = '1';
+    second.innerText = '5'
+  } else if(num == '4' || num == '400000000000001' || num == '400000000000002' || num == '400000000000003' || num == '400000000000004' || num == '399999999999999'){
     first.innerText = 2;
     second.innerText = 5;
-  } else if (num == "2857142857142857") {
-    first.innerText = 2;
-    second.innerText = 7;
-  } else if (num == "2222222222222222") {
-    first.innerText = 2;
-    second.innerText = 9;
-  } else if (num == "6") {
+  } else if(num == '6000000000000001' || num == '5999999999999999' || num == '6' || num == '600000000000001' || num == '600000000000002' || num == '600000000000003' || num == '600000000000004' || num == '599999999999998'){
     first.innerText = 3;
     second.innerText = 5;
-  } else if (num == "42857142857142855") {
-    first.innerText = 3;
-    second.innerText = 7;
-  } else if (num == "375") {
-    first.innerText = 3;
-    second.innerText = 8;
-  } else if (num == "3") {
-    first.innerText = 3;
-    second.innerText = 10;
-  } else if (num == "8") {
+  } else if(num == '8' || num == '7999999999999998' || num == '8000000000000003' || num == '800000000000001' || num == '800000000000002' || num == '8000000000000025' || num == '800000000000003' || num == '800000000000004' || num == '799999999999997'){
     first.innerText = 4;
     second.innerText = 5;
-  } else if (num == "5714285714285714") {
-    first.innerText = 4;
-    second.innerText = 7;
-  } else if (num == "4444444444444444") {
-    first.innerText = 4;
-    second.innerText = 9;
-  } else if (num == "6666666666666667") {
-    first.innerText = 5;
-    second.innerText = 3;
-  } else if (num == "8333333333333334") {
-    first.innerText = 5;
-    second.innerText = 6;
-  } else if (num == "7142857142857143") {
-    first.innerText = 5;
-    second.innerText = 7;
-  } else if (num == "625") {
-    first.innerText = 5;
-    second.innerText = 8;
-  } else if (num == "5555555555555556") {
-    first.innerText = 5;
-    second.innerText = 9;
-  } else if (num == "8571428571428571") {
-    first.innerText = 6;
-    second.innerText = 7;
-  } else if (num == "3333333333333335") {
-    first.innerText = 1;
-    second.innerText = 3;
-  } else if (num == "1666666666666667") {
-    first.innerText = 1;
-    second.innerText = 6;
-  } else if (num == "875") {
-    first.innerText = 7;
-    second.innerText = 8;
-  } else if (num == "7777777777777778") {
-    first.innerText = 7;
-    second.innerText = 9;
-  } else if (num == "7") {
-    first.innerText = 7;
-    second.innerText = 10;
-  } else if (num == "6666666666666665") {
-    first.innerText = 2;
-    second.innerText = 3;
-  } else if (num == "1428571428571428") {
-    first.innerText = 1;
-    second.innerText = 7;
-  } else if (num == "8888888888888888") {
-    first.innerText = 8;
-    second.innerText = 9;
-  } else if (num == "2857142857142858") {
-    first.innerText = 2;
-    second.innerText = 7;
-  } else if (num == "9") {
-    first.innerText = 9;
-    second.innerText = 10;
-  } else if (num == "4285714285714286") {
-    first.innerText = 3;
-    second.innerText = 7;
-  } else if (num == "1111111111111112") {
-    first.innerText = 1;
-    second.innerText = 9;
+  } else if(prev == '3' && num == '0000000000000004'){
+    single.innerText = 3;
+    first.innerText = '';
+    second.innerText = '';
+    splitter.innerText = '';
+  } else if(prev == '4' && num == '000000000000001'){
+    single.innerText = 4;
+    first.innerText = '';
+    second.innerText = '';
+    splitter.innerText = '';
+  } else if(prev == '5' && num == '000000000000002'){
+    single.innerText = 5;
+    first.innerText = '';
+    second.innerText = '';
+    splitter.innerText = '';
+  } else if(prev == '6' && num == '000000000000003'){
+    single.innerText = 6;
+    first.innerText = '';
+    second.innerText = '';
+    splitter.innerText = '';
+  } else if(prev == '7' && num == '0000000000000036'){
+    single.innerText = 7;
+    first.innerText = '';
+    second.innerText = '';
+    splitter.innerText = '';
+  } else if (prev == '8' && num == '000000000000004'){
+    single.innerText = 8;
+    first.innerText = '';
+    second.innerText = '';
+    splitter.innerText = '';
+  } else if (prev == '9' && num == '999999999999996'){
+    single.innerText = 10;
+    first.innerText = '';
+    second.innerText = '';
+    splitter.innerText = '';
   }
 }
 
@@ -302,12 +276,13 @@ function rotateArmClockwise(rotationObject) {
   let randomColor = colors[Math.floor(Math.random() * colors.length)];
   fraction = eval(stepSizeNumerator.innerText / stepSizeDenominator.innerText);
   counter += fraction;
+  console.log("Fraction: " + fraction + " Counter: " + counter + " Degrees(360): " + Math.ceil((counter * 360)));
   if (rotationObject.hasOwnProperty(fraction)) {
     face.style.backgroundColor = randomColor;
     secondHand.animate([
       { transform: `rotate(${counter * 360}deg)` }
     ], {
-      duration: counter * 360 >= 1800 ? 5000 : 1000,
+      duration: 1000,
       easing: 'linear',
       iterations: 1,
       direction: 'normal',
@@ -324,12 +299,13 @@ function rotateArmAntiClockwise(rotationObject) {
   let randomColor = colors[Math.floor(Math.random() * colors.length)];
   fraction = eval(stepSizeNumerator.innerText / stepSizeDenominator.innerText);
   counter -= fraction;
+  console.log("Fraction: " + fraction + " Counter: " + counter + " Degrees(360): " + Math.ceil((counter * 360)));
   if (rotationObject.hasOwnProperty(fraction)) {
     face.style.backgroundColor = randomColor;
     secondHand.animate([
       { transform: `rotate(${counter * 360}deg)` }
     ], {
-      duration: counter * 360 >= 1800 ? 5000 : 1000,
+      duration: 1000,
       easing: 'linear',
       iterations: 1,
       direction: 'normal',
