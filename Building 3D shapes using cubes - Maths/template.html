@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script type="text/javascript" src="js/swf2js.min.js"></script>
+</head>
+<div id="swf_instance"></div>
+<body>
+    <script type="text/javascript">
+        swf2js.load('Building 3D shapes using cubes - Maths.swf');
+        function informMe(arg) { alert("informMe : swf-file loaded"); }
+
+        swf2js.load('Building 3D shapes using cubes - Maths.swf', { tagId: "swf_instance", width: "320", height: "320", callback: informMe, bgcolor: "black" });
+    </script>
+</body>
+
+</html>

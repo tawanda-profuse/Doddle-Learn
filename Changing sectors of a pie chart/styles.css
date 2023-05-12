@@ -120,6 +120,7 @@ html {
 .heading {
   color: var(--doddle-gray);
   text-align: center;
+  font-family: var(--doddle-font);
 }
 
 .intro,
@@ -129,3 +130,91 @@ html {
 }
 
 /* Content_________________________________________________________________ */
+canvas {
+  border: 5px solid var(--doddle-gray);
+  border-radius: 8px;
+  cursor: pointer;
+  transform: translateY(5%);
+}
+
+#piechart-controls {
+  text-align: center;
+  font-family: var(--doddle-font);
+}
+
+.container {
+  padding: 50px;
+}
+/* h1{
+    text-align: center;
+    border-bottom: 2px solid black;
+} */
+.center {
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+table {
+  border-collapse: collapse;
+
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+
+  /* display: inline; */
+  transform: translate(5%, 20%);
+}
+
+td,
+th {
+  border: 2px solid lightgray;
+  padding: 10px;
+  margin: 0;
+  font-family: var(--doddle-font);
+  width: 86.6667px;
+}
+
+th {
+  text-align: center;
+  font-size: 3rem;
+}
+
+tr {
+  display: block;
+}
+
+.adjust-button {
+  padding: 3px;
+  font-size: 3rem;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid var(--doddle-gray);
+  border-radius: 5px;
+  margin: 5px 0 3px 0;
+  font-family: var(--doddle-font);
+  cursor: pointer;
+}
+
+div.adjust-button {
+  display: inline-block;
+  margin: 3px;
+}
+div.adjust-button:hover {
+  transform: scale(1.2);
+}
+
+var {
+  display: block;
+  color: red;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+}
