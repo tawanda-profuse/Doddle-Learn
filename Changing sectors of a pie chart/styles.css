@@ -145,10 +145,6 @@ canvas {
 .container {
   padding: 50px;
 }
-/* h1{
-    text-align: center;
-    border-bottom: 2px solid black;
-} */
 .center {
   max-width: 600px;
   margin: 50px auto;
@@ -168,8 +164,6 @@ table {
   -ms-user-select: none;
   /* Internet Explorer/Edge */
   user-select: none;
-
-  /* display: inline; */
   transform: translate(5%, 20%);
 }
 
