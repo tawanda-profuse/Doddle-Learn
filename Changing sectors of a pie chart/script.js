@@ -15,7 +15,6 @@ function hideHelp() {
 
 function resetAll() {
     window.location.reload();
-    // window.location.href = "";
     return false;
 }
 
@@ -36,18 +35,14 @@ function start() {
     // Credit goes to: https://github.com/jamesalvarez/draggable-piechart
     $(window).ready(function () {
         // Pie Chart
-        // var dimensions = knuthfisheryates2(['item 1', 'item 2', 'item 3', 'item 4', 'item 5']);
-        var dimensions = ['🚀', '🔭', '🔬', '🧪', '📏'];
         var colorOptions = ['yellowgreen', 'hotpink', 'orange', 'turquoise', 'purple']; // Optional colors
         // Assign an array to the variable proportions:
-        var proportions = dimensions.map(function (d, i) {
+        var proportions = colorOptions.map(function (d, i) {
             return {
-                label: d,
-                // proportion: randomProportions[i],
                 proportion: 72,
                 format: {
-                    color: 'turquoise',
-                    label: d.charAt(0).toUpperCase() + d.slice(1) // capitalise first letter
+                    color: d,
+                    label: ''
                 }
             }
         });
@@ -56,13 +51,13 @@ function start() {
         var setup3 = {
             canvas: document.getElementById('piechart3'),
             radius: 0.9,
-            collapsing: false,
+            collapsing: true,
             proportions: proportions,
             drawSegment: drawSegmentOutlineOnly,
             onchange: onPieChartChange
         };
 
-        var pie3 = new DraggablePiechart(setup3);
+        var pie3 = new DraggablePiechart(setup3); // This creates an instance of the pie chart
 
         // Aesthetic design of the pie chart:
         function drawSegmentOutlineOnly(context, piechart, centerX, centerY, radius, startingAngle, arcSize, format, collapsed) {
@@ -107,10 +102,10 @@ function start() {
             var labelsRow = $('<tr/>').append(proportions.map(function (v, i) { return '<th>' + v.format.label + '</th>' }));
             var proportionsRow = $('<tr/>').append(proportions.map(function (v, i) {
                 let degrees = ((percentages[i] / 100) * 360).toFixed(0);
-                var plus = $('<div/>').attr('id', 'plus-' + dimensions[i]).addClass('adjust-button').data({ i: i, d: -1 }).html('&#43;').mousedown(adjustClick);
-                var minus = $('<div/>').attr('id', 'plus-' + dimensions[i]).addClass('adjust-button').data({ i: i, d: 1 }).html('&#8722;').mousedown(adjustClick);
+                var plus = $('<div/>').attr('id', 'plus-' + colorOptions[i]).addClass('adjust-button').data({ i: i, d: -0.2 }).html('&#43;').mousedown(adjustClick);
+                var minus = $('<div/>').attr('id', 'plus-' + colorOptions[i]).addClass('adjust-button').data({ i: i, d: 0.2 }).html('&#8722;').mousedown(adjustClick);
 
-                return $('<td/>').append('<var>' + degrees + '°</var>').append(plus).append(minus);
+                return $('<td/>').append('<var>' + degrees + '°</var>').append(minus).append(plus);
 
             }));
 

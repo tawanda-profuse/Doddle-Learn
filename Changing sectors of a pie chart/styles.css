@@ -23,7 +23,6 @@ html {
   position: relative;
   margin: 0;
   padding: 20px;
-  min-height: 100vh;
 }
 
 .content {
@@ -70,7 +69,7 @@ html {
   background-color: var(--doddle-white);
   border-radius: 10px;
   width: 90%;
-  padding: 50px;
+  padding: 50px 50px 25px 50px;
   margin: 5px auto;
   text-transform: capitalize;
 }
@@ -82,7 +81,7 @@ html {
   border-width: 3px;
   border-color: var(--doddle-gray);
   border-radius: 5px;
-  bottom: 50vh;
+  bottom: 10vh;
   right: 5vw;
   width: 25rem;
   box-shadow: 5px 5px 5px 5px black;
@@ -177,8 +176,29 @@ th {
 }
 
 th {
+  padding: 20px 10px;
   text-align: center;
   font-size: 3rem;
+}
+
+th:first-child{
+  background-color: yellowgreen;
+}
+
+th:nth-child(2){
+  background-color: hotpink;
+}
+
+th:nth-child(3){
+  background-color: orange;
+}
+
+th:nth-child(4){
+  background-color: turquoise;
+}
+
+th:last-child{
+  background-color: purple;
 }
 
 tr {
