@@ -1,0 +1,164 @@
+.play-ground {
+  padding: 10px 50px;
+  margin: 50px auto;
+  position: relative;
+  border: 2px solid red;
+}
+
+.container {
+  width: 90%;
+  padding: 50px;
+  min-height: 50vh;
+  /* height: 300px; */
+  /* margin: 100px auto; */
+  margin: 50px auto;
+  -webkit-perspective: 800px;
+  perspective: 800px;
+  /* -webkit-perspective-origin: -7% -7%; */
+  -webkit-perspective-origin: -2% -2%;
+  /* perspective-origin: -7% -7%; */
+  perspective-origin: -2% -2%;
+  cursor: pointer;
+  background-color: gray;
+}
+
+.cube {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(-37.5px);
+  transform: translateZ(-37.5px);
+  left: 50%;
+  position: relative;
+  margin: 0;
+  width: 37.5px;
+  height: 37.5px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.cube div {
+  width: 37.25px;
+  height: 30px;
+  background: #444444;
+  position: absolute;
+  border: 1px solid #000;
+  text-align: center;
+  padding-top: 8px;
+  color: #000;
+  font-size: 0.8rem;
+}
+
+.front {
+  -webkit-transform: translateZ(18.75px);
+  transform: translateZ(18.75px);
+}
+
+.left {
+  -webkit-transform: rotateY(-90deg) translateZ(18.75px);
+  transform: rotateY(-90deg) translateZ(18.75px);
+}
+
+.right {
+  -webkit-transform: rotateY(90deg) translateZ(18.75px);
+  transform: rotateY(90deg) translateZ(18.75px);
+}
+
+.top {
+  -webkit-transform: rotateX(90deg) translateZ(18.75px);
+  transform: rotateX(90deg) translateZ(18.75px);
+}
+
+.bottom {
+  -webkit-transform: rotateX(-90deg) translateZ(18.75px);
+  transform: rotateX(-90deg) translateZ(18.75px);
+}
+
+.back {
+  -webkit-transform: rotateY(180deg) translateZ(18.75px);
+  transform: rotateY(180deg) translateZ(18.75px);
+}
+
+.play-ground label:not(.color-palette label) {
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px;
+  background: #f5f5f5;
+  text-align: center;
+  margin-right: 5px;
+  font-size: 1.2rem;
+}
+
+.play-ground label:hover:not(:checked, .color-palette label) {
+  color: orange;
+  background: #eee;
+}
+
+.play-ground input {
+  position: absolute;
+  display: none;
+}
+
+.play-ground input:checked + label:not(.color-palette label) {
+  border-bottom: 3px solid #444;
+  font-weight: bold;
+  background-color: orange;
+  color: #444;
+}
+
+.play-ground input:checked + label {
+  font-weight: bold;
+}
+
+.play-ground input[value="front"]:checked ~ .container .cube {
+  -webkit-transform: translateZ(-37.5px) rotateY(0);
+  transform: translateZ(-37.5px) rotateY(0);
+}
+
+.play-ground input[value="left"]:checked ~ .container .cube {
+  -webkit-transform: translateZ(-37.5px) rotateY(90deg);
+  transform: translateZ(-37.5px) rotateY(90deg);
+}
+
+.play-ground input[value="right"]:checked ~ .container .cube {
+  -webkit-transform: translateZ(-37.5px) rotateY(-90deg);
+  transform: translateZ(-37.5px) rotateY(-90deg);
+}
+
+input[value="top"]:checked ~ .container .cube {
+  -webkit-transform: translateZ(-37.5px) rotateX(-90deg);
+  transform: translateZ(-37.5px) rotateX(-90deg);
+}
+
+.play-ground input[value="bottom"]:checked ~ .container .cube {
+  -webkit-transform: translateZ(-37.5px) rotateX(90deg);
+  transform: translateZ(-37.5px) rotateX(90deg);
+}
+
+.play-ground input[value="back"]:checked ~ .container .cube {
+  -webkit-transform: translateZ(-37.5px) rotateY(180deg);
+  transform: translateZ(-37.5px) rotateY(180deg);
+}
+
+.color-palette{
+    position: absolute;
+    /* bottom: -16%; */
+    bottom: 0;
+    right: 5%;
+    font-size: 4rem;
+    /* padding: 50px; */
+    padding: 2px;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    flex-wrap: wrap;
+    z-index: 5;
+}
+
+.color-palette label{
+  /* width: 100px;
+  height: 100px; */
+  background-color: white;
+  color: red;
+  border: 1px solid black;
+}

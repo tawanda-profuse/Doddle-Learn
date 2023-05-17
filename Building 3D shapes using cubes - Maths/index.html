@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building 3D Shapes Using Cubes</title>
+    <link rel="shortcut icon" href="images/cube-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="play-ground">
+        <input id="front" name="transforms" type="radio" value="front">
+        <label for="front" title="Rotate forwards"><i class="fas fa-rotate-forward"></i></label>
+
+        <input id="right" name="transforms" type="radio" value="right">
+        <label for="right" title="Rotate right"><i class="fas fa-arrow-right"></i></label>
+
+        <input id="top" name="transforms" type="radio" value="top">
+        <label for="top" title="Rotate downwards"><i class="fas fa-arrow-down"></i></label>
+
+        <input id="bottom" name="transforms" type="radio" value="bottom">
+        <label for="bottom" title="Rotate upwards"><i class="fas fa-arrow-up"></i></label>
+
+        <input id="back" name="transforms" type="radio" value="back">
+        <label for="back" title="Rotate backwards"><i class="fas fa-rotate-backward"></i></label>
+
+        <input id="left" name="transforms" type="radio" value="left">
+        <label for="left" title="Rotate right"><i class="fas fa-arrow-left"></i></label>
+        <div class="container">
+            <figure class="cube">
+                <div class="front"><i class="fas fa-circle"></i></div>
+                <div class="left"><i class="fas fa-circle"></i></div>
+                <div class="right"><i class="fas fa-circle"></i></div>
+                <div class="top"><i class="fas fa-circle"></i></div>
+                <div class="bottom"><i class="fas fa-circle"></i></div>
+                <div class="back"><i class="fas fa-circle"></i></div>
+            </figure>
+        </div>
+        <div class="color-palette">
+            <span>
+                <input type="checkbox" name="gray" id="color-gray">
+                <label for="color-gray"><i class="fas fa-paint-brush"></i></label>
+            </span>
+            <span>
+                <input type="checkbox" name="purple" id="color-purple">
+                <label for="color-purple"><i class="fas fa-paint-brush"></i></label>
+            </span>
+            <span>
+                <input type="checkbox" name="yellow" id="color-yellow">
+                <label for="color-yellow"><i class="fas fa-paint-brush"></i></label>
+            </span>
+            <span>
+                <input type="checkbox" name="blue" id="color-blue">
+                <label for="color-blue"></label>
+            </span>
+            <span>
+                <input type="checkbox" name="green" id="color-green">
+                <label for="color-green"><i class="fas fa-paint-brush"></i></label>
+            </span>
+            <span>
+                <input type="checkbox" name="red" id="color-red">
+                <label for="color-red"><i class="fas fa-paint-brush"></i></label>
+            </span>
+            <span>
+                <input type="checkbox" name="white" id="color-white">
+                <label for="color-white"><i class="fas fa-paint-brush"></i></label>
+            </span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
