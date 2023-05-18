@@ -22,11 +22,11 @@ html {
   border-style: none;
   position: relative;
   margin: 0;
-  padding: 20px;
+  padding: 0 0 20px 0;
+  min-height: 100vh;
 }
 
 .content {
-  margin: 10px auto;
   text-align: center;
   position: relative;
   padding: 10px;
@@ -62,13 +62,12 @@ html {
 
 .interface {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .screen {
   background-color: var(--doddle-white);
   border-radius: 10px;
-  width: 90%;
   padding: 50px 50px 25px 50px;
   margin: 5px auto;
   text-transform: capitalize;
