@@ -52,9 +52,9 @@ function start() {
 // Hide/Show Grid function
 function displayGrid(gridToggle) {
   if (gridToggle.checked) {
-    waveBackground.style.backgroundImage = "url('/images/graphblank.png')";
+    waveBackground.style.backgroundImage = "url('/graphblank.png')";
   } else {
-    waveBackground.style.backgroundImage = "url('/images/graph2.png')";
+    waveBackground.style.backgroundImage = "url('images/graph2.png')";
   }
 }
 
