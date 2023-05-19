@@ -1,20 +1,148 @@
+:root {
+  /* Global variables */
+  --doddle-gray: #444444;
+  --doddle-font: "Roboto", sans-serif;
+  --doddle-orange: #ff6600;
+  --doddle-white: #ffffff;
+}
+
+body {
+  color: var(--doddle-gray);
+  font-family: var(--doddle-font);
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+.main {
+  background-color: var(--doddle-gray);
+  border-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0 0 20px 0;
+  min-height: 100vh;
+}
+
+.content {
+  text-align: center;
+  position: relative;
+  padding: 10px;
+}
+
+.interface button i {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.interface button {
+  background-color: var(--doddle-orange);
+  border-radius: 10px;
+  border-style: none;
+  color: var(--doddle-white);
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 80px;
+  height: 50px;
+  margin-left: 10px;
+  margin-top: 10px;
+  transition: 0.1s;
+  text-transform: capitalize;
+  box-shadow: 3px 3px 3px 3px black;
+}
+
+.interface button:hover {
+  background-color: var(--doddle-gray);
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 0px;
+  border: 1px solid black;
+}
+
+.interface {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.screen {
+  background-color: var(--doddle-white);
+  border-radius: 10px;
+  padding: 50px 50px 25px 50px;
+  margin: 5px auto;
+  text-transform: capitalize;
+}
+
+.help-text {
+  background-color: var(--doddle-white);
+  color: var(--doddle-orange);
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--doddle-gray);
+  border-radius: 5px;
+  bottom: 50vh;
+  right: 5vw;
+  width: 25rem;
+  box-shadow: 5px 5px 5px 5px black;
+  font-family: var(--doddle-font);
+  font-size: 1.5rem;
+}
+
+.help-text p {
+  margin: 10px;
+}
+
+.startPanel {
+  background-color: var(--doddle-white);
+  border-radius: 5px;
+  border-color: var(--doddle-gray);
+  border-width: 3px;
+  border-style: solid;
+  font-size: 1.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50%;
+  width: 50%;
+  box-shadow: 10px 10px 10px 0px black;
+}
+
+.startPanel p {
+  margin: 100px;
+}
+
+.intro img {
+  width: 600px;
+}
+
+.heading {
+  color: var(--doddle-gray);
+  text-align: center;
+}
+
+.intro,
+.help-text,
+.startPanel {
+  position: absolute;
+}
+
+/* Content_________________________________________________________________ */
+
 .play-ground {
   padding: 10px 50px;
   position: relative;
-  border: 2px solid red;
+  max-width: 80vw;
 }
 
 .container {
-  width: 90%;
   padding: 50px;
   min-height: 50vh;
   margin: 50px auto 0;
   -webkit-perspective: 800px;
   perspective: 800px;
-  /* -webkit-perspective-origin: -5% -5%; */
-  /* perspective-origin: -5% -5%; */
   cursor: pointer;
   background-color: gray;
+  border: 2px solid black;
 }
 
 .cube {
@@ -34,13 +162,15 @@
 .cube div {
   width: 37.25px;
   height: 30px;
-  background: #444444;
+  background: var(--doddle-gray);
   position: absolute;
   border: 1px solid #000;
   text-align: center;
   padding-top: 8px;
   color: #000;
   font-size: 0.8rem;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .front {
@@ -75,16 +205,18 @@
 
 .play-ground label:not(.color-palette label) {
   cursor: pointer;
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 50%;
+  padding: 15px;
   background: #f5f5f5;
   text-align: center;
-  margin-right: 5px;
-  font-size: 1.2rem;
+  margin-right: 50px;
+  border: 2px solid var(--doddle-gray);
+  font-size: 1.5rem;
+  float: center;
 }
 
 .play-ground label:hover:not(:checked, .color-palette label) {
-  color: orange;
+  color: var(--doddle-orange);
   background: #eee;
 }
 
@@ -94,63 +226,60 @@
 }
 
 .play-ground input:checked + label:not(.color-palette label) {
-  border-bottom: 3px solid #444;
   font-weight: bold;
-  background-color: orange;
-  color: #444;
-}
-
-.play-ground input:checked + label {
+  background-color: rgb(255, 165, 0);
+  color: var(--doddle-gray);
   font-weight: bold;
 }
 
 .play-ground input[value="front"]:checked ~ .container .cube {
-  -webkit-transform: translateZ(-37.5px) rotateY(0);
-  transform: translateZ(-37.5px) rotateY(0);
+  -webkit-transform: translateZ(-75px) rotateY(0);
+  transform: translateZ(-75px) rotateY(0);
 }
 
 .play-ground input[value="left"]:checked ~ .container .cube {
-  -webkit-transform: translateZ(-37.5px) rotateY(90deg);
-  transform: translateZ(-37.5px) rotateY(90deg);
+  -webkit-transform: translateZ(-75px) rotateY(180deg);
+  transform: translateZ(-75px) rotateY(180deg);
 }
 
 .play-ground input[value="right"]:checked ~ .container .cube {
-  -webkit-transform: translateZ(-37.5px) rotateY(-90deg);
-  transform: translateZ(-37.5px) rotateY(-90deg);
+  -webkit-transform: translateZ(-75px) rotateY(-180deg);
+  transform: translateZ(-75px) rotateY(-180deg);
 }
 
-input[value="top"]:checked ~ .container .cube {
-  -webkit-transform: translateZ(-37.5px) rotateX(-90deg);
-  transform: translateZ(-37.5px) rotateX(-90deg);
+.play-ground input[value="top"]:checked ~ .container .cube {
+  -webkit-transform: translateZ(-75px) rotateX(-180deg);
+  transform: translateZ(-75px) rotateX(-180deg);
 }
 
 .play-ground input[value="bottom"]:checked ~ .container .cube {
-  -webkit-transform: translateZ(-37.5px) rotateX(90deg);
-  transform: translateZ(-37.5px) rotateX(90deg);
+  -webkit-transform: translateZ(-75px) rotateX(180deg);
+  transform: translateZ(-75px) rotateX(180deg);
 }
 
 .play-ground input[value="back"]:checked ~ .container .cube {
-  -webkit-transform: translateZ(-37.5px) rotateY(180deg);
-  transform: translateZ(-37.5px) rotateY(180deg);
+  -webkit-transform: translateZ(-75px) rotateY(360deg);
+  transform: translateZ(-75px) rotateY(360deg);
 }
 
 .color-palette{
-    position: absolute;
-    right: 4.5%;
-    transform: translateY(-5%);
     font-size: 2.5rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     z-index: 5;
-    padding: 12px 8px;
-    width: 50%;
+    padding: 24px 16px;
+    background-color: var(--doddle-gray);
 }
 
 .color-palette label{
   background-color: rgba(165, 165, 165, 0.7);
+  border: 2px solid black;
   border-radius: 20px;
   padding: 8px;
+}
+.color-palette label:hover{
+  background-color: rgba(255, 165, 0, 0.5);
 }
 
 .color-palette input{
@@ -158,12 +287,11 @@ input[value="top"]:checked ~ .container .cube {
 }
 
 .color-palette input:checked + label {
-  /* background-color: orange; */
   background-color: rgb(255, 165, 0);
 }
 
 .gray{
-  color: #444444;
+  color: var(--doddle-gray);
 }
 
 .purple{
