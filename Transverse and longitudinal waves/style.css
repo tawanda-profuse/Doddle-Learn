@@ -1,80 +1,91 @@
+:root {
+  /* Global variables */
+  --doddle-gray: #444444;
+  --doddle-font: "Roboto", sans-serif;
+  --doddle-orange: #ff6600;
+  --doddle-white: #ffffff;
+}
+
 body {
-  color: #444;
-  font-family: "Roboto", sans-serif;
+  color: var(--doddle-gray);
+  font-family: var(--doddle-font);
   margin: 0;
   padding: 0;
 }
 
+html {
+  font-size: 16px;
+}
+
 .main {
-  background-color: #444444;
-  border-radius: 10px;
+  background-color: var(--doddle-gray);
   border-style: none;
-  height: 783px;
   position: relative;
-  width: 1250px;
-  margin: auto;
+  margin: 0;
+  padding: 0 0 20px 0;
+  min-height: 100vh;
 }
 
 .content {
-  margin: 10px auto;
   text-align: center;
   position: relative;
   padding: 10px;
 }
 
+.interface button i {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
 .interface button {
-  background-color: #ff6600;
+  background-color: var(--doddle-orange);
   border-radius: 10px;
   border-style: none;
-  color: #fff;
-  font-size: 24px;
+  color: var(--doddle-white);
+  font-size: 1.5rem;
   font-weight: bold;
-  padding: 10px 15px;
+  width: 80px;
+  height: 50px;
   margin-left: 10px;
+  margin-top: 10px;
   transition: 0.1s;
   text-transform: capitalize;
+  box-shadow: 3px 3px 3px 3px black;
 }
 
 .interface button:hover {
-  background-color: #444444;
-  box-shadow: 0 0 0 3px #fff;
+  background-color: var(--doddle-gray);
   cursor: pointer;
+  box-shadow: 0px 0px 0px 0px;
+  border: 1px solid black;
 }
 
 .interface {
-  margin: 20px 10px 10px auto;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .screen {
-  background-color: #fff;
-  height: 680px;
+  background-color: var(--doddle-white);
+  border-radius: 10px;
+  padding: 50px 50px 25px 50px;
   margin: 5px auto;
-  width: 75rem;
   text-transform: capitalize;
 }
 
-.waves-content{
-  border-radius: 5px;
-  border: 3px solid #444;
-  font-size: 24px;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 300px;
-  width: 37.5rem;
-  overflow: hidden;
-}
-
 .help-text {
-  background-color: #fff;
+  background-color: var(--doddle-white);
+  color: var(--doddle-orange);
   border-style: solid;
   border-width: 3px;
-  border-color: #444;
+  border-color: var(--doddle-gray);
   border-radius: 5px;
-  bottom: 100px;
-  right: 30px;
-  width: 400px;
+  bottom: 20vh;
+  right: 5vw;
+  width: 25rem;
+  box-shadow: 5px 5px 5px 5px black;
+  font-family: var(--doddle-font);
+  font-size: 1.5rem;
 }
 
 .help-text p {
@@ -86,55 +97,73 @@ body {
 }
 
 .startPanel {
-  background-color: #fff;
+  background-color: var(--doddle-white);
   border-radius: 5px;
-  border-color: #444;
+  border-color: var(--doddle-gray);
   border-width: 3px;
   border-style: solid;
   font-size: 1.5rem;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  height: 400px;
-  width: 50rem;
-  background-color: red;
+  transform: translate(-50%, -50%);
+  height: 50%;
+  width: 50%;
+  box-shadow: 10px 10px 10px 0px black;
+}
+
+.startPanel p {
+  margin: 100px;
+}
+
+.intro img {
+  width: 600px;
 }
 
 .heading {
-  color: #444;
-  left: 50%;
-  transform: translate(-50%);
+  color: var(--doddle-gray);
   text-align: center;
 }
 
 .intro,
 .help-text,
-.heading,
-.waves-content,
-.options,
-.action-buttons {
-  position: absolute;
+.startPanel
+.waves-content {
+position: absolute;
 }
 
 /* Content */
+.waves-content{
+  border-radius: 5px;
+  border: 3px solid var(--doddle-gray);
+  font-size: 24px;
+  top: 40%;
+  left: 50%;
+  margin: auto;
+  height: 300px;
+  width: 37.5rem;
+  overflow: hidden;
+}
+
 .options {
   display: flex;
   justify-content: space-around;
   top: 20%;
   left: 20%;
+  margin: auto;
   height: 400px;
   width: 800px;
   overflow: hidden;
-  border: 3px solid #444444;
+  border: 3px solid var(--doddle-gray);
 }
 
 .action-buttons {
   display: flex;
+  position: relative;
   justify-content: space-around;
-  height: 200px;
-  top: 60%;
-  left: 12%;
-  color: #444444;
+  align-items: center;
+  margin: 20px auto;
+  padding: 20px;
+  color: var(--doddle-gray);
 }
 
 .action-buttons div {
@@ -197,7 +226,7 @@ body {
 
 .select-type p {
   text-align: center;
-  color: #444444;
+  color: var(--doddle-gray);
   font-size: 1.2rem;
 }
 
@@ -231,7 +260,7 @@ body {
 
 .selections div p,
 .action-buttons div p {
-  color: #444444;
+  color: var(--doddle-gray);
 }
 
 .box:hover {

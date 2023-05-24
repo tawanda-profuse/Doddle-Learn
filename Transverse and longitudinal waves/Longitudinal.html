@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Longitudinal Wave</title>
 	<link rel="stylesheet" href="style.css">
+	<!-- Font Awesome Link: -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 	<link rel="shortcut icon" href="images/waves.png" type="image/x-icon">
 </head>
 
@@ -41,37 +43,42 @@
 						Sorry, your browser does not support inline SVG.
 					</svg>
 				</div>
-			</div>
-			<div class="action-buttons">
-				<div>
-					<p>Click a particle to highlight it</p>
-				</div>
-				<div>
-					<label for="amplitude">Amplitude</label>
-					<input type="range" name="amplitude" id="amplitude" value="20" step="10" min="0" max="130">
-					<p id="amplitude-v"></p>
-				</div>
-				<div>
-					<label for="wave-length">Wavelength</label>
-					<input type="range" name="wave-length" id="wave-length" value="300" step="10" min="100" max="700">
-					<p id="wavel-v"></p>
-				</div>
-				<div>
-					<label for="frequency">Frequency</label>
-					<input type="range" name="frequency" id="frequency" value="0.1" step="0.05" min="0" max="1">
-					<p id="frequency-v"></p>
-				</div>
-				<div>
-					<label for="toggle-grid" title="Hide/Show Grid" class="display-grid">
-						<img src="images/grid.PNG" alt="">
-					</label>
-					<input type="checkbox" name="toggle-grid" id="toggle-grid" onchange="displayGrid(this)">
+
+				<div class="action-buttons">
+					<div>
+						<p>Click a particle to highlight it</p>
+					</div>
+					<div>
+						<label for="amplitude">Amplitude</label>
+						<input type="range" name="amplitude" id="amplitude" value="20" step="10" min="0" max="130">
+						<p id="amplitude-v"></p>
+					</div>
+					<div>
+						<label for="wave-length">Wavelength</label>
+						<input type="range" name="wave-length" id="wave-length" value="300" step="10" min="100"
+							max="700">
+						<p id="wavel-v"></p>
+					</div>
+					<div>
+						<label for="frequency">Frequency</label>
+						<input type="range" name="frequency" id="frequency" value="0.1" step="0.05" min="0" max="1">
+						<p id="frequency-v"></p>
+					</div>
+					<div>
+						<label for="toggle-grid" title="Hide/Show Grid" class="display-grid">
+							<img src="images/grid.PNG" alt="">
+						</label>
+						<input type="checkbox" name="toggle-grid" id="toggle-grid" onchange="displayGrid(this)">
+					</div>
 				</div>
 			</div>
 			<div class="interface">
-				<button type="button" name="button" onclick="renew()" id="startButton">stop</button>
-				<button onclick="resetAll()" type="button" name="button">reset</button>
-				<button onmouseover="hideHelp()" onmouseout="hideHelp()" type="button" name="button">help</button>
+				<button type="button" name="button" onclick="start()" id="startButton" title="Start"><i
+						class="fas fa-play"></i></button>
+				<button onmouseover="hideHelp()" onmouseout="hideHelp()" type="button" name="button" title="Help"><i
+						class="fas fa-question"></i></button>
+				<button onclick="resetAll()" type="button" name="button" title="Reset"><i
+						class="fas fa-rotate-left"></i></button>
 			</div>
 
 		</div>
