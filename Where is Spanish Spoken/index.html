@@ -11,82 +11,51 @@
 
 <head>
 	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="authoring-tool" content="Adobe_Animate_CC" />
 	<title>Where is Spanish Spoken</title>
 	<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
 	<link rel="stylesheet" href="styles.css" />
+	<!-- Font Awesome Link: -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 	<link rel="shortcut icon" href="images/spain-flag.webp" type="image/x-icon" />
 </head>
 
-<body onload="init();">
-	<div id="animation_container">
-		<canvas id="canvas" width="1320" height="810"></canvas>
-		<div id="dom_overlay_container"></div>
+<body>
+	<div class="main">
+		<div class="content">
+			<div class="screen">
+				<h1 class="heading" id="myHeading">Where is Spanish Spoken?</h1>
+				<div id="chartdiv"></div>
+			</div>
+			<div class="interface">
+				<!-- Optional buttons that can be removed -->
+				<button type="button" name="button" onclick="start()" id="startButton" title="Start"><i
+						class="fas fa-play"></i></button>
+				<button type="button" name="button" onclick="solve()" id="solveButton" title="Step Forward"><i
+						class="fas fa-forward-step"></i></button>
+				<button type="button" name="button" onclick="check()" id="checkButton" title="Check Solution"><i
+						class="fas fa-check"></i></button>
+				<button onmouseover="hideHelp()" onmouseout="hideHelp()" type="button" name="button" title="Help"><i
+						class="fas fa-question"></i></button>
+				<button onclick="resetAll()" type="button" name="button" title="Reset"><i
+						class="fas fa-rotate-left"></i></button>
+			</div>
+		</div>
+		<div class="help-text" id="help-text" style="display:none">
+			<p>Click on the highlighted countries on the map to find some of the places in the world where Spanish is
+				spoken. There are 19 places to press on in total. You can use the tools at the top right to zoom in and
+				out of the map. Use the home icon to reset to default.
+			</p>
+		</div>
 	</div>
+	<script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+	<script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+	<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+	<script src="https://www.amcharts.com/lib/3/lang-maps/es.js"></script>
 	<script src="script.js"></script>
-	<script>
-		var canvas,
-			stage,
-			exportRoot,
-			anim_container,
-			dom_overlay_container,
-			fnStartAnimation
-
-		function init() {
-			canvas = document.getElementById('canvas')
-			anim_container = document.getElementById('animation_container')
-			dom_overlay_container = document.getElementById('dom_overlay_container')
-			var comp = AdobeAn.getComposition('56D364E08FA9474794F48D2407741CBC')
-			var lib = comp.getLibrary()
-			var loader = new createjs.LoadQueue(false)
-			loader.addEventListener('fileload', function (evt) {
-				handleFileLoad(evt, comp)
-			})
-			loader.addEventListener('complete', function (evt) {
-				handleComplete(evt, comp)
-			})
-			var lib = comp.getLibrary()
-			loader.loadManifest(lib.properties.manifest)
-		}
-
-		function handleFileLoad(evt, comp) {
-			var images = comp.getImages()
-			if (evt && evt.item.type == 'image') {
-				images[evt.item.id] = evt.result
-			}
-		}
-
-		function handleComplete(evt, comp) {
-			//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-			var lib = comp.getLibrary()
-			var ss = comp.getSpriteSheet()
-			var queue = evt.target
-			var ssMetadata = lib.ssMetadata
-			for (i = 0; i < ssMetadata.length; i++) {
-				ss[ssMetadata[i].name] = new createjs.SpriteSheet({
-					images: [queue.getResult(ssMetadata[i].name)],
-					frames: ssMetadata[i].frames
-				})
-			}
-			exportRoot = new lib.WhereisSpanishSpoken()
-			stage = new lib.Stage(canvas)
-			stage.enableMouseOver()
-			//Registers the "tick" event listener.
-			fnStartAnimation = function () {
-				stage.addChild(exportRoot)
-				createjs.Ticker.framerate = lib.properties.fps
-				createjs.Ticker.addEventListener('tick', stage)
-			}
-			//Code to support hidpi screens and responsive scaling.
-			AdobeAn.makeResponsive(false, 'both', false, 1, [
-				canvas,
-				anim_container,
-				dom_overlay_container
-			])
-			AdobeAn.compositionLoaded(lib.properties.id)
-			fnStartAnimation()
-		}
-	</script>
 </body>
 
 </html>
