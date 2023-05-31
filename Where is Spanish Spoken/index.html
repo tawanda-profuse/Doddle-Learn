@@ -30,13 +30,6 @@
 				<div id="chartdiv"></div>
 			</div>
 			<div class="interface">
-				<!-- Optional buttons that can be removed -->
-				<button type="button" name="button" onclick="start()" id="startButton" title="Start"><i
-						class="fas fa-play"></i></button>
-				<button type="button" name="button" onclick="solve()" id="solveButton" title="Step Forward"><i
-						class="fas fa-forward-step"></i></button>
-				<button type="button" name="button" onclick="check()" id="checkButton" title="Check Solution"><i
-						class="fas fa-check"></i></button>
 				<button onmouseover="hideHelp()" onmouseout="hideHelp()" type="button" name="button" title="Help"><i
 						class="fas fa-question"></i></button>
 				<button onclick="resetAll()" type="button" name="button" title="Reset"><i
@@ -45,14 +38,14 @@
 		</div>
 		<div class="help-text" id="help-text" style="display:none">
 			<p>Click on the highlighted countries on the map to find some of the places in the world where Spanish is
-				spoken. There are 19 places to press on in total. You can use the tools at the top right to zoom in and
-				out of the map. Use the home icon to reset to default.
+				spoken. There are 21 places in total. You can use the tools at the top right to zoom in and
+				out of the map. Use the home icon to reset to default. Click and drag on any part of the map to navigate
+				it.
 			</p>
 		</div>
 	</div>
 	<script src="https://www.amcharts.com/lib/3/ammap.js"></script>
 	<script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
-	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 	<script src="https://www.amcharts.com/lib/3/serial.js"></script>
 	<script src="https://www.amcharts.com/lib/3/lang-maps/es.js"></script>
 	<script src="script.js"></script>

@@ -34,33 +34,32 @@ function start() {
 // Bespoke functions_____________________________________
 "use strict";
 var data = {
-    "Argentina": ['yes', 1],
-    "Bolivia": ['yes', 1],
-    "Chile": ['yes', 1],
-    "Colombia": ['yes', 1],
-    "Costa Rica": ['yes', 1],
-    "Cuba": ['yes', 1],
-    "Dominica": ['yes', 1],
-    "Dominican Republic": ['yes', 1],
-    "Ecuador": ['yes', 1],
-    "El Salvador": ['yes', 1],
-    "Guatemala": ['yes', 1],
-    "Honduras": ['yes', 1],
-    "Mexico": ['yes', 1],
-    "Nicaragua": ['yes', 1],
-    "Panama": ['yes', 1],
-    "Paraguay": ['yes', 1],
-    "Peru": ['yes', 1],
-    "Spain": ['yes', 1],
-    "Uruguay": ['yes', 1],
-    "Venezuela": ['yes', 1],
-    "Puerto Rico": ['yes', 1]
+    "Argentina": ['Sí', 1],
+    "Bolivia": ['Sí', 1],
+    "Chile": ['Sí', 1],
+    "Colombia": ['Sí', 1],
+    "Costa Rica": ['Sí', 1],
+    "Cuba": ['Sí', 1],
+    "Dominica": ['Sí', 1],
+    "Dominican Republic": ['Sí', 1],
+    "Ecuador": ['Sí', 1],
+    "El Salvador": ['Sí', 1],
+    "Guatemala": ['Sí', 1],
+    "Honduras": ['Sí', 1],
+    "Mexico": ['Sí', 1],
+    "Nicaragua": ['Sí', 1],
+    "Panama": ['Sí', 1],
+    "Paraguay": ['Sí', 1],
+    "Peru": ['Sí', 1],
+    "Spain": ['Sí', 1],
+    "Uruguay": ['Sí', 1],
+    "Venezuela": ['Sí', 1],
+    "Puerto Rico": ['Sí', 1]
 };
 var map;
 
-// AmCharts.theme = AmCharts.themes.light;
 // add all your code to this method, as this will ensure that page is loaded
-AmCharts.ready(function() {
+AmCharts.ready(function () {
     // create AmMap object  
     map = new AmCharts.AmMap();
     map.fontFamily = "Roboto";
@@ -70,8 +69,8 @@ AmCharts.ready(function() {
         getAreasFromMap: true
     };
     map.balloon.maxWidth = 500;
-  
-  map.zoomControl = {top:40};
+
+    map.zoomControl = { top: 40 };
 
     map.areasSettings = {
         autoZoom: true,
@@ -102,15 +101,15 @@ function processData() {
         if (area) {
             var value = countryData[1];
 
-            if(value <= 0){
+            if (value <= 0) {
                 color = '#ffffff'
-            } else if(value >= 0){
+            } else if (value >= 0) {
                 color = '#ffff00'
             }
 
             area.value = value;
             area.color = color;
-            area.customData = "<td><b>" + countryData[0] + "</b></span></td></tr></table></span>";
+            area.customData = "<td><b>" + countryData[0] + "</b></span></td></tr></tr></table></span>";
         }
     }
     map.validateNow();
