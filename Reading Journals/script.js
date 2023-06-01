@@ -1,44 +1,64 @@
-var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
-function init() {
-    canvas = document.getElementById("canvas");
-    anim_container = document.getElementById("animation_container");
-    dom_overlay_container = document.getElementById("dom_overlay_container");
-    var comp = AdobeAn.getComposition("0B2B3EBA4B645D45A7E84D318570440E");
-    var lib = comp.getLibrary();
-    var loader = new createjs.LoadQueue(false);
-    loader.addEventListener("fileload", function (evt) { handleFileLoad(evt, comp) });
-    loader.addEventListener("complete", function (evt) { handleComplete(evt, comp) });
-    var lib = comp.getLibrary();
-    loader.loadManifest(lib.properties.manifest);
-}
+// General_____________________________________________
+var checkButton = document.getElementById('checkButton');
+var solveButton = document.getElementById('solveButton');
+var startButton = document.getElementById('startButton');
+var startPanel = document.getElementById('startPanel');
 
-document.body.addEventListener("load", init())
-
-function handleFileLoad(evt, comp) {
-    var images = comp.getImages();
-    if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }
-}
-
-function handleComplete(evt, comp) {
-    //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-    var lib = comp.getLibrary();
-    var ss = comp.getSpriteSheet();
-    var queue = evt.target;
-    var ssMetadata = lib.ssMetadata;
-    for (i = 0; i < ssMetadata.length; i++) {
-        ss[ssMetadata[i].name] = new createjs.SpriteSheet({ "images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames })
+function hideHelp() {
+    var x = document.getElementById("help-text");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
     }
-    exportRoot = new lib.ReadingJournals();
-    stage = new lib.Stage(canvas);
-    stage.enableMouseOver();
-    //Registers the "tick" event listener.
-    fnStartAnimation = function () {
-        stage.addChild(exportRoot);
-        createjs.Ticker.framerate = lib.properties.fps;
-        createjs.Ticker.addEventListener("tick", stage);
-    }
-    //Code to support hidpi screens and responsive scaling.
-    AdobeAn.makeResponsive(false, 'both', false, 1, [canvas, anim_container, dom_overlay_container]);
-    AdobeAn.compositionLoaded(lib.properties.id);
-    fnStartAnimation();
 }
+
+function resetAll() {
+    window.location.reload();
+    // window.location.href = "";
+    return false;
+}
+
+function check() {
+    console.log('check initiated');
+}
+
+function solve() {
+    console.log('solve initiated');
+}
+
+function start() {
+    startPanel.style.display = 'none';
+    startButton.style.display = 'none';
+}
+// Bespoke functions_____________________________________
+var pages = document.getElementsByClassName('page');
+for(var i = 0; i < pages.length; i++)
+  {
+    var page = pages[i];
+    if (i % 2 === 0)
+      {
+        page.style.zIndex = (pages.length - i);
+      }
+  }
+
+document.addEventListener('DOMContentLoaded', function(){
+  for(var i = 0; i < pages.length; i++)
+    {
+      //Or var page = pages[i];
+      pages[i].pageNum = i + 1;
+      pages[i].onclick=function()
+        {
+          if (this.pageNum % 2 === 0)
+            {
+              this.classList.remove('flipped');
+              this.previousElementSibling.classList.remove('flipped');
+            }
+          else
+            {
+              this.classList.add('flipped');
+              this.nextElementSibling.classList.add('flipped');
+            }
+         }
+      }
+})
