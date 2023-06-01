@@ -102,7 +102,7 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 10px 10px 10px 0px black;
-    padding: 100px;
+    padding: 50px;
 }
 
 .startPanel p {

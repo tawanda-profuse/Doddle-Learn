@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome Link: -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
-    <link rel="shortcut icon" href="/images/book.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/book.png" type="image/x-icon">
 </head>
 
 <body>
@@ -17,12 +17,11 @@
         <div class="content">
             <div class="screen">
                 <h1 class="heading" id="myHeading">Reading Journals</h1>
-                <link href="https://fonts.googleapis.com/css?family=Lovers+Quarrel" rel="stylesheet">
                 <div class="book-container">
                     <div class="book">
                         <div id="pages" class="pages">
                             <div class="page">
-                                <img src="/images/cover.png" alt="Crystals">
+                                <img src="images/cover.png" alt="Crystals">
                                 <h2>My Reading Journal</h2>
                             </div>
                             <div class="page">
@@ -30,7 +29,7 @@
                                     the things that strike you while you are reading it.
                                 </p>
                                 <p class="yellow">Design an exciting and individual cover for your reading journal!</p>
-                                <img src="/images/pencils.png" alt="Pencil colors">
+                                <img src="images/pencils.png" alt="Pencil colors">
                             </div>
                             <div class="page">
                                 <p>What do you think you will need to include in your reading journal?</p>
@@ -109,17 +108,21 @@ all day!
                 <p>Press play▶️ to begin.</p>
             </div>
             <div class="interface">
-                <button type="button" name="button" onclick="start()" id="startButton" title="Start"><i
+                <button type="button" name="button" id="startButton" title="Start"><i
                         class="fas fa-play"></i></button>
-                <button onmouseover="hideHelp()" onmouseout="hideHelp()" type="button" name="button" title="Help"><i
+                <button type="button" name="button" id="helpButton" title="Help"><i
                         class="fas fa-question"></i></button>
-                <button onclick="resetAll()" type="button" name="button" title="Reset"><i
+                <!-- <button onmouseover="hideHelp()" onmouseout="hideHelp()" type="button" name="button" id="helpButton" title="Help"><i
+                        class="fas fa-question"></i></button> -->
+                <button type="button" name="button" id="resetButton" title="Reset"><i
                         class="fas fa-rotate-left"></i></button>
             </div>
 
-        </div>
+        </>
         <div class="help-text" id="help-text" style="display:none">
-            <p>Type help text here</p>
+            <p>Click on either side of the book to turn the pages to the left or right respectively. Click the reset
+                icon below to restart the activity.
+            </p>
         </div>
     </div>
     <script src="script.js"></script>
