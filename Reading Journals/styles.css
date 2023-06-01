@@ -106,7 +106,6 @@ html {
 }
 
 .startPanel p {
-    /* margin: 100px; */
     text-align: center;
     vertical-align: middle;
 }
@@ -236,7 +235,16 @@ html {
     transform-style: preserve-3d;
     backface-visibility: hidden;
     border-radius: 4px;
-    /*box-shadow: 0 0 0 1px #e3dfd8;*/
+}
+
+.book .page:nth-child(2),
+.book .page:nth-child(3),
+.book .page:nth-child(4),
+.book .page:nth-child(5),
+.book .page:nth-child(6),
+.book .page:nth-child(7)
+{
+    border: 5px solid purple;
 }
 
 .book .page:nth-child(1), .book .page:nth-child(8) {
