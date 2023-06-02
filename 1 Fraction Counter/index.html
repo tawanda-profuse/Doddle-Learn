@@ -17,7 +17,6 @@
         <div class="content">
             <div class="screen">
                 <h1 class="heading" id="myHeading">1 Fraction Counter</h1>
-                <!-- Content goes below here... -->
                 <div class="clock-work">
                     <div class="step-size" title="Click to hide" id="stepSize">
                         step size
@@ -59,8 +58,10 @@
                 </div>
             </div>
             <div class="interface">
-                <button onmouseover="hideHelp()" onmouseout="hideHelp()" type="button" name="button">help</button>
-                <button onclick="resetAll()" type="button" name="button">reset</button>
+                <button type="button" name="button" title="Help" id="helpButton"><i
+                        class="fas fa-question"></i></button>
+                <button type="button" name="button" title="Reset" id="resetButton"><i
+                        class="fas fa-rotate-left"></i></button>
             </div>
             <div class="help-text" id="help-text" style="display:none">
                 <p>Press the blue button on the left to show then change the step size. Then press the clockwise or
@@ -68,41 +69,6 @@
             </div>
         </div>
 
-        <script type="text/javascript">
-            // General_____________________________________________
-            var checkButton = document.getElementById('checkButton');
-            var solveButton = document.getElementById('solveButton');
-            var startButton = document.getElementById('startButton');
-            var startPanel = document.getElementById('startPanel');
-            function hideHelp() {
-                var x = document.getElementById("help-text");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            }
-
-            function resetAll() {
-                window.location.reload();
-                return false;
-            }
-
-            function check() {
-                console.log('check initiated');
-            }
-
-            function solve() {
-                console.log('solve initiated');
-            }
-
-            function start() {
-                startPanel.style.display = 'none';
-                startButton.style.display = 'none';
-            }
-      // Bespoke functions_____________________________________
-
-        </script>
         <script src="script.js"></script>
 </body>
 

@@ -6,6 +6,10 @@
   --doddle-white: #ffffff;
 }
 
+/* * {
+  box-sizing: border-box;
+} */
+
 body {
   color: var(--doddle-gray);
   font-family: var(--doddle-font);
