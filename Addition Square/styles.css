@@ -136,20 +136,20 @@ html {
 }
 
 .second {
-  position: absolute;
-  left: 50%;
-  top: 15%;
   z-index: 3;
   font-size: 1.5rem;
   color: navy;
   text-transform: lowercase;
   font-weight: 500;
+  transform: translateY(150%);
 }
 
 .description {
   display: flex;
   flex-direction: column;
   align-self: center;
+  align-items: center;
+  justify-items: center;
   padding-right: 25px;
 }
 
@@ -163,6 +163,7 @@ html {
 
 .addition-table table {
   border-collapse: collapse;
+  width: 100%;
 }
 
 .addition-table td {
@@ -170,8 +171,12 @@ html {
   font-size: 1.8rem;
   cursor: pointer;
   color: black;
-  width: 53px;
-  height: 53px;
+  width: 10%;
+  height: 4vw;
+}
+
+.addition-table td:hover {
+  background-color: rgba(4, 4, 4, 0.2);
 }
 
 tr:nth-child(1),
