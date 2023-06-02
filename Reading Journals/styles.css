@@ -146,37 +146,36 @@ html {
 .pages h2 {
     color: black;
     background-color: var(--doddle-white);
-    padding: 20px;
-    margin: 40px;
+    padding: 10px;
+    margin: 20px auto;
+    text-align: center;
     line-height: 2;
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
+    font-size: 1.9em;
 }
 
 .book .page:nth-child(8) h2 {
     color: palevioletred;
-    position: absolute;
-    bottom: 5%;
+    margin-top: 90%;
 }
 
 .pages p {
-    margin-top: 5vw;
-    text-align: justify;
-    font-size: 1.2rem;
+    margin-top: 5vh;
+    text-align: left;
+    /* font-size: 1.2rem; */
+    font-size: 1.5em;
     color: var(--doddle-gray);
 }
 
 .pages figure {
-    font-size: 1.2rem;
-    width: 100%;
-    transform: translateX(-15%);
-}
-
-.pages figcaption {
+    font-size: 1.5em;
     text-align: justify;
-    transform: translateX(4%);
+    margin: 0;
+    width: 100%;
 }
 
 .pages li {
+    width: 100%;
     text-align: left;
 }
 
@@ -185,15 +184,15 @@ html {
 }
 
 .yellow {
-    margin-top: 5vw;
     background-color: yellow;
     padding: 5px;
 }
 
 .lightblue {
-    margin-top: 5vw;
+    margin-top: 3vh;
     background-color: lightskyblue;
     padding: 5px;
+    transform: translateX(-6%);
 }
 
 .bordered{
@@ -201,7 +200,7 @@ html {
     font-family: var(--doddle-font);
     text-align: left;
     padding: 20px;
-    font-size: 1.2rem;
+    font-size: 1.3em;
 }
 
 .dark{
@@ -216,8 +215,9 @@ html {
     margin-bottom: 0.5em;
     background: left top no-repeat;
     background-size: cover;
-    padding: 0 20px;
+    padding: 20px;
     position: relative;
+    font-size: 16px;
 }
 
 .page:nth-child(even) {
@@ -261,7 +261,7 @@ html {
 .book .page:nth-child(1) img {
     width: 80%;
     height: 50%;
-    margin-top: 50px;
+    margin-top: 15%;
 }
 
 .book .page:nth-child(2) img {
@@ -375,3 +375,57 @@ html {
 .page:nth-child(odd) {
     background-position: right top;
 }
+
+@media screen and (max-width: 1330px) {
+    .page{
+        /* font-size: 12px; */
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1205px) {
+    .page{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .page{
+        font-size: 10px;
+    }
+}
+
+/* @media screen and (max-width: 820px) { */
+@media screen and (max-width: 910px) {
+    .page{
+        font-size: 8px;
+    }
+}
+
+/* @media screen and (max-width: 710px) { */
+@media screen and (max-width: 790px) {
+    .page{
+        font-size: 6px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .page{
+        font-size: 4px;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .page{
+        font-size: 2px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .page{
+        font-size: 1px;
+    }
+}
+
+
+
