@@ -118,6 +118,7 @@ html {
 .heading {
   color: var(--doddle-gray);
   text-align: center;
+  font-size: 1.8rem;
 }
 
 .intro,
@@ -129,9 +130,10 @@ html {
 /* Content_________________________________________________________________ */
 
 .play-ground {
-  padding: 10px 50px;
+  /* padding: 10px 50px; */
+  padding: 0.625rem 3.125rem;
   position: relative;
-  max-width: 80vw;
+  max-width: 100vw;
 }
 
 .container {
@@ -153,15 +155,19 @@ html {
   left: 50%;
   position: relative;
   margin: 0;
-  width: 37.5px;
-  height: 37.5px;
+  /* width: 37.5px; */
+  width: 2.34rem;
+  /* height: 37.5px; */
+  height: 2.34rem;
   -webkit-transition: 1s;
   transition: 1s;
 }
 
 .cube div {
-  width: 37.25px;
-  height: 30px;
+  /* width: 37.25px; */
+  width: 2.32rem;
+  /* height: 30px; */
+  height: 1.875rem;
   background: var(--doddle-gray);
   position: absolute;
   border: 1px solid #000;
@@ -213,6 +219,7 @@ html {
   border: 2px solid var(--doddle-gray);
   font-size: 1.5rem;
   float: center;
+  display: inline-flex;
 }
 
 .play-ground label:hover:not(:checked, .color-palette label) {
@@ -266,6 +273,7 @@ html {
     font-size: 2.5rem;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     align-items: center;
     z-index: 5;
     padding: 24px 16px;
@@ -277,9 +285,11 @@ html {
   border: 2px solid black;
   border-radius: 20px;
   padding: 8px;
+  display: inline-flex;
 }
 .color-palette label:hover{
   background-color: rgba(255, 165, 0, 0.5);
+  cursor: pointer;
 }
 
 .color-palette input{
@@ -316,7 +326,4 @@ html {
   color: #000;
 }
 
-.color-palette label:hover{
-  transform: scale(1.3);
-  cursor: pointer;
-}
+
