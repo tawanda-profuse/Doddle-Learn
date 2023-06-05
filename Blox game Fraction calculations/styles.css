@@ -141,13 +141,24 @@ html {
     border-radius: 10px;
 }
 
+@media screen and (max-width: 900px) {
+    .classroom{
+        flex-direction: column;
+    }
+    .classroom-content {
+        margin: auto;
+    }
+    .honeycomb {
+        width: 100%;
+    }
+}
+
 .classroom-content {
     align-self: flex-start;
     display: flex;
     flex-direction: column;
     font-size: 16px;
     justify-content: center;
-    align-items: center;
     width: 50%;
 }
 
@@ -161,9 +172,7 @@ html {
     font-size: 2em;
     font-weight: 500;
     border: 0.05em solid black;
-    padding: 0.05em;
     min-height: 25vh;
-    width: 90%;
     text-align: center;
     color: navy;
 }
@@ -178,6 +187,7 @@ sup, sub, .division{
     font-size: 1.2em;
     font-weight: bold;
     width: 70%;
+    margin: auto;
     color: var(--doddle-orange);
     outline: none;
     border-color: var(--doddle-gray);
@@ -193,6 +203,7 @@ sup, sub, .division{
 
 .answer {
     font-size: 2em;
+    font-weight: bold;
     border: 0.05em solid black;
     padding: 0.05em;
     min-height: 20vh;
@@ -232,6 +243,7 @@ sup, sub, .division{
     display: grid;
     grid-template-columns: repeat(auto-fill, calc(var(--cell-size) / 2));
     gap: var(--cell-gap);
+    padding: 20px;
 }
 
 .honeycomb-cell {

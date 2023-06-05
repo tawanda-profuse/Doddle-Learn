@@ -42,6 +42,8 @@ let cells = document.querySelectorAll('.honeycomb-cell-content')
 let questionContainer = document.querySelector("#question")
 let showAnswerButton = document.getElementById('showAnswer')
 let answerContent = document.querySelector('#answer')
+let redPick = document.querySelector('#red')
+let bluePick = document.querySelector('#blue')
 
 let questions = [
     'What is 1<sup>3</sup><span class="division">&frasl;</span><sub>4</sub> of 8?',
@@ -86,6 +88,17 @@ cells.forEach((cell, index) => {
     })
 })
 
+
+
 showAnswerButton.addEventListener("click", function () {
     answerContent.style.display = 'block'
 })
+
+function manageCells() {
+    $('.honeycomb-cell-content').click(function () {
+        $('.honeycomb-cell-content').css('background-color', 'plum');
+        $('.honeycomb-cell-content').not(this).css('background-color', 'white');
+    });
+}
+
+manageCells();
