@@ -146,6 +146,9 @@ html {
     display: flex;
     flex-direction: column;
     font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
 }
 
 .classroom-content h1 {
@@ -156,13 +159,21 @@ html {
 
 .question {
     font-size: 2em;
-    border: 0.1em solid black;
-    padding: 1em;
-    min-height: 20vh;
+    font-weight: 500;
+    border: 0.05em solid black;
+    padding: 0.05em;
+    min-height: 25vh;
+    width: 90%;
+    text-align: center;
+    color: navy;
+}
+
+sup, sub, .division{
+    vertical-align: super;
 }
 
 #showAnswer {
-    margin: 0 auto;
+    font-weight: 500;
     padding: 10px 20px;
     font-size: 1.2em;
     font-weight: bold;
@@ -182,12 +193,17 @@ html {
 
 .answer {
     font-size: 2em;
-    border: 0.1em solid black;
-    padding: 1em;
-    min-height: 15vh;
+    border: 0.05em solid black;
+    padding: 0.05em;
+    min-height: 20vh;
     text-align: center;
-    width: 70%;
+    width: 80%;
     margin: 0 auto 0.5em;
+    color: navy;
+}
+
+.answer p{
+    display: none;
 }
 
 .color-picker {
