@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blox Game Fraction Calculations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="main">
+        <div class="content">
+            <div class="screen">
+                <h1 class="heading" id="myHeading">Blox Game Fraction Calculations</h1>
+                <div class="classroom">
+                    <div class="classroom-content">
+                        <h1>Fractions 1</h1>
+                        <div class="question" id="question">What is 22 x nine-elevenths?</div>
+                        <button id="showAnswer">Show Answer</button>
+                        <div class="answer" id="answer">18</div>
+                        <div class="color-picker">
+                            <img src="images/red-hexagon.png" alt="Red hexagon" id="red">
+                            <img src="images/blue-hexagon.png" alt="Blue hexagon" id="blue">
+                        </div>
+                    </div>
+                    <div class="honeycomb">
+                        <div class="honeycomb-spacer" style="--index:0"></div>
+                        <div class="honeycomb-spacer" style="--index:1"></div>
+                        <div class="honeycomb-spacer" style="--index:2"></div>
+                        <div class="honeycomb-spacer" style="--index:3"></div>
+                        <div class="honeycomb-spacer" style="--index:4"></div>
+
+
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">8</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">20</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">70</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">10</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">50</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">6</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">15</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">42</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">36</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">22</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">35</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">54</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">65</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">25</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">99</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">27</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">3</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">12</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">32</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">18</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">81</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">70</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">7</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">24</div>
+                        </div>
+                        <div class="honeycomb-cell">
+                            <div class="honeycomb-cell-content">100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="interface">
+                <button type="button" name="button" title="Help" id="helpButton"><i
+                        class="fas fa-question"></i></button>
+                <button type="button" name="button" title="Reset" id="resetButton"><i
+                        class="fas fa-rotate-left"></i></button>
+            </div>
+
+        </div>
+        <div class="help-text" id="help-text" style="display:none">
+            <p>Click a number on the grid to see a question. When the class has answered, click to show the answer, and
+                then press the appropriate team's colour.
+            </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

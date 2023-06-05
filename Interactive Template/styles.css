@@ -122,6 +122,7 @@ html {
   color: var(--doddle-gray);
   text-align: center;
   font-size: 1.8rem;
+  text-transform: capitalize;
 }
 
 .intro,
