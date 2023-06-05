@@ -233,6 +233,14 @@ sup, sub, .division{
     opacity: 0.6;
 }
 
+.red{
+    background-color: red;
+}
+
+.blue{
+    background-color: blue;
+}
+
 .honeycomb {
     width: 40%;
     --cell-size: 75px;
