@@ -62,7 +62,7 @@ html {
 
 .interface {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .screen {
@@ -70,7 +70,6 @@ html {
   border-radius: 10px;
   padding: 50px 50px 25px 50px;
   margin: 5px auto;
-  text-transform: capitalize;
 }
 
 .help-text {
@@ -81,7 +80,7 @@ html {
   border-color: var(--doddle-gray);
   border-radius: 5px;
   bottom: 10vh;
-  right: 5vw;
+  left: 5vw;
   width: 25rem;
   box-shadow: 5px 5px 5px 5px black;
   font-family: var(--doddle-font);
@@ -119,6 +118,8 @@ html {
   color: var(--doddle-gray);
   text-align: center;
   font-family: var(--doddle-font);
+  font-size: 2rem;
+  text-transform: capitalize;
 }
 
 .intro,
@@ -143,6 +144,7 @@ canvas {
 .container {
   padding: 50px;
 }
+
 .center {
   max-width: 600px;
   margin: 50px auto;
@@ -180,23 +182,23 @@ th {
   font-size: 3rem;
 }
 
-th:first-child{
+th:first-child {
   background-color: yellowgreen;
 }
 
-th:nth-child(2){
+th:nth-child(2) {
   background-color: hotpink;
 }
 
-th:nth-child(3){
+th:nth-child(3) {
   background-color: orange;
 }
 
-th:nth-child(4){
+th:nth-child(4) {
   background-color: turquoise;
 }
 
-th:last-child{
+th:last-child {
   background-color: purple;
 }
 
@@ -220,6 +222,7 @@ div.adjust-button {
   display: inline-block;
   margin: 3px;
 }
+
 div.adjust-button:hover {
   transform: scale(1.2);
 }
