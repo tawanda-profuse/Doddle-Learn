@@ -88,8 +88,6 @@ cells.forEach((cell, index) => {
     })
 })
 
-
-
 showAnswerButton.addEventListener("click", function () {
     answerContent.style.display = 'block'
 })
