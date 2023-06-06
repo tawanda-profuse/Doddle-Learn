@@ -272,9 +272,8 @@ function drawLine() {
     ) {
         let newItem = document.createElement("div")
         newItem.classList.add("line")
-        newItem.style.top = 55 + '%'
-        newItem.style.width = 50 + 'vw'
-        newItem.style.transform = 'rotate(45deg)'
+        newItem.style.top = 49 + '%'
+        newItem.style.transform = 'rotate(35deg)'
         table.append(newItem)
     }
     else if (three.classList.contains("cross") && five.classList.contains("cross") && seven.classList.contains("cross") ||
@@ -282,9 +281,8 @@ function drawLine() {
     ) {
         let newItem = document.createElement("div")
         newItem.classList.add("line")
-        newItem.style.top = 40 + '%'
-        newItem.style.width = 50 + 'vw'
-        newItem.style.transform = 'rotate(-45deg)'
+        newItem.style.top = 49 + '%'
+        newItem.style.transform = 'rotate(-35deg)'
         table.append(newItem)
     }
     // vertical
@@ -294,7 +292,7 @@ function drawLine() {
         let newItem = document.createElement("div")
         newItem.classList.add("line")
         newItem.style.top = 50 + '%'
-        newItem.style.transform = 'rotate(90deg) translateY(200px)'
+        newItem.style.transform = 'rotate(90deg) translateY(150px)'
 
         table.append(newItem)
     } else if (two.classList.contains("cross") && five.classList.contains("cross") && eight.classList.contains("cross") ||
@@ -311,7 +309,7 @@ function drawLine() {
         let newItem = document.createElement("div")
         newItem.classList.add("line")
         newItem.style.top = 50 + '%'
-        newItem.style.transform = 'rotate(90deg) translateY(-190px)'
+        newItem.style.transform = 'rotate(90deg) translateY(-150px)'
         table.append(newItem)
     }
 }

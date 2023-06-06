@@ -142,14 +142,8 @@ html {
 }
 
 @media screen and (max-width: 900px) {
-    .classroom{
+    .classroom {
         flex-direction: column;
-    }
-    .classroom-content {
-        margin: auto;
-    }
-    .honeycomb {
-        width: 100%;
     }
 }
 
@@ -159,7 +153,7 @@ html {
     flex-direction: column;
     font-size: 16px;
     justify-content: center;
-    width: 50%;
+    width: 100%;
 }
 
 .classroom-content h1 {
@@ -177,7 +171,9 @@ html {
     color: navy;
 }
 
-sup, sub, .division{
+sup,
+sub,
+.division {
     vertical-align: super;
 }
 
@@ -188,6 +184,7 @@ sup, sub, .division{
     font-weight: bold;
     width: 70%;
     margin: auto;
+    text-align: center;
     color: var(--doddle-orange);
     outline: none;
     border-color: var(--doddle-gray);
@@ -213,7 +210,7 @@ sup, sub, .division{
     color: navy;
 }
 
-.answer p{
+.answer p {
     display: none;
 }
 
@@ -233,21 +230,12 @@ sup, sub, .division{
     opacity: 0.6;
 }
 
-.red{
-    background-color: red;
-}
-
-.blue{
-    background-color: blue;
-}
-
 .honeycomb {
-    width: 40%;
+    width: 100%;
     --cell-size: 75px;
     --cell-gap: 3px;
     --cell-outline: 1.5px;
     --long-diagonal: 1.1547;
-    /* --long-diagonal: 1; */
     display: grid;
     grid-template-columns: repeat(auto-fill, calc(var(--cell-size) / 2));
     gap: var(--cell-gap);
@@ -296,10 +284,11 @@ sup, sub, .division{
     font-weight: bold;
     color: black;
 }
+
 .honeycomb-cell-content:hover {
     background-color: lightgreen;
 }
 
-.honeycomb-cell-content:last-child{
+.honeycomb-cell-content:last-child {
     font-size: 2.5em;
 }

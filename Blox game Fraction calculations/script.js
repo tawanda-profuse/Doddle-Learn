@@ -39,11 +39,13 @@ function solve() {
 }
 // Bespoke functions_____________________________________
 let cells = document.querySelectorAll('.honeycomb-cell-content')
+let cells2 = document.querySelectorAll('.honeycomb-cell')
 let questionContainer = document.querySelector("#question")
 let showAnswerButton = document.getElementById('showAnswer')
 let answerContent = document.querySelector('#answer')
 let redPick = document.querySelector('#red')
 let bluePick = document.querySelector('#blue')
+let currentCell
 
 let questions = [
     'What is 1<sup>3</sup><span class="division">&frasl;</span><sub>4</sub> of 8?',
@@ -82,15 +84,21 @@ let answers = [
 
 cells.forEach((cell, index) => {
     cell.addEventListener("click", function () {
+        cell.style.backgroundColor = 'plum'
         questionContainer.innerHTML = questions[index]
+        currentCell = index
         answerContent.innerHTML = answers[index]
         answerContent.style.display = 'none'
     })
 })
 
-// Functions for individual cells---
+redPick.addEventListener("click", function () {
+    cells[currentCell].style.backgroundColor = 'red'
+})
 
-// Functions for individual cells---
+bluePick.addEventListener("click", function () {
+    cells[currentCell].style.backgroundColor = 'rgb(129, 129, 252)'
+})
 
 showAnswerButton.addEventListener("click", function () {
     answerContent.style.display = 'block'
@@ -103,4 +111,4 @@ function manageCells() {
     });
 }
 
-manageCells();
+// manageCells();
