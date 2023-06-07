@@ -29,13 +29,14 @@
             class="fas fa-forward-step"></i></button>
         <button type="button" name="button" onclick="check()" id="checkButton" title="Check Solution"><i
             class="fas fa-check"></i></button>
-        <button type="button" name="button" title="Help" id="helpButton"><i class="fas fa-question"></i></button>
+        <div class="tooltip">
+          <button type="button" name="button" title="Help" id="helpButton">
+            <span class="tooltiptext" id="myToolTip">Type help text here...</span><i class="fas fa-question"></i>
+          </button>
+        </div>
         <button type="button" name="button" title="Reset" id="resetButton"><i class="fas fa-rotate-left"></i></button>
       </div>
 
-    </div>
-    <div class="help-text" id="help-text" style="display:none">
-      <p>Type help text here</p>
     </div>
   </div>
   <script src="script.js"></script>
