@@ -28,14 +28,6 @@ let userPoints = [];
 let isDrawingEnabled = true;
 let correctReflectionsInARow = 0;
 let totalQuestions = 0;
-let startTime = Date.now();
-
-// Timer updating every second
-const timerElement = document.getElementById('timer');
-setInterval(() => {
-    const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
-    timerElement.textContent = `Time: ${elapsedTime}s`;
-}, 1000);
 
 // Draw dotted grid
 for (let x = 0; x <= canvas.width; x += gridSize) {
