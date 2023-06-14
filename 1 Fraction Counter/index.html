@@ -60,15 +60,22 @@
                 </div>
             </div>
             <div class="interface">
-                <button type="button" name="button" title="Help" id="helpButton"><i
-                        class="fas fa-question"></i></button>
+                <!-- <button type="button" name="button" title="Help" id="helpButton"><i
+                        class="fas fa-question"></i></button> -->
+                <div class="tooltip">
+                    <button type="button" name="button" title="Help" id="helpButton">
+                        <span class="tooltiptext" id="myToolTip">Press the blue button on the left to show then change the step size. Then press the clockwise or
+                            anticlockwise buttons to activate the counter.</span><i
+                            class="fas fa-question"></i>
+                    </button>
+                </div>
                 <button type="button" name="button" title="Reset" id="resetButton"><i
                         class="fas fa-rotate-left"></i></button>
             </div>
-            <div class="help-text" id="help-text" style="display:none">
+            <!-- <div class="help-text" id="help-text" style="display:none">
                 <p>Press the blue button on the left to show then change the step size. Then press the clockwise or
                     anticlockwise buttons to activate the counter.</p>
-            </div>
+            </div> -->
         </div>
 
         <script src="script.js"></script>

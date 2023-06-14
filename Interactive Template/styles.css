@@ -69,6 +69,7 @@ html {
   justify-content: flex-end;
 }
 
+/* Help text */
 .tooltip {
   position: relative;
 }
