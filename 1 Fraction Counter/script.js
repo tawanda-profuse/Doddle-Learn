@@ -55,15 +55,18 @@ var topNum = document.getElementById("numerator");
 var divider = document.getElementById("divider");
 var bottomNum = document.getElementById("denominator");
 var fraction; // Calculated value of numerator / denominator
+var inputs = document.querySelector('.inputs');
 
 // Hides the step size container
 stepSize.addEventListener('click', function () {
   stepSize.classList.add('hide');
+  inputs.style.display = 'block';
 });
 
 // Reveals the step size container
 showCover.addEventListener('click', function () {
   stepSize.classList.remove('hide');
+  inputs.style.display = 'none';
 });
 
 // Function below generates a random color every time the web page loads

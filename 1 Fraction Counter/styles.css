@@ -66,7 +66,7 @@ html {
 
 .interface {
   display: flex;
-  justify-content: flex-end;
+  justify-content:space-between;
 }
 
 .screen {
@@ -142,7 +142,6 @@ html {
 
 .step-size {
   background-color: skyblue;
-  align-self: center;
   border-radius: 8px;
   box-shadow: 2px 2px black;
   text-transform: capitalize;
@@ -152,32 +151,30 @@ html {
   cursor: pointer;
   transition: ease-in-out 0.2s;
   font-size: 1.6rem;
-  transform: translate(5%, 0);
+  min-height: 135px;
+  transition: 0.5s ease-in-out;
 }
 
 .hide {
-  visibility: hidden;
-  transform: translate(1.2);
+  display: none;
 }
 
 .inputs {
-  position: absolute;
-  z-index: 5;
-  transform: translate(-175%, -95%);
-}
-
-.inputs:nth-child(2) {
-  /* top: 57%; */
-  margin-top: 8%;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  display: none;
+  min-width: 205.271px;
+  transition: all 0.6s ease;
 }
 
 .clock-controls {
-  position: absolute;
   display: flex;
   justify-content: space-evenly;
   width: 50%;
-  padding: 10px;
-  bottom: 14%;
   left: 0;
 }
 
@@ -259,9 +256,7 @@ html {
   border: none;
   background-color: springgreen;
   cursor: pointer;
-  position: absolute;
-  /* margin: 50px auto; */
-  margin-top: 60px;
+  margin-top: 10px;
   font-size: 1.2rem;
   color: white;
 }
@@ -277,13 +272,12 @@ html {
 }
 
 .clock_face {
-  margin: 10% auto;
   width: 25rem;
   height: 25rem;
   border: 1.25rem solid #444444;
   border-radius: 50%;
   background-color: lime;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .center {
@@ -379,46 +373,31 @@ html {
 }
 
 /* Media queries: */
-@media screen and (max-width: 1130px) {
-  .inputs {
-    transform: translate(-145%, -95%);
+/* @media screen and (width > 1300px) {
+  .hide {
+    transform: translateY(-100%);
+    left: 20%;
+    position: absolute;
   }
-
-  .inputs:nth-child(2) {
-    margin-top: 10%;
-  }
-}
+} */
 
 @media screen and (max-width: 840px) {
   .clock-work {
     flex-direction: column;
   }
 
-  .inputs:nth-child(2) {
-    margin-top: 15%;
-  }
-
-  .inputs {
-    transform: translate(-5%, -620%);
-  }
-
   .clock-controls {
-    bottom: 50%;
+    bottom: 55%;
+    position: absolute;
     width: 100%;
   }
 
   .clock {
-    transform: translate(0, 30%);
+    transform: translate(0, 40%);
   }
 
   .clock-work {
-    margin-bottom: 100px;
-  }
-}
-
-@media screen and (max-width: 680px) {
-  .inputs:nth-child(2) {
-    margin-top: 98px;
+    margin-bottom: 150px;
   }
 }
 
@@ -438,47 +417,30 @@ html {
   }
 
   .clock-controls {
-    bottom: 40%;
-    width: 100%;
+    bottom: 50%;
   }
 
   .clock {
     transform: translate(0, 50%);
   }
-
-  .inputs {
-    transform: translate(2%, -430%);
-  }
 }
 
-@media screen and (max-width: 340px) {
-  .step-size {
-    width: 80vw;
-    height: 40vh;
+@media screen and (max-width: 345px) {
+  .clock-controls {
+    bottom: 45%;
   }
-
-  .inputs {
-    transform: translate(6%, -450%);
+  .clock {
+    transform: translateY(70%);
   }
 }
 
 @media screen and (max-width: 280px) {
-  .inputs {
-    transform: translate(6%, -300%);
-  }
-
   .clock-controls {
-    bottom: 25%;
-    width: 100%;
+    bottom: 40%;
   }
 
   .clock_face {
     width: 10rem;
     height: 10rem;
-  }
-}
-@media screen and (max-width: 278px) {
-  .inputs {
-    transform: translate(6%, -230%);
   }
 }
