@@ -157,6 +157,7 @@
     width: 80%;
     min-height: 55vh;
     border-collapse: collapse;
+    user-select: none;
   }
 
   td{
