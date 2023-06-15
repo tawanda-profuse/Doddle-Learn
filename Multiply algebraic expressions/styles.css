@@ -26,7 +26,6 @@
     border-style: none;
     position: relative;
     margin: 0;
-    padding: 0 0 20px 0;
     min-height: 100vh;
   }
   
@@ -66,7 +65,7 @@
   
   .interface {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
   
   /* Help text */
@@ -85,7 +84,7 @@
     position: absolute;
     z-index: 1;
     bottom: 150%;
-    right: 15%;
+    left: 15%;
     margin-right: -55px;
     opacity: 0;
     transition: opacity 0.3s;
@@ -98,7 +97,7 @@
     content: "";
     position: absolute;
     top: 100%;
-    right: 15%;
+    left: 15%;
     margin-right: -3px;
     border-width: 15px;
     border-style: solid;
@@ -153,4 +152,43 @@
   }
   
   /* Content_________________________________________________________________ */
+  table{
+    margin: auto;
+    width: 80%;
+    min-height: 55vh;
+    border-collapse: collapse;
+  }
+
+  td{
+    border: 0.2rem solid green;
+    text-align: center;
+    width: 20%;
+    height: 10%;
+    color: navy;
+    font-size: 2rem;
+  }
+
+  @media screen and (width < 630px) {
+    td{
+        font-size: 1rem;
+    }
+  }
   
+  @media screen and (width < 375) {
+    td{
+        font-size: 0.5rem;
+    }
+  }
+
+  td:hover {
+    color: goldenrod;
+    cursor: pointer;
+  }
+
+  td:nth-child(1) {
+      background-color: aquamarine;
+  }
+
+  tr:nth-child(1){
+    background-color: aquamarine;
+  }

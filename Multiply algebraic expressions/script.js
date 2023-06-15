@@ -18,9 +18,4 @@ function check() {
 function solve() {
     console.log('solve initiated');
 }
-
-startButton.addEventListener("click", function () {
-    startPanel.style.display = 'none';
-    startButton.style.display = 'none';
-})
 // Bespoke functions_____________________________________
