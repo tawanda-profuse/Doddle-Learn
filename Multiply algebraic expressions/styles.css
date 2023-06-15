@@ -161,11 +161,13 @@
 
   td{
     border: 0.2rem solid green;
+    background-color: white;
     text-align: center;
     width: 20%;
     height: 10%;
     color: navy;
     font-size: 2rem;
+    text-transform: lowercase;
   }
 
   @media screen and (width < 630px) {
