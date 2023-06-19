@@ -52,7 +52,7 @@
     margin-left: 10px;
     margin-top: 10px;
     transition: 0.1s;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     box-shadow: 3px 3px 3px 3px black;
   }
   
@@ -113,7 +113,7 @@
     border-radius: 10px;
     padding: 50px 50px 25px 50px;
     margin: 5px auto;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
   }
   
   .startPanel {
@@ -165,7 +165,6 @@
 
   td{
     border: 0.2rem solid green;
-    background-color: white;
     text-align: center;
     width: 20%;
     height: 16%;
