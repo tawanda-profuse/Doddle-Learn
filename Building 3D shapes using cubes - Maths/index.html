@@ -83,15 +83,15 @@
                 </div>
             </div>
             <div class="interface">
-                <!-- Optional buttons that can be removed -->
-                <button onmouseover="hideHelp()" onmouseout="hideHelp()" type="button" name="button" title="Help"><i
-                        class="fas fa-question"></i></button>
-                <button onclick="resetAll()" type="button" name="button" title="Reset"><i
-                        class="fas fa-rotate-left"></i></button>
+                <div class="tooltip">
+                    <button type="button" name="button" title="Help" id="helpButton">
+                      <span class="tooltiptext" id="myToolTip">
+                        <p>Click within the grey area to create a new brick. Use the palette below to choose the colour of the bricks you add. Choose the rubber to delete bricks when you click them. Use the controller arrows to rotate the bricks in the space.</p>
+                      </span><i class="fas fa-question"></i>
+                    </button>
+                  </div>
+                  <button type="button" name="button" title="Reset" id="resetButton"><i class="fas fa-rotate-left"></i></button>
             </div>
-        </div>
-        <div class="help-text" id="help-text" style="display:none">
-            <p>Click within the grey area to create a new brick. Use the palette below to choose the colour of the bricks you add. Choose the rubber to delete bricks when you click them. Use the controller arrows to rotate the bricks in the space.</p>
         </div>
     </div>
     <script src="script.js"></script>

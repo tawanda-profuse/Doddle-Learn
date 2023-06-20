@@ -4,15 +4,6 @@ var solveButton = document.getElementById('solveButton');
 var startButton = document.getElementById('startButton');
 var startPanel = document.getElementById('startPanel');
 
-function hideHelp() {
-    var x = document.getElementById("help-text");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
-
 function resetAll() {
     window.location.reload();
     // window.location.href = "";
@@ -32,7 +23,6 @@ function start() {
     startButton.style.display = 'none';
 }
 // Bespoke functions_____________________________________
-
 var cube = document.querySelector('.cube'); // The original cube
 var playGround = document.querySelector('.play-ground'); // The grand-parent container
 var container = document.querySelector('.container'); // the parent container
