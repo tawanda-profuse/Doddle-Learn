@@ -1,100 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Building 3D Shapes Using Cubes</title>
-    <link rel="shortcut icon" href="images/cube-logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome Link: -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Building 3D Shapes Using Cubes</title>
+	<link rel="shortcut icon" href="images/cube-logo.png" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+	<!-- Font Awesome Link: -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+	<link rel="shortcut icon" href="images/" type="image/x-icon">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
-    <div class="main">
-        <div class="content">
-            <div class="screen">
-                <h1 class="heading" id="myHeading">Building 3D Shapes Using Cubes.</h1>
-                <div class="play-ground">
-                    <input id="front" name="transforms" type="radio" value="front" checked>
-                    <label for="front" title="Rotate forwards"><i class="fas fa-rotate-forward"></i></label>
+	<div class="main">
+		<div class="content">
+			<div class="screen">
+				<h1 class="heading" id="myHeading">Building 3D Shapes Using Cubes</h1>
+				<div id="monitor">
+					<canvas id="canvas">HTML5 CANVAS</canvas>
+					<div class="checkboxSquared">
+						<input type="checkbox" id="green"><label for="green"></label>
+						<span style="color: green;"><i class="fas fa-paint-brush"></i></span>
+					</div>
+					<div class="checkboxSquared">
+						<input type="checkbox" id="red"><label for="red"></label>
+						<span style="color: red;"><i class="fas fa-paint-brush"></i></span>
+					</div>
+					<div class="checkboxSquared">
+						<input type="checkbox" id="purple"><label for="purple"></label>
+						<span style="color: purple;"><i class="fas fa-paint-brush"></i></span>
+					</div>
+					<div class="checkboxSquared">
+						<input type="checkbox" id="destroy"><label for="destroy" title="Toggle to remove cube"></label>
+						<span><i class="fas fa-trash"></i></span>
+					</div>
+					<div class="checkboxSquared">
+						<input type="checkbox" id="blue"><label for="blue"></label>
+						<span style="color: blue;"><i class="fas fa-paint-brush"></i></span>
+					</div>
+				</div>
+			</div>
+			<div class="interface">
+				<div class="tooltip">
+					<button type="button" name="button" title="Help" id="helpButton">
+						<span class="tooltiptext" id="myToolTip">
+							Click a cube to attach another to it. Use the palette to choose the colour of the bricks.
+							Choose the dustbin icon to delete bricks when you click them (Make sure to uncheck it to start adding more cubes). To rotate the shape in space,
+							use the following
+							controls:
+							<ol>
+								<li><strong>Click and drag</strong> → rotate X, Y axis</li>
+								<li><strong>Mouse wheel</strong> → rotate Z axis</li>
+								<!-- <li>click → create cube</li> -->
+							</ol>
+						</span><i class="fas fa-question"></i>
+					</button>
+				</div>
+				<button type="button" name="button" title="Reset" id="resetButton"><i
+						class="fas fa-rotate-left"></i></button>
+			</div>
+		</div>
+	</div>
+	<script src="script.js"></script>
 
-                    <input id="right" name="transforms" type="radio" value="right">
-                    <label for="right" title="Rotate left"><i class="fas fa-arrow-left"></i></label>
-
-                    <input id="top" name="transforms" type="radio" value="top">
-                    <label for="top" title="Rotate downwards"><i class="fas fa-arrow-down"></i></label>
-
-                    <input id="bottom" name="transforms" type="radio" value="bottom">
-                    <label for="bottom" title="Rotate upwards"><i class="fas fa-arrow-up"></i></label>
-
-                    <input id="back" name="transforms" type="radio" value="back">
-                    <label for="back" title="Rotate backwards"><i class="fas fa-rotate-backward"></i></label>
-
-                    <input id="left" name="transforms" type="radio" value="left">
-                    <label for="left" title="Rotate right"><i class="fas fa-arrow-right"></i></label>
-                    <div class="container">
-                        <figure class="cube">
-                            <div class="front"><i class="fas fa-circle"></i></div>
-                            <div class="left"><i class="fas fa-circle"></i></div>
-                            <div class="right"><i class="fas fa-circle"></i></div>
-                            <div class="top"><i class="fas fa-circle"></i></div>
-                            <div class="bottom"><i class="fas fa-circle"></i></div>
-                            <div class="back"><i class="fas fa-circle"></i></div>
-                        </figure>
-                    </div>
-                    <div class="color-palette" data-color="gray">
-                        <div class="gray">
-                            <input type="checkbox" name="#444444" id="color-gray" checked>
-                            <label title="Gray" for="color-gray"><i class="fas fa-paint-brush"></i></label>
-                        </div>
-                        <div class="purple">
-                            <input type="checkbox" name="purple" id="color-purple">
-                            <label title="Purple" for="color-purple"><i class="fas fa-paint-brush"></i></label>
-                        </div>
-                        <div class="yellow">
-                            <input type="checkbox" name="yellow" id="color-yellow">
-                            <label title="Yellow" for="color-yellow"><i class="fas fa-paint-brush"></i></label>
-                        </div>
-                        <div class="blue">
-                            <input type="checkbox" name="blue" id="color-blue">
-                            <label title="Blue" for="color-blue"><i class="fas fa-paint-brush"></i></label>
-                        </div>
-                        <div class="green">
-                            <input type="checkbox" name="green" id="color-green">
-                            <label title="Green" for="color-green"><i class="fas fa-paint-brush"></i></label>
-                        </div>
-                        <div class="red">
-                            <input type="checkbox" name="red" id="color-red">
-                            <label title="Red" for="color-red"><i class="fas fa-paint-brush"></i></label>
-                        </div>
-                        <div class="white">
-                            <input type="checkbox" name="white" id="color-white">
-                            <label title="White" for="color-white"><i class="fas fa-paint-brush"></i></label>
-                        </div>
-                        <div class="eraser">
-                            <input type="checkbox" name="eraser" id="eraser">
-                            <label title="Remove cube" for="eraser"><i class="fas fa-eraser"></i></label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="interface">
-                <div class="tooltip">
-                    <button type="button" name="button" title="Help" id="helpButton">
-                      <span class="tooltiptext" id="myToolTip">
-                        <p>Click within the grey area to create a new brick. Use the palette below to choose the colour of the bricks you add. Choose the rubber to delete bricks when you click them. Use the controller arrows to rotate the bricks in the space.</p>
-                      </span><i class="fas fa-question"></i>
-                    </button>
-                  </div>
-                  <button type="button" name="button" title="Reset" id="resetButton"><i class="fas fa-rotate-left"></i></button>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
 </body>
 
 </html>
