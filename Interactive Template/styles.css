@@ -53,7 +53,6 @@ html {
   margin-left: 10px;
   margin-top: 10px;
   transition: 0.1s;
-  text-transform: capitalize;
   box-shadow: 3px 3px 3px 3px black;
 }
 
@@ -102,7 +101,7 @@ html {
   margin-right: -3px;
   border-width: 15px;
   border-style: solid;
-  border-color: var(--doddle-gray) transparent transparent transparent;
+  border-color: var(--doddle-white) transparent transparent transparent;
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
@@ -114,7 +113,6 @@ html {
   border-radius: 10px;
   padding: 50px 50px 25px 50px;
   margin: 5px auto;
-  text-transform: capitalize;
 }
 
 .startPanel {
