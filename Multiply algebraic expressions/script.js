@@ -125,7 +125,11 @@ window.addEventListener('load', function () {
             ]
             let product1 = multiplier * multiplicand1
             let product2 = multiplier * multiplicand2
-            targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
+                targetElement.preventDefault();
+            } else {
+                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            }
             targetElement.dataset.show = true
         } else {
             targetElement.innerHTML = ''
@@ -227,7 +231,11 @@ window.addEventListener('load', function () {
             ]
             let product1 = multiplier * multiplicand1
             let product2 = multiplier * multiplicand2
-            targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
+                targetElement.preventDefault();
+            } else {
+                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            }
             targetElement.dataset.show = true
         } else {
             targetElement.innerHTML = ''
@@ -329,7 +337,11 @@ window.addEventListener('load', function () {
             ]
             let product1 = multiplier * multiplicand1
             let product2 = multiplier * multiplicand2
-            targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
+                targetElement.preventDefault();
+            } else {
+                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            }
             targetElement.dataset.show = true
         } else {
             targetElement.innerHTML = ''
@@ -431,7 +443,11 @@ window.addEventListener('load', function () {
             ]
             let product1 = multiplier * multiplicand1
             let product2 = multiplier * multiplicand2
-            targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
+                targetElement.preventDefault();
+            } else {
+                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            }
             targetElement.dataset.show = true
         } else {
             targetElement.innerHTML = ''
@@ -533,7 +549,11 @@ window.addEventListener('load', function () {
             ]
             let product1 = multiplier * multiplicand1
             let product2 = multiplier * multiplicand2
-            targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
+                targetElement.preventDefault();
+            } else {
+                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            }
             targetElement.dataset.show = true
         } else {
             targetElement.innerHTML = ''
@@ -635,7 +655,11 @@ window.addEventListener('load', function () {
             ]
             let product1 = multiplier * multiplicand1
             let product2 = multiplier * multiplicand2
-            targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
+                targetElement.preventDefault();
+            } else {
+                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            }
             targetElement.dataset.show = true
         } else {
             targetElement.innerHTML = ''
@@ -737,7 +761,11 @@ window.addEventListener('load', function () {
             ]
             let product1 = multiplier * multiplicand1
             let product2 = multiplier * multiplicand2
-            targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
+                targetElement.preventDefault();
+            } else {
+                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            }
             targetElement.dataset.show = true
         } else {
             targetElement.innerHTML = ''
@@ -839,7 +867,11 @@ window.addEventListener('load', function () {
             ]
             let product1 = multiplier * multiplicand1
             let product2 = multiplier * multiplicand2
-            targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
+                targetElement.preventDefault();
+            } else {
+                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            }
             targetElement.dataset.show = true
         } else {
             targetElement.innerHTML = ''
@@ -941,7 +973,11 @@ window.addEventListener('load', function () {
             ]
             let product1 = multiplier * multiplicand1
             let product2 = multiplier * multiplicand2
-            targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
+                targetElement.preventDefault();
+            } else {
+                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            }
             targetElement.dataset.show = true
         } else {
             targetElement.innerHTML = ''
@@ -1043,7 +1079,11 @@ window.addEventListener('load', function () {
             ]
             let product1 = multiplier * multiplicand1
             let product2 = multiplier * multiplicand2
-            targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
+                targetElement.preventDefault();
+            } else {
+                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            }
             targetElement.dataset.show = true
         } else {
             targetElement.innerHTML = ''
@@ -1145,7 +1185,11 @@ window.addEventListener('load', function () {
             ]
             let product1 = multiplier * multiplicand1
             let product2 = multiplier * multiplicand2
-            targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
+                targetElement.preventDefault();
+            } else {
+                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            }
             targetElement.dataset.show = true
         } else {
             targetElement.innerHTML = ''
@@ -1247,7 +1291,11 @@ window.addEventListener('load', function () {
             ]
             let product1 = multiplier * multiplicand1
             let product2 = multiplier * multiplicand2
-            targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
+                targetElement.preventDefault();
+            } else {
+                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            }
             targetElement.dataset.show = true
         } else {
             targetElement.innerHTML = ''
@@ -1349,7 +1397,11 @@ window.addEventListener('load', function () {
             ]
             let product1 = multiplier * multiplicand1
             let product2 = multiplier * multiplicand2
-            targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
+                targetElement.preventDefault();
+            } else {
+                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            }
             targetElement.dataset.show = true
         } else {
             targetElement.innerHTML = ''
@@ -1451,7 +1503,11 @@ window.addEventListener('load', function () {
             ]
             let product1 = multiplier * multiplicand1
             let product2 = multiplier * multiplicand2
-            targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
+                targetElement.preventDefault();
+            } else {
+                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            }
             targetElement.dataset.show = true
         } else {
             targetElement.innerHTML = ''
@@ -1553,7 +1609,12 @@ window.addEventListener('load', function () {
             ]
             let product1 = multiplier * multiplicand1
             let product2 = multiplier * multiplicand2
-            targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            
+            if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
+                targetElement.preventDefault();
+            } else {
+                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+            }
             targetElement.dataset.show = true
         } else {
             targetElement.innerHTML = ''
