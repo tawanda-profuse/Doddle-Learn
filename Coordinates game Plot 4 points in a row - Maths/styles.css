@@ -1,0 +1,409 @@
+:root {
+    /* Global variables */
+    --doddle-gray: #444444;
+    --doddle-font: "Roboto", sans-serif;
+    --doddle-orange: #ff6600;
+    --doddle-white: #ffffff;
+}
+
+/* * {
+    box-sizing: border-box;
+  } */
+
+body {
+    color: var(--doddle-gray);
+    font-family: var(--doddle-font);
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+.main {
+    background-color: var(--doddle-gray);
+    border-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0 0 20px 0;
+    min-height: 100vh;
+}
+
+.content {
+    text-align: center;
+    position: relative;
+    padding: 10px;
+}
+
+.interface button i {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.interface button {
+    background-color: var(--doddle-orange);
+    border-radius: 10px;
+    border-style: none;
+    color: var(--doddle-white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 80px;
+    height: 50px;
+    margin-left: 10px;
+    margin-top: 10px;
+    transition: 0.1s;
+    box-shadow: 3px 3px 3px 3px black;
+}
+
+.interface button:hover {
+    background-color: var(--doddle-gray);
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 0px;
+    border: 1px solid black;
+}
+
+.interface {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Help text */
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 40vw;
+    background-color: var(--doddle-white);
+    border: 2px solid var(--doddle-gray);
+    color: var(--doddle-orange);
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 15%;
+    margin-right: -55px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 5px 5px 5px 5px black;
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-family: var(--doddle-font);
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 15%;
+    margin-right: -3px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: var(--doddle-white) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.screen {
+    background-color: var(--doddle-white);
+    border-radius: 10px;
+    padding: 50px 50px 25px 50px;
+    margin: 5px auto;
+}
+
+.startPanel {
+    background-color: var(--doddle-white);
+    border-radius: 5px;
+    border-color: var(--doddle-gray);
+    border-width: 3px;
+    border-style: solid;
+    font-size: 1.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 100px;
+    min-width: 40%;
+    box-shadow: 10px 10px 10px 0px black;
+}
+
+.startPanel p {
+    margin: 100px;
+}
+
+.intro img {
+    width: 600px;
+}
+
+.heading {
+    color: var(--doddle-gray);
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+}
+
+.intro,
+.startPanel {
+    position: absolute;
+}
+
+/* Content_________________________________________________________________ */
+.game-area {
+    border: 1rem solid navy;
+    border-radius: 0.625rem;
+    padding: 0.625rem 3.125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.controls {
+    width: 50%;
+}
+
+@media screen and (max-width: 1150px) {
+    .game-area {
+        flex-direction: column;
+    }
+
+    .controls {
+        margin-top: 3.125rem;
+    }
+
+    .cartesian-plate {
+        margin-top: 3.125rem;
+    }
+}
+
+/* First Control */
+.first,
+.second {
+    border: 0.5rem solid red;
+    display: flex;
+    padding: 0.625em;
+    font-size: 16px;
+    width: 60%;
+}
+
+.left-bracket,
+.right-bracket,
+.comma {
+    align-self: center;
+    font-size: 5em;
+    color: navy;
+    font-family: Arial, Helvetica, serif;
+    user-select: none;
+}
+
+.number {
+    user-select: none;
+    align-self: center;
+    font-size: 3em;
+    font-weight: bold;
+    color: navy;
+    background-color: yellow;
+    padding: 0;
+    border-left: 0.125rem solid navy;
+    border-right: 0.125rem solid navy;
+}
+
+.up-arrow,
+.down-arrow {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 0;
+    width: 6.25rem;
+    background-color: greenyellow;
+    color: navy;
+    border: 0.125rem solid navy;
+    transition: 0.1s ease;
+}
+
+.up-arrow {
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.down-arrow {
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.up-arrow:hover,
+.down-arrow:hover {
+    border-radius: 0.5rem;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.red_ball,
+.blue_ball {
+    font-size: 5em;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    align-self: center;
+    color: red;
+    border: none;
+    transition: 0.1s ease;
+    background-color: transparent;
+    position: relative;
+}
+
+.red_ball:hover,
+.blue_ball:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transform: translateX(5%);
+}
+
+/* Second Control */
+.second {
+    border-color: blue;
+    /* margin-top: 20px; */
+    margin-top: 1.25rem;
+}
+
+.blue_ball {
+    color: blue;
+}
+
+/* Grid for plotting points */
+.y-axis,
+.x-axis {
+    position: absolute;
+    z-index: 9;
+    left: 42%;
+}
+
+.y-axis::before {
+    content: '';
+    padding: 15px;
+    position: absolute;
+    left: 70%;
+    top: -2%;
+    height: 88%;
+    background-image: url(images/y-axis.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.y-axis p {
+    margin-top: -15px;
+    padding: 0;
+    margin-bottom: 32px;
+    font-size: 1.8em;
+    color: navy;
+    font-weight: bold;
+    user-select: none;
+}
+
+.y-axis p:nth-child(6) {
+    color: red;
+    z-index: 14;
+}
+
+.y-axis span {
+    position: absolute;
+    left: 200%;
+    top: 0;
+    font-size: 2em;
+    color: navy;
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.x-axis {
+    margin-top: 52%;
+    left: -4%;
+    user-select: none;
+}
+
+.x-axis::before {
+    content: '';
+    padding: 15px;
+    position: absolute;
+    left: -2%;
+    top: -40%;
+    width: 100%;
+    background-image: url(images/x-axis.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.x-axis span {
+    font-size: 1.8em;
+    color: navy;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.x-axis p {
+    position: absolute;
+    right: 0;
+    font-size: 2em;
+    color: navy;
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    bottom: 50%;
+}
+
+.x-axis span:nth-child(5) {
+    margin-right: 0;
+    margin-left: 58px;
+}
+
+.x-axis span:nth-child(6) {
+    margin-right: 0;
+    margin-left: 28px;
+}
+
+.x-axis span:nth-child(7) {
+    margin-right: 0;
+    margin-left: 30px;
+}
+
+.x-axis span:nth-child(8) {
+    margin-right: 0;
+    margin-left: 25px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 4vw);
+    width: 32vw;
+    margin: auto;
+    position: relative;
+}
+
+.cell {
+    border: 0.0625rem solid green;
+    background-color: aquamarine;
+    width: 4vw;
+    height: 4vw;
+}
+
+.plot-red{
+    border-radius: 50%;
+    background-color: red;
+    width: 1.875em;
+    height: 1.875em;
+    position: absolute;
+    z-index: 20;
+}
+
+.plot-blue {
+    border-radius: 50%;
+    background-color: blue;
+    width: 1.875em;
+    height: 1.875em;
+    position: absolute;
+    z-index: 20;
+}

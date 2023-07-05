@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordinates Game</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome Link: -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="images/" type="image/x-icon" />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="content">
+        <div class="screen">
+          <h1 class="heading" id="myHeading">Coordinates Game</h1>
+          <div class="game-area">
+            <div class="controls">
+              <!-- First control -->
+              <div class="first">
+                <div class="left-bracket">(</div>
+                <div class="left-controls">
+                  <button class="up-arrow">
+                    <i class="fas fa-arrow-up"></i>
+                  </button>
+                  <div class="number">0</div>
+                  <button class="down-arrow">
+                    <i class="fas fa-arrow-down"></i>
+                  </button>
+                </div>
+                <div class="comma">,</div>
+                <div class="right-controls">
+                  <button class="up-arrow">
+                    <i class="fas fa-arrow-up"></i>
+                  </button>
+                  <div class="number">0</div>
+                  <button class="down-arrow">
+                    <i class="fas fa-arrow-down"></i>
+                  </button>
+                </div>
+                <div class="right-bracket">)</div>
+                <button class="red_ball"><i class="fas fa-circle"></i></button>
+              </div>
+              <!-- Second control -->
+              <div class="second">
+                <div class="left-bracket">(</div>
+                <div class="left-controls">
+                  <button class="up-arrow">
+                    <i class="fas fa-arrow-up"></i>
+                  </button>
+                  <div class="number">0</div>
+                  <button class="down-arrow">
+                    <i class="fas fa-arrow-down"></i>
+                  </button>
+                </div>
+                <div class="comma">,</div>
+                <div class="right-controls">
+                  <button class="up-arrow">
+                    <i class="fas fa-arrow-up"></i>
+                  </button>
+                  <div class="number">0</div>
+                  <button class="down-arrow">
+                    <i class="fas fa-arrow-down"></i>
+                  </button>
+                </div>
+                <div class="right-bracket">)</div>
+                <button class="blue_ball"><i class="fas fa-circle"></i></button>
+              </div>
+            </div>
+            <div class="cartesian-plate">
+              <div class="grid">
+                <div class="y-axis">
+                    <span>y</span>
+                    <p>4</p>
+                    <p>3</p>
+                    <p>2</p>
+                    <p>1</p>
+                    <p>0</p>
+                    <p>-1</p>
+                    <p>-2</p>
+                    <p>-3</p>
+                    <p>-4</p>
+                </div>
+                <div class="x-axis">
+                    <span>-4</span>
+                    <span>-3</span>
+                    <span>-2</span>
+                    <span>-1</span>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <p>x</p>
+                </div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+              </div>
+              <div class="grid">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+              </div>
+              <div class="grid">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+              </div>
+              <div class="grid">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+              </div>
+              <div class="grid">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+              </div>
+              <div class="grid">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+              </div>
+              <div class="grid">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+              </div>
+              <div class="grid">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="interface">
+          <div class="tooltip">
+            <button type="button" name="button" title="Help" id="helpButton">
+              <span class="tooltiptext" id="myToolTip">
+                Use the scroll arrows to set the coordinates of the point to
+                plot, then press the coloured ball to plot the point. Press
+                reset for a new game.
+              </span>
+              <i class="fas fa-question"></i>
+            </button>
+          </div>
+          <button type="button" name="button" title="Reset" id="resetButton">
+            <i class="fas fa-rotate-left"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
