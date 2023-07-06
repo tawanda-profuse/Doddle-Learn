@@ -157,15 +157,18 @@ html {
 .game-area {
     border: 1rem solid navy;
     border-radius: 0.625rem;
-    padding: 0.625rem 3.125rem;
+    padding: 1.1rem 3.125rem;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     margin: auto;
 }
 
 .controls {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media screen and (max-width: 1150px) {
@@ -184,12 +187,25 @@ html {
 
 /* First Control */
 .first,
-.second {
+.second,
+.display-message {
     border: 0.5rem solid red;
     display: flex;
     padding: 0.625em;
     font-size: 16px;
     width: 60%;
+    height: 20vh;
+}
+
+.display-message {
+    border-color: navy;
+    border-radius: 0.625rem;
+    visibility: hidden;
+    margin-bottom: 1.5rem;
+    font-size: 2em;
+    text-align: left;
+    color: navy;
+    transition: all 0.3s ease;
 }
 
 .left-bracket,
@@ -203,9 +219,9 @@ html {
 }
 
 .number {
+    font-size: 2em;
     user-select: none;
     align-self: center;
-    font-size: 3em;
     font-weight: bold;
     color: navy;
     background-color: yellow;
@@ -216,7 +232,7 @@ html {
 
 .up-arrow,
 .down-arrow {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
     padding: 0;
     width: 6.25rem;
@@ -283,12 +299,11 @@ html {
 
 .y-axis::before {
     content: '';
-    padding: 15px;
     position: absolute;
-    left: 70%;
-    top: -2%;
-    height: 88%;
-    background-image: url(images/y-axis.png);
+    left: 100%;
+    height: 90%;
+    width: 5px;
+    background: navy;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -303,12 +318,13 @@ html {
     user-select: none;
 }
 
-.y-axis p:nth-child(6) {
+.y-axis p:nth-child(7) {
     color: red;
     z-index: 14;
 }
 
 .y-axis span {
+    user-select: none;
     position: absolute;
     left: 200%;
     top: 0;
@@ -319,6 +335,20 @@ html {
     font-family: 'Times New Roman', Times, serif;
 }
 
+.y-pic-1 {
+    position: absolute;
+    top: -4%;
+    user-select: none;
+}
+
+.y-pic-2 {
+    user-select: none;
+    position: absolute;
+    bottom: 6%;
+    left: 60%;
+    transform: rotate(180deg);
+}
+
 .x-axis {
     margin-top: 52%;
     left: -4%;
@@ -327,14 +357,20 @@ html {
 
 .x-axis::before {
     content: '';
-    padding: 15px;
     position: absolute;
-    left: -2%;
-    top: -40%;
-    width: 100%;
-    background-image: url(images/x-axis.png);
+    left: 4%;
+    top: -24%;
+    width: 97%;
+    height: 5px;
+    background: navy;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+@media screen and (max-width: 1279px) {
+    .x-axis {
+        margin-left: -3px;
+    }
 }
 
 .x-axis span {
@@ -342,6 +378,7 @@ html {
     color: navy;
     font-weight: bold;
     margin-right: 20px;
+    user-select: none;
 }
 
 .x-axis p {
@@ -355,31 +392,51 @@ html {
     bottom: 50%;
 }
 
-.x-axis span:nth-child(5) {
+.x-axis span:nth-child(6) {
     margin-right: 0;
     margin-left: 58px;
 }
 
-.x-axis span:nth-child(6) {
+.x-axis span:nth-child(7) {
     margin-right: 0;
     margin-left: 28px;
 }
 
-.x-axis span:nth-child(7) {
+.x-axis span:nth-child(8) {
     margin-right: 0;
     margin-left: 30px;
 }
 
-.x-axis span:nth-child(8) {
+.x-axis span:nth-child(9) {
     margin-right: 0;
     margin-left: 25px;
+}
+
+.one-pic {
+    position: absolute;
+    transform: rotate(-90deg);
+    top: -40%;
+    left: -2%;
+}
+
+.two-pic {
+    position: absolute;
+    transform: rotate(90deg);
+    top: -40%;
+    right: -6%;
+}
+
+.cartesian-plate {
+    width: 50%;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, 4vw);
     width: 32vw;
-    margin: auto;
+    /* width: 100%; */
+    height: auto;
+    margin: 0 auto;
     position: relative;
 }
 
@@ -390,7 +447,7 @@ html {
     height: 4vw;
 }
 
-.plot-red{
+.plot-red {
     border-radius: 50%;
     background-color: red;
     width: 1.875em;
