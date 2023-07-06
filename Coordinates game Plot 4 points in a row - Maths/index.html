@@ -17,193 +17,117 @@
   <body>
     <div class="main">
       <div class="content">
-        <div class="screen">
-          <h1 class="heading" id="myHeading">Coordinates Game</h1>
-          <div class="game-area">
-            <div class="controls">
-              <!-- Display Message -->
-              <div class="display-message">
-                The red team has blown it! Well done to the blues.
+          <div class="screen">
+              <h1 class="heading" id="myHeading">Coordinates Game</h1>
+              <div class="game-area">
+                  <div class="controls">
+                      <!-- Display Message -->
+                      <div class="display-message">
+                          
+                      </div>
+                      <!-- First control -->
+                      <div class="first">
+                          <div class="left-bracket">(</div>
+                          <div class="left-controls">
+                              <button class="up-arrow">
+                                  <i class="fas fa-arrow-up"></i>
+                              </button>
+                              <div class="number">0</div>
+                              <button class="down-arrow">
+                                  <i class="fas fa-arrow-down"></i>
+                              </button>
+                          </div>
+                          <div class="comma">,</div>
+                          <div class="right-controls">
+                              <button class="up-arrow">
+                                  <i class="fas fa-arrow-up"></i>
+                              </button>
+                              <div class="number">0</div>
+                              <button class="down-arrow">
+                                  <i class="fas fa-arrow-down"></i>
+                              </button>
+                          </div>
+                          <div class="right-bracket">)</div>
+                          <button class="red_ball"><i class="fas fa-circle"></i></button>
+                      </div>
+                      <!-- Second control -->
+                      <div class="second">
+                          <div class="left-bracket">(</div>
+                          <div class="left-controls">
+                              <button class="up-arrow">
+                                  <i class="fas fa-arrow-up"></i>
+                              </button>
+                              <div class="number">0</div>
+                              <button class="down-arrow">
+                                  <i class="fas fa-arrow-down"></i>
+                              </button>
+                          </div>
+                          <div class="comma">,</div>
+                          <div class="right-controls">
+                              <button class="up-arrow">
+                                  <i class="fas fa-arrow-up"></i>
+                              </button>
+                              <div class="number">0</div>
+                              <button class="down-arrow">
+                                  <i class="fas fa-arrow-down"></i>
+                              </button>
+                          </div>
+                          <div class="right-bracket">)</div>
+                          <button class="blue_ball"><i class="fas fa-circle"></i></button>
+                      </div>
+                  </div>
+                  <div class="cartesian-plate">
+                      <!-- <div class="axis" id="axis_x-3" style="--c: 10; --cx: 5; --cy: 12; --dsize: 6;"> -->
+                      <div class="axis" id="axis_x-3" style="--c: 8; --cx: 5; --cy: 12; --dsize: 6">
+                          <div class="y-axis">
+                              <img class="y-pic-1" src="images/arrow.png" alt="">
+                              <span>y</span>
+                              <p>4</p>
+                              <p>3</p>
+                              <p>2</p>
+                              <p>1</p>
+                              <p>0</p>
+                              <p>-1</p>
+                              <p>-2</p>
+                              <p>-3</p>
+                              <p>-4</p>
+                              <img class="y-pic-2" src="images/arrow.png" alt="">
+                          </div>
+                          <div class="x-axis">    
+                              <img class="x-pic-1" src="images/arrow.png" alt="">
+                              <span>-4</span>
+                              <span>-3</span>
+                              <span>-2</span>
+                              <span>-1</span>
+                              <span>0</span>
+                              <span>1</span>
+                              <span>2</span>
+                              <span>3</span>
+                              <span>4</span>
+                              <p>x</p>
+                              <img class="x-pic-2" src="images/arrow.png" alt="">
+                          </div>
+                      </div>
+                  </div>
               </div>
-              <!-- First control -->
-              <div class="first">
-                <div class="left-bracket">(</div>
-                <div class="left-controls">
-                  <button class="up-arrow">
-                    <i class="fas fa-arrow-up"></i>
-                  </button>
-                  <div class="number">0</div>
-                  <button class="down-arrow">
-                    <i class="fas fa-arrow-down"></i>
-                  </button>
-                </div>
-                <div class="comma">,</div>
-                <div class="right-controls">
-                  <button class="up-arrow">
-                    <i class="fas fa-arrow-up"></i>
-                  </button>
-                  <div class="number">0</div>
-                  <button class="down-arrow">
-                    <i class="fas fa-arrow-down"></i>
-                  </button>
-                </div>
-                <div class="right-bracket">)</div>
-                <button class="red_ball"><i class="fas fa-circle"></i></button>
-              </div>
-              <!-- Second control -->
-              <div class="second">
-                <div class="left-bracket">(</div>
-                <div class="left-controls">
-                  <button class="up-arrow">
-                    <i class="fas fa-arrow-up"></i>
-                  </button>
-                  <div class="number">0</div>
-                  <button class="down-arrow">
-                    <i class="fas fa-arrow-down"></i>
-                  </button>
-                </div>
-                <div class="comma">,</div>
-                <div class="right-controls">
-                  <button class="up-arrow">
-                    <i class="fas fa-arrow-up"></i>
-                  </button>
-                  <div class="number">0</div>
-                  <button class="down-arrow">
-                    <i class="fas fa-arrow-down"></i>
-                  </button>
-                </div>
-                <div class="right-bracket">)</div>
-                <button class="blue_ball"><i class="fas fa-circle"></i></button>
-              </div>
-            </div>
-            <div class="cartesian-plate">
-              <div class="grid">
-                <div class="y-axis">
-                    <img class="y-pic-1" src="images/arrow.png" alt="">
-                    <span>y</span>
-                    <p>4</p>
-                    <p>3</p>
-                    <p>2</p>
-                    <p>1</p>
-                    <p>0</p>
-                    <p>-1</p>
-                    <p>-2</p>
-                    <p>-3</p>
-                    <p>-4</p>
-                    <img class="y-pic-2" src="images/arrow.png" alt="">
-                </div>
-                <div class="x-axis">    
-                    <img class="one-pic" src="images/arrow.png" alt="">
-                    <span>-4</span>
-                    <span>-3</span>
-                    <span>-2</span>
-                    <span>-1</span>
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <p>x</p>
-                    <img class="two-pic" src="images/arrow.png" alt="">
-                </div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-              </div>
-              <div class="grid">
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-              </div>
-              <div class="grid">
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-              </div>
-              <div class="grid">
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-              </div>
-              <div class="grid">
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-              </div>
-              <div class="grid">
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-              </div>
-              <div class="grid">
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-              </div>
-              <div class="grid">
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-              </div>
-            </div>
           </div>
-        </div>
-        <div class="interface">
-          <div class="tooltip">
-            <button type="button" name="button" title="Help" id="helpButton">
-              <span class="tooltiptext" id="myToolTip">
-                Use the scroll arrows to set the coordinates of the point to
-                plot, then press the coloured ball to plot the point. Press
-                reset for a new game.
-              </span>
-              <i class="fas fa-question"></i>
-            </button>
+          <div class="interface">
+              <div class="tooltip">
+                  <button type="button" name="button" title="Help" id="helpButton">
+                      <span class="tooltiptext" id="myToolTip">
+                          Use the scroll arrows to set the coordinates of the point to
+                          plot, then press the coloured ball to plot the point. Press
+                          reset for a new game.
+                      </span>
+                      <i class="fas fa-question"></i>
+                  </button>
+              </div>
+              <button type="button" name="button" title="Reset" id="resetButton">
+                  <i class="fas fa-rotate-left"></i>
+              </button>
           </div>
-          <button type="button" name="button" title="Reset" id="resetButton">
-            <i class="fas fa-rotate-left"></i>
-          </button>
-        </div>
       </div>
-    </div>
+  </div>
     <script src="script.js"></script>
   </body>
 </html>

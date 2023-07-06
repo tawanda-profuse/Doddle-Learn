@@ -7,7 +7,6 @@ var startPanel = document.getElementById('startPanel');
 
 resetButton.addEventListener("click", function () {
     window.location.reload();
-    // window.location.href = "";
     return false;
 })
 
@@ -22,43 +21,46 @@ function solve() {
 var redBall = document.querySelector(".red_ball");
 var blueBall = document.querySelector(".blue_ball");
 var CP = document.querySelector(".cartesian-plate");
-var grid = document.querySelector(".grid");
+var grid = document.querySelector(".axis");
 var upArrows = document.querySelectorAll(".up-arrow");
 var downArrows = document.querySelectorAll(".down-arrow");
 var numbers = document.querySelectorAll(".number");
 var allCoordinates = []
 var displayMessage = document.querySelector(".display-message");
-// var exists = Object.keys(obj).some(function(k) {
-//     return obj[k] === "test1";
-// });
 
-// let exists = Object.values(obj).includes("test1");
-// Checks for three consecutive values in an array
-const checkThree = arr => {
-    const prev = {
-        element: null,
-        count: 0
-    };
+// Checks for three identical values in an array
+const checkThree = (arr, color) => {
+    let count = 0;
     for (let i = 0; i < arr.length; i++) {
-        const { count, element } = prev;
-        if (count === 1 && element === arr[i]) {
-            displayMessage.style.visibility = 'visible';
-            displayMessage.textContent = allCoordinates[allCoordinates.length - 1].split(":")[0] == 'plot-red' ?
-                "The red team has blown it! Well done to the blues." : "The blue team has blown it! Well done to the reds."
-        };
-        prev.count = element === arr[i] ? count + 1 : count;
-        prev.element = arr[i];
-    };
-    return false;
+        if (arr[i].split(":")[0] === color) {
+            count++;
+            if(count === 3){
+                displayMessage.style.visibility = 'visible';
+                displayMessage.textContent = allCoordinates[allCoordinates.length-1].split(":")[0] === 'plot-blue' ?
+                "The blue team has blown it! Well done to the reds." : "The red team has blown it! Well done to the blues." 
+                
+                upArrows.forEach(arrow => {
+                    arrow.style.visibility = 'hidden'
+                });
+                
+                downArrows.forEach(arrow => {
+                    arrow.style.visibility = 'hidden'
+                });
+
+            } else {
+                displayMessage.style.textContent = '';
+            }
+        }
+    }
 };
 
 redBall.addEventListener("click", function () {
     let redBall = document.createElement("div")
     redBall.classList.add("plot-red")
     let leftValue = 47 + (Number(numbers[0].textContent) * 13);
-    let topValue = 370 - (Number(numbers[1].textContent) * 100);
+    let topValue = 47 - (Number(numbers[1].textContent) * 13);
     redBall.style.left = leftValue + "%"; // increments of 13 (-5, 8, 21, 34, [47], 60, 73, 86, 99)
-    redBall.style.top = topValue + "%"; // increments of 100 (770, 670, 570, 470 , [370], 270, 170, 70, -30)
+    redBall.style.top = topValue + "%"; // increments of 13 (-5, 8, 21, 34, [47], 60, 73, 86, 99)
     let insertItem = `${redBall.classList}:${leftValue},${topValue}`;
     if (allCoordinates.includes(insertItem) || allCoordinates.includes('plot-blue:' + insertItem.split(":")[1])) {
         displayMessage.style.visibility = 'visible';
@@ -69,6 +71,7 @@ redBall.addEventListener("click", function () {
     } else {
         grid.append(redBall)
         allCoordinates.push(insertItem);
+        console.log(allCoordinates);
     }
 
     let newTest = []
@@ -76,16 +79,16 @@ redBall.addEventListener("click", function () {
         newTest.push(allCoordinates[index].split(":")[0])
     }
 
-    checkThree(newTest);
+    checkThree(newTest, redBall.classList[0]);
 });
 
 blueBall.addEventListener("click", function () {
     let blueBall = document.createElement("div")
     blueBall.classList.add("plot-blue")
     let leftValue = 47 + (Number(numbers[2].textContent) * 13);
-    let topValue = 370 - (Number(numbers[3].textContent) * 100);
+    let topValue = 47 - (Number(numbers[3].textContent) * 13);
     blueBall.style.left = leftValue + "%"; // increments of 13 (-5, 8, 21, 34, [47], 60, 73, 86, 99)
-    blueBall.style.top = topValue + "%"; // increments of 100 (770, 670, 570, 470 , [370], 270, 170, 70, -30)
+    blueBall.style.top = topValue + "%"; // increments of 13 (-5, 8, 21, 34, [47], 60, 73, 86, 99)
     let insertItem = `${blueBall.classList}:${leftValue},${topValue}`;
     if (allCoordinates.includes(insertItem) || allCoordinates.includes('plot-red:' + insertItem.split(":")[1])) {
         displayMessage.style.visibility = 'visible';
@@ -103,7 +106,7 @@ blueBall.addEventListener("click", function () {
         newTest.push(allCoordinates[index].split(":")[0])
     }
 
-    checkThree(newTest);
+    checkThree(newTest, blueBall.classList[0]);
 });
 
 // First number: Red
@@ -132,7 +135,7 @@ downArrows[1].addEventListener("click", function () {
     }
 });
 
-// Third number: Blue
+// First number: Blue
 upArrows[2].addEventListener("click", function () {
     if (numbers[2].textContent < 4) {
         numbers[2].textContent++;
@@ -145,7 +148,7 @@ downArrows[2].addEventListener("click", function () {
     }
 });
 
-// Fourth number: Blue
+// Second number: Blue
 upArrows[3].addEventListener("click", function () {
     if (numbers[3].textContent < 4) {
         numbers[3].textContent++;
