@@ -34,25 +34,69 @@ const checkThree = (arr, color) => {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i].split(":")[0] === color) {
             count++;
-            if(count === 3){
+            if (count === 3) {
                 displayMessage.style.visibility = 'visible';
-                displayMessage.textContent = allCoordinates[allCoordinates.length-1].split(":")[0] === 'plot-blue' ?
-                "The blue team has blown it! Well done to the reds." : "The red team has blown it! Well done to the blues." 
-                
+                displayMessage.textContent = allCoordinates[allCoordinates.length - 1].split(":")[0] === 'plot-blue' ?
+                    "The blue team has blown it! Well done to the reds." : "The red team has blown it! Well done to the blues."
+
                 upArrows.forEach(arrow => {
                     arrow.style.visibility = 'hidden'
                 });
-                
+
                 downArrows.forEach(arrow => {
                     arrow.style.visibility = 'hidden'
                 });
-
             } else {
                 displayMessage.style.textContent = '';
             }
         }
     }
 };
+
+// In progress:
+function validateRow(arr) {
+    let winner
+    console.log("all coordinates: ", arr);
+
+    let filteredReds = arr.filter(item => {
+        return item.split(":")[0] === 'plot-red'
+    });
+
+    let filteredBlues = arr.filter(item => {
+        return item.split(":")[0] === 'plot-blue'
+    });
+
+    let x_Distance = 0, y_Distance = 0
+    
+    if(arr.length >= 3){
+        x_Distance = arr[arr.length - 1].split(":")[1].split(",")[0] - arr[arr.length - 3].split(":")[1].split(",")[0]
+        y_Distance = arr[arr.length - 1].split(":")[1].split(",")[1] - arr[arr.length - 3].split(":")[1].split(",")[1]
+    }
+
+    console.log("X: ", x_Distance, "Y: ", y_Distance);
+
+    if (filteredReds.length === 3) {
+        winner = filteredReds
+        winners()
+    } else if (filteredBlues.length === 3) {
+        winner = filteredBlues
+        winners()
+    }
+
+    console.log("Array of blues", filteredBlues);
+    console.log("Array of reds", filteredReds);
+    console.log("-----------------------------------");
+
+    function winners() {
+        if (x_Distance === 26 || y_Distance === 26 || x_Distance === -26 || y_Distance === -26 || x_Distance === 26 && y_Distance === 26 || x_Distance === -26 && y_Distance === 26 || x_Distance === 26 && y_Distance === -26 || x_Distance === -26 && y_Distance === -26 || x_Distance === 0 && y_Distance === -26 || x_Distance === 26 && y_Distance === 0 || x_Distance === -26 && y_Distance === 0 || x_Distance === 0 && y_Distance === -26) {
+            console.log("Winner!")
+        } else {
+            filteredBlues.pop()
+            filteredReds.pop()
+            console.log(false);
+        }
+    }
+}
 
 redBall.addEventListener("click", function () {
     let redBall = document.createElement("div")
@@ -71,7 +115,6 @@ redBall.addEventListener("click", function () {
     } else {
         grid.append(redBall)
         allCoordinates.push(insertItem);
-        console.log(allCoordinates);
     }
 
     let newTest = []
@@ -80,6 +123,7 @@ redBall.addEventListener("click", function () {
     }
 
     checkThree(newTest, redBall.classList[0]);
+    // validateRow(allCoordinates)
 });
 
 blueBall.addEventListener("click", function () {
@@ -107,6 +151,7 @@ blueBall.addEventListener("click", function () {
     }
 
     checkThree(newTest, blueBall.classList[0]);
+    // validateRow(allCoordinates)
 });
 
 // First number: Red
