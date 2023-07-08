@@ -128,7 +128,7 @@ window.addEventListener('load', function () {
             if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
                 targetElement.preventDefault();
             } else {
-                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+                targetElement.innerHTML = (variable1 == '' && variable2 == '') ? eval(`${operand}${product1}${variable1}${operator}${product2}${variable2}`) : `${operand}${product1}${variable1}${operator}${product2}${variable2}`;
             }
             targetElement.dataset.show = true
         } else {
@@ -234,7 +234,7 @@ window.addEventListener('load', function () {
             if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
                 targetElement.preventDefault();
             } else {
-                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+                targetElement.innerHTML = (variable1 == '' && variable2 == '') ? eval(`${operand}${product1}${variable1}${operator}${product2}${variable2}`) : `${operand}${product1}${variable1}${operator}${product2}${variable2}`;
             }
             targetElement.dataset.show = true
         } else {
@@ -340,7 +340,7 @@ window.addEventListener('load', function () {
             if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
                 targetElement.preventDefault();
             } else {
-                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+                targetElement.innerHTML = (variable1 == '' && variable2 == '') ? eval(`${operand}${product1}${variable1}${operator}${product2}${variable2}`) : `${operand}${product1}${variable1}${operator}${product2}${variable2}`;
             }
             targetElement.dataset.show = true
         } else {
@@ -446,7 +446,7 @@ window.addEventListener('load', function () {
             if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
                 targetElement.preventDefault();
             } else {
-                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+                targetElement.innerHTML = (variable1 == '' && variable2 == '') ? eval(`${operand}${product1}${variable1}${operator}${product2}${variable2}`) : `${operand}${product1}${variable1}${operator}${product2}${variable2}`;
             }
             targetElement.dataset.show = true
         } else {
@@ -552,7 +552,7 @@ window.addEventListener('load', function () {
             if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
                 targetElement.preventDefault();
             } else {
-                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+                targetElement.innerHTML = (variable1 == '' && variable2 == '') ? eval(`${operand}${product1}${variable1}${operator}${product2}${variable2}`) : `${operand}${product1}${variable1}${operator}${product2}${variable2}`;
             }
             targetElement.dataset.show = true
         } else {
@@ -658,7 +658,7 @@ window.addEventListener('load', function () {
             if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
                 targetElement.preventDefault();
             } else {
-                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+                targetElement.innerHTML = (variable1 == '' && variable2 == '') ? eval(`${operand}${product1}${variable1}${operator}${product2}${variable2}`) : `${operand}${product1}${variable1}${operator}${product2}${variable2}`;
             }
             targetElement.dataset.show = true
         } else {
@@ -764,7 +764,7 @@ window.addEventListener('load', function () {
             if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
                 targetElement.preventDefault();
             } else {
-                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+                targetElement.innerHTML = (variable1 == '' && variable2 == '') ? eval(`${operand}${product1}${variable1}${operator}${product2}${variable2}`) : `${operand}${product1}${variable1}${operator}${product2}${variable2}`;
             }
             targetElement.dataset.show = true
         } else {
@@ -870,7 +870,7 @@ window.addEventListener('load', function () {
             if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
                 targetElement.preventDefault();
             } else {
-                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+                targetElement.innerHTML = (variable1 == '' && variable2 == '') ? eval(`${operand}${product1}${variable1}${operator}${product2}${variable2}`) : `${operand}${product1}${variable1}${operator}${product2}${variable2}`;
             }
             targetElement.dataset.show = true
         } else {
@@ -976,7 +976,7 @@ window.addEventListener('load', function () {
             if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
                 targetElement.preventDefault();
             } else {
-                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+                targetElement.innerHTML = (variable1 == '' && variable2 == '') ? eval(`${operand}${product1}${variable1}${operator}${product2}${variable2}`) : `${operand}${product1}${variable1}${operator}${product2}${variable2}`;
             }
             targetElement.dataset.show = true
         } else {
@@ -1082,7 +1082,7 @@ window.addEventListener('load', function () {
             if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
                 targetElement.preventDefault();
             } else {
-                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+                targetElement.innerHTML = (variable1 == '' && variable2 == '') ? eval(`${operand}${product1}${variable1}${operator}${product2}${variable2}`) : `${operand}${product1}${variable1}${operator}${product2}${variable2}`;
             }
             targetElement.dataset.show = true
         } else {
@@ -1188,7 +1188,7 @@ window.addEventListener('load', function () {
             if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
                 targetElement.preventDefault();
             } else {
-                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+                targetElement.innerHTML = (variable1 == '' && variable2 == '') ? eval(`${operand}${product1}${variable1}${operator}${product2}${variable2}`) : `${operand}${product1}${variable1}${operator}${product2}${variable2}`;
             }
             targetElement.dataset.show = true
         } else {
@@ -1294,7 +1294,7 @@ window.addEventListener('load', function () {
             if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
                 targetElement.preventDefault();
             } else {
-                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+                targetElement.innerHTML = (variable1 == '' && variable2 == '') ? eval(`${operand}${product1}${variable1}${operator}${product2}${variable2}`) : `${operand}${product1}${variable1}${operator}${product2}${variable2}`;
             }
             targetElement.dataset.show = true
         } else {
@@ -1400,7 +1400,7 @@ window.addEventListener('load', function () {
             if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
                 targetElement.preventDefault();
             } else {
-                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+                targetElement.innerHTML = (variable1 == '' && variable2 == '') ? eval(`${operand}${product1}${variable1}${operator}${product2}${variable2}`) : `${operand}${product1}${variable1}${operator}${product2}${variable2}`;
             }
             targetElement.dataset.show = true
         } else {
@@ -1506,7 +1506,7 @@ window.addEventListener('load', function () {
             if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
                 targetElement.preventDefault();
             } else {
-                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+                targetElement.innerHTML = (variable1 == '' && variable2 == '') ? eval(`${operand}${product1}${variable1}${operator}${product2}${variable2}`) : `${operand}${product1}${variable1}${operator}${product2}${variable2}`;
             }
             targetElement.dataset.show = true
         } else {
@@ -1613,7 +1613,7 @@ window.addEventListener('load', function () {
             if(multiplier == undefined || multiplicand1 == undefined || multiplicand2 == undefined){
                 targetElement.preventDefault();
             } else {
-                targetElement.innerHTML = `${operand}${product1}${variable1}${operator}${product2}${variable2}`
+                targetElement.innerHTML = (variable1 == '' && variable2 == '') ? eval(`${operand}${product1}${variable1}${operator}${product2}${variable2}`) : `${operand}${product1}${variable1}${operator}${product2}${variable2}`;
             }
             targetElement.dataset.show = true
         } else {

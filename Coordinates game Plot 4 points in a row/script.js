@@ -28,35 +28,10 @@ var numbers = document.querySelectorAll(".number");
 var allCoordinates = []
 var displayMessage = document.querySelector(".display-message");
 
-// Checks for three identical values in an array
-const checkThree = (arr, color) => {
-    let count = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i].split(":")[0] === color) {
-            count++;
-            if (count === 3) {
-                displayMessage.style.visibility = 'visible';
-                displayMessage.textContent = allCoordinates[allCoordinates.length - 1].split(":")[0] === 'plot-blue' ?
-                    "The blue team has blown it! Well done to the reds." : "The red team has blown it! Well done to the blues."
-
-                upArrows.forEach(arrow => {
-                    arrow.style.visibility = 'hidden'
-                });
-
-                downArrows.forEach(arrow => {
-                    arrow.style.visibility = 'hidden'
-                });
-            } else {
-                displayMessage.style.textContent = '';
-            }
-        }
-    }
-};
-
-// In progress:
+// Determine the winner
 function validateRow(arr) {
     let winner
-    console.log("all coordinates: ", arr);
+    let x_Distance = 0, y_Distance = 0
 
     let filteredReds = arr.filter(item => {
         return item.split(":")[0] === 'plot-red'
@@ -66,14 +41,10 @@ function validateRow(arr) {
         return item.split(":")[0] === 'plot-blue'
     });
 
-    let x_Distance = 0, y_Distance = 0
-    
-    if(arr.length >= 3){
+    if (arr.length >= 3) {
         x_Distance = arr[arr.length - 1].split(":")[1].split(",")[0] - arr[arr.length - 3].split(":")[1].split(",")[0]
         y_Distance = arr[arr.length - 1].split(":")[1].split(",")[1] - arr[arr.length - 3].split(":")[1].split(",")[1]
     }
-
-    console.log("X: ", x_Distance, "Y: ", y_Distance);
 
     if (filteredReds.length === 3) {
         winner = filteredReds
@@ -83,17 +54,24 @@ function validateRow(arr) {
         winners()
     }
 
-    console.log("Array of blues", filteredBlues);
-    console.log("Array of reds", filteredReds);
-    console.log("-----------------------------------");
-
+    // Closure function:
     function winners() {
         if (x_Distance === 26 || y_Distance === 26 || x_Distance === -26 || y_Distance === -26 || x_Distance === 26 && y_Distance === 26 || x_Distance === -26 && y_Distance === 26 || x_Distance === 26 && y_Distance === -26 || x_Distance === -26 && y_Distance === -26 || x_Distance === 0 && y_Distance === -26 || x_Distance === 26 && y_Distance === 0 || x_Distance === -26 && y_Distance === 0 || x_Distance === 0 && y_Distance === -26) {
-            console.log("Winner!")
+            displayMessage.style.visibility = 'visible';
+            displayMessage.textContent = arr[arr.length - 1].split(":")[0] === 'plot-blue' ?
+                "The blue team has blown it! Well done to the reds." : "The red team has blown it! Well done to the blues."
+
+            upArrows.forEach(arrow => {
+                arrow.style.visibility = 'hidden'
+            });
+
+            downArrows.forEach(arrow => {
+                arrow.style.visibility = 'hidden'
+            });
         } else {
-            filteredBlues.pop()
-            filteredReds.pop()
-            console.log(false);
+            filteredReds = []
+            filteredBlues = []
+            arr = []
         }
     }
 }
@@ -117,13 +95,7 @@ redBall.addEventListener("click", function () {
         allCoordinates.push(insertItem);
     }
 
-    let newTest = []
-    for (let index = 0; index < allCoordinates.length; index++) {
-        newTest.push(allCoordinates[index].split(":")[0])
-    }
-
-    checkThree(newTest, redBall.classList[0]);
-    // validateRow(allCoordinates)
+    validateRow(allCoordinates)
 });
 
 blueBall.addEventListener("click", function () {
@@ -145,13 +117,7 @@ blueBall.addEventListener("click", function () {
         allCoordinates.push(insertItem);
     }
 
-    let newTest = [];
-    for (let index = 0; index < allCoordinates.length; index++) {
-        newTest.push(allCoordinates[index].split(":")[0])
-    }
-
-    checkThree(newTest, blueBall.classList[0]);
-    // validateRow(allCoordinates)
+    validateRow(allCoordinates)
 });
 
 // First number: Red
