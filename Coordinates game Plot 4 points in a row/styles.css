@@ -308,9 +308,11 @@ html {
 
 /* Y-Axis */
 .y-axis {
+    user-select: none;
     position: absolute;
     z-index: 9;
-    left: 43%;
+    /* left: 43%; */
+    left: 47%;
     top: 0;
     height: 100%;
     display: flex;
@@ -322,8 +324,8 @@ html {
 .y-pic-1 {
     position: absolute;
     top: -3%;
-    transform: translateX(70%);
     user-select: none;
+    z-index: -1;
 }
 
 .y-pic-2 {
@@ -331,14 +333,16 @@ html {
     user-select: none;
     bottom: -3%;
     rotate: 180deg;
-    transform: translateX(-75%);
+    transform: translateX(-10%);
+    z-index: -1;
 }
 
 .y-axis p {
     padding: 0;
     margin: 50% 0;
     font-size: 1.8em;
-    color: navy;
+    /* color: navy; */
+    color: red;
     font-weight: bold;
     user-select: none;
     position: relative;
@@ -358,23 +362,40 @@ html {
 
 /* X-Axis */
 .x-axis {
+    user-select: none;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
     position: absolute;
-    left: 0;
-    top: 50%;
+    left: 3%;
+    top: 46%;
 }
 
 .x-axis span {
     font-size: 1.8em;
-    color: navy;
+    color: red;
     font-weight: bold;
     margin: 0;
-    padding: 0 8% 0 0;
+    padding: 0 10% 0 0;
     position: relative;
     user-select: none;
+}
+
+.x-axis span:nth-child(3) {
+    transform: translateX(-10%);
+}
+
+.x-axis span:nth-child(4) {
+    transform: translateX(-25%);
+}
+
+.x-axis span:nth-child(5) {
+    transform: translateX(-50%);
+}
+
+.x-axis span:nth-child(6) {
+    margin-left: 25px;
 }
 
 .x-axis p {
@@ -390,12 +411,14 @@ html {
 
 .x-pic-1 {
     position: relative;
-    transform: rotate(-90deg) translate(50%, 160%);
+    /* transform: rotate(-90deg) translate(50%, 160%); */
+    transform: rotate(-90deg) translate(-10%, 160%);
 }
 
 .x-pic-2 {
     position: relative;
-    transform: rotate(90deg) translate(-50%, 160%);
+    /* transform: rotate(90deg) translate(-50%, 160%); */
+    transform: rotate(90deg) translate(10%, 160%);
 }
 
 /* Plot red ball */
