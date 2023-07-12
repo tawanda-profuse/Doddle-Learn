@@ -1,0 +1,231 @@
+:root {
+  /* Global variables */
+  --doddle-gray: #444444;
+  --doddle-font: "Roboto", sans-serif;
+  --doddle-orange: #ff6600;
+  --doddle-white: #ffffff;
+}
+
+/* * {
+  box-sizing: border-box;
+} */
+
+body {
+  color: var(--doddle-gray);
+  font-family: var(--doddle-font);
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+.main {
+  background-color: var(--doddle-gray);
+  border-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0 0 20px 0;
+  min-height: 100vh;
+}
+
+.content {
+  text-align: center;
+  position: relative;
+  padding: 10px;
+}
+
+.interface button i {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.interface button {
+  background-color: var(--doddle-orange);
+  border-radius: 10px;
+  border-style: none;
+  color: var(--doddle-white);
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 80px;
+  height: 50px;
+  margin-left: 10px;
+  margin-top: 10px;
+  transition: 0.1s;
+  box-shadow: 3px 3px 3px 3px black;
+}
+
+.interface button:hover {
+  background-color: var(--doddle-gray);
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 0px;
+  border: 1px solid black;
+}
+
+.interface {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Help text */
+.tooltip {
+  position: relative;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 40vw;
+  background-color: var(--doddle-white);
+  border: 2px solid var(--doddle-gray);
+  color: var(--doddle-orange);
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 15%;
+  margin-right: -55px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  box-shadow: 5px 5px 5px 5px black;
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: var(--doddle-font);
+}
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 15%;
+  margin-right: -3px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: var(--doddle-white) transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.screen {
+  background-color: var(--doddle-white);
+  border-radius: 10px;
+  padding: 50px 50px 25px 50px;
+  margin: 5px auto;
+}
+
+.startPanel {
+  background-color: var(--doddle-white);
+  border-radius: 5px;
+  border-color: var(--doddle-gray);
+  border-width: 3px;
+  border-style: solid;
+  font-size: 1.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 100px;
+  min-width: 40%;
+  box-shadow: 10px 10px 10px 0px black;
+}
+
+.startPanel p {
+  margin: 100px;
+}
+
+.intro img {
+  width: 600px;
+}
+
+.heading {
+  color: var(--doddle-gray);
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+}
+
+.intro,
+.startPanel {
+  position: absolute;
+}
+
+/* Content_________________________________________________________________ */
+.activity{
+  margin: auto;
+  border: 0.8rem solid navy;
+  border-radius: 10px;
+  padding: 1rem;
+  user-select: none;
+}
+
+svg {
+  width: 40%;
+  user-select: none;
+}
+
+#hour-hand, #minute-hand {
+  transform-origin: 300px 300px;
+  cursor: pointer;
+}
+
+.row-1{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#output{
+  width: 15%;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: navy;
+  border: 0.2rem solid rgba(0, 0, 255, 0.578);
+}
+
+.activity button{
+  padding: 10px;
+  font-size: 1.5rem;
+  color: navy;
+  width: 10%;
+  background-color: rgba(0, 0, 255, 0.372);
+  outline: none;
+  border-radius: 10px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.row-2{
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+}
+
+#output2{
+  border: 0.2rem solid rgba(0, 0, 255, 0.578);
+  padding: 0 1rem;
+  display: flex;
+  width: 80%;
+  font-size: 1.5rem;
+  color: navy;
+  font-size: 2rem;
+  border-radius: 10px;
+}
+
+#text-1{
+  margin-right: 5px;
+  text-transform: capitalize;
+}
+
+#text-3{
+  margin-right: 5px;
+}
+
+.hide{
+  visibility: hidden;
+}
