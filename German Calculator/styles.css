@@ -1,0 +1,225 @@
+:root {
+    /* Global variables */
+    --doddle-gray: #444444;
+    --doddle-font: "Roboto", sans-serif;
+    --doddle-orange: #ff6600;
+    --doddle-white: #ffffff;
+}
+
+/* * {
+    box-sizing: border-box;
+  } */
+
+body {
+    color: var(--doddle-gray);
+    font-family: var(--doddle-font);
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+.main {
+    background-color: var(--doddle-gray);
+    border-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0 0 20px 0;
+    min-height: 100vh;
+}
+
+.content {
+    text-align: center;
+    position: relative;
+    padding: 10px;
+}
+
+.interface button i {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.interface button {
+    background-color: var(--doddle-orange);
+    border-radius: 10px;
+    border-style: none;
+    color: var(--doddle-white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 80px;
+    height: 50px;
+    margin-left: 10px;
+    margin-top: 10px;
+    transition: 0.1s;
+    box-shadow: 3px 3px 3px 3px black;
+}
+
+.interface button:hover {
+    background-color: var(--doddle-gray);
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 0px;
+    border: 1px solid black;
+}
+
+.interface {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Help text */
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 40vw;
+    background-color: var(--doddle-white);
+    border: 2px solid var(--doddle-gray);
+    color: var(--doddle-orange);
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    right: 15%;
+    margin-right: -55px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 5px 5px 5px 5px black;
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-family: var(--doddle-font);
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 15%;
+    margin-right: -3px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: var(--doddle-white) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.screen {
+    background-color: var(--doddle-white);
+    border-radius: 10px;
+    padding: 50px 50px 25px 50px;
+    margin: 5px auto;
+}
+
+.startPanel {
+    background-color: var(--doddle-white);
+    border-radius: 5px;
+    border-color: navy;
+    border-width: 3px;
+    border-style: solid;
+    font-size: 2rem;
+    color: navy;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    transform: translate(-50%, 0);
+    /* padding: 100px; */
+    padding: 25px;
+    min-width: 40%;
+    box-shadow: 10px 10px 10px 0px black;
+}
+
+.startPanel button {
+    border: 2px solid var(--doddle-orange);
+    padding: 10px 20px;
+    font-size: 2rem;
+    color: var(--doddle-orange);
+    border-radius: 10px;
+}
+
+.startPanel button:hover {
+    background-color: var(--doddle-orange);
+    color: var(--doddle-white);
+    cursor: pointer;
+}
+
+.intro img {
+    width: 600px;
+}
+
+.heading {
+    color: var(--doddle-gray);
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+}
+
+.intro,
+.startPanel {
+    position: absolute;
+}
+
+/* Content_________________________________________________________________ */
+.classroom{
+    padding: 20px;
+    border: 3px solid navy;
+    /* background: url(images/wood-background-pattern-02_wpahdy.jpg); */
+    background: url(images/wooden-table.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.calculator{
+    /* height: 100%; */
+    width: 30%;
+    margin: auto;
+    background-color: var(--doddle-gray);
+    border-radius: 50px 50px 25px 25px;
+    padding: 20px;
+    /* padding: 10px; */
+    border: 5px solid black;
+}
+
+.display{
+    background-color: rgb(0, 255, 128);
+    margin: 20px auto 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+    font-size: 2rem;
+    color: black;
+    text-align: right;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+}
+
+.invisible{visibility: hidden;}
+
+.row span{
+    background-color: #999999;
+    border: 2px solid #111111;
+    padding: 5px 10px;
+    margin: 0;
+    width: 20%;
+    color: black;
+    font-size: 3rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.row span:hover{
+    cursor: pointer;
+    background-color: var(--doddle-orange);
+}

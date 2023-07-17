@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- <html lang="en" dir="ltr"> -->
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>German Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome Link: -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <link rel="shortcut icon" href="images/flag.png" type="image/x-icon">
+</head>
+
+<body>
+  <div class="main">
+    <div class="content">
+      <div class="screen">
+        <h1 class="heading" id="myHeading">German Calculator</h1>
+        <div class="classroom">
+            <div class="calculator">
+                <div class="display">0</div>
+                <div class="row">
+                    <span class="inputs">7</span>
+                    <span class="inputs">8</span>
+                    <span class="inputs">9</span>
+                </div>
+                <div class="row">
+                    <span class="inputs">4</span>
+                    <span class="inputs">5</span>
+                    <span class="inputs">6</span>
+                </div>
+                <div class="row">
+                    <span class="inputs">1</span>
+                    <span class="inputs">2</span>
+                    <span class="inputs">3</span>
+                </div>
+                <div class="row">
+                    <span class="inputs">+</span>
+                    <span class="inputs">0</span>
+                    <span class="inputs">-</span>
+                </div>
+                <div class="row">
+                    <span class="invisible">=</span>
+                    <span class="equals">=</span>
+                    <span class="clear">C</span>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- <div class="startPanel" id="startPanel">
+        <p>Use this German calculator to find out the German words for some more numbers. Can you predict the answers to the sums you type in?</p>
+        <p>Press <strong>start</strong> to begin</p>
+        <button type="button" name="button" id="startButton">Start</button>
+      </div> -->
+      <div class="interface">
+        <div class="tooltip">
+          <button type="button" name="button" id="helpButton">
+            <span class="tooltiptext" id="myToolTip">Type help text here...</span><i class="fas fa-question"></i>
+          </button>
+        </div>
+        <button type="button" name="button" id="resetButton"><i class="fas fa-rotate-left"></i></button>
+      </div>
+
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
