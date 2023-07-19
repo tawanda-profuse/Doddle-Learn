@@ -1,0 +1,387 @@
+:root {
+    /* Global variables */
+    --doddle-gray: #444444;
+    --doddle-font: "Roboto", sans-serif;
+    --doddle-orange: #ff6600;
+    --doddle-white: #ffffff;
+  }
+  
+  /* * {
+    box-sizing: border-box;
+  } */
+  
+  body {
+    color: var(--doddle-gray);
+    font-family: var(--doddle-font);
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 16px;
+  }
+  
+  .main {
+    background-color: var(--doddle-gray);
+    border-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0 0 20px 0;
+    min-height: 100vh;
+  }
+  
+  .content {
+    text-align: center;
+    position: relative;
+    padding: 10px;
+  }
+  
+  .interface button i {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .interface button {
+    background-color: var(--doddle-orange);
+    border-radius: 10px;
+    border-style: none;
+    color: var(--doddle-white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 80px;
+    height: 50px;
+    margin-left: 10px;
+    margin-top: 10px;
+    transition: 0.1s;
+    box-shadow: 3px 3px 3px 3px black;
+  }
+  
+  .interface button:hover {
+    background-color: var(--doddle-gray);
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 0px;
+    border: 1px solid black;
+  }
+  
+  .interface {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Help text */
+  .tooltip {
+    position: relative;
+  }
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 40vw;
+    background-color: var(--doddle-white);
+    border: 2px solid var(--doddle-gray);
+    color: var(--doddle-orange);
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 15%;
+    margin-right: -55px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 5px 5px 5px 5px black;
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-family: var(--doddle-font);
+  }
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 15%;
+    margin-right: -3px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: var(--doddle-white) transparent transparent transparent;
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .screen {
+    background-color: var(--doddle-white);
+    border-radius: 10px;
+    padding: 50px 50px 25px 50px;
+    margin: 5px auto;
+  }
+  
+  .startPanel {
+    background-color: var(--doddle-white);
+    border-radius: 5px;
+    border-color: navy;
+    color: navy;
+    border-width: 3px;
+    border-style: solid;
+    font-size: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    min-width: 40%;
+    box-shadow: 10px 10px 10px 0px black;
+}
+
+.startPanel button, #next {
+    border: 2px solid var(--doddle-orange);
+    color: var(--doddle-orange);
+    outline: none;
+    font-size: 2rem;
+    border-radius: 10px;
+    padding: 10px 30px;
+}
+
+#next{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+
+.startPanel button:hover, #next:hover {
+    color: var(--doddle-white);
+    background-color: var(--doddle-orange);
+    cursor: pointer;
+}
+  
+  .intro img {
+    width: 600px;
+  }
+  
+  .heading {
+    color: var(--doddle-gray);
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+  }
+  
+  .intro,
+  .startPanel {
+    position: absolute;
+  }
+  
+  /* Content_________________________________________________________________ */
+  .activity{
+    border: 5px solid navy;
+    background-color: lightskyblue;
+    /* background: linear-gradient(to right, lightskyblue 60%, white 40%); */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    height: 100vh;
+    position: relative;
+  }
+
+  .win-dialogue{
+    position: absolute;
+    z-index: 50;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    border: 4px solid navy;
+    background-color: white;
+    color: navy;
+    font-size: 2.5rem;
+    width: 30vw;
+    padding: 5px;
+    /* display: flex; */
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+}
+.win-dialogue span{
+    background-color: var(--doddle-orange);
+    border: 3px solid red;
+    color: white;
+    border-radius: 50%;
+    padding: 2.5px 10px;
+}
+.win-dialogue span:hover{
+    cursor: pointer;
+}
+
+.column{
+    width: 40%;
+}
+.column:nth-child(3){
+    align-self: center;
+}
+
+.instruction{
+    border: 3px solid navy;
+    padding: 5px;
+    color: navy;
+    font-size: 2rem;
+    font-weight: 700;
+    background-color: white;
+    border-radius: 5px;
+    height: 50%;
+    position: relative;
+}
+.toggle-body{
+    border: 2px solid var(--doddle-orange);
+    color: var(--doddle-orange);
+    outline: none;
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 10%;
+    width: 60%;
+}
+.toggle-body:hover {
+    color: var(--doddle-white);
+    background-color: var(--doddle-orange);
+    cursor: pointer;
+}
+.human{
+    height: 100%;
+    background: url(images/body-front.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: rgb(255, 215, 0);
+    position: relative;
+}
+.video{
+    border: 3px solid navy;
+    padding: 1px;
+    border-radius: 5px;
+    background-color: white;
+    width: 100%;
+}
+.video img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.video video{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    object-fit: contain;
+}
+
+.point{
+    position: absolute;
+    background: url(images/point.png);
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.point:hover{
+    cursor: pointer;
+}
+/* Body parts: Front*/
+/* Right side: */
+#right-shoulder{
+    left: 30%;
+    top: 22%;
+}
+#right-chest{
+    top: 25%;
+    left: 40%;
+}
+#right-bicep{
+    top: 32%;
+    left: 28%;
+}
+#right-thigh{
+    top: 57%;
+    left: 40%;
+}
+/* Abs */
+#abs{
+    top: 37%;
+    left: 49.5%;
+}
+/* Left side: */
+#left-shoulder{
+    right: 28%;
+    top: 22%;
+}
+#left-chest{
+    top: 25%;
+    right: 40%;
+}
+#left-bicep{
+    top: 32%;
+    right: 28%;
+}
+#left-thigh{
+    top: 57%;
+    right: 38%;
+}
+/* Body parts: Back*/
+/* Left side: */
+#left-upper-back{
+    right: 51%;
+    top: 22%;
+}
+#left-shoulder-back{
+    right: 67%;
+    top: 22%;
+}
+#left-tricep{
+    right: 68%;
+    top: 30%;
+}
+#left-lower-back{
+    right: 56%;
+    top: 34%;
+}
+#left-glute{
+    right: 53%;
+    top: 48%;
+}
+#left-thigh-back{
+    right: 53%;
+    top: 58%;
+}
+#left-calf{
+    right: 54%;
+    top: 76%;
+}
+/* Right side: */
+#right-upper-back{
+    left: 51%;
+    top: 22%;
+}
+#right-shoulder-back{
+    left: 68%;
+    top: 22%;
+}
+#right-tricep{
+    left: 68%;
+    top: 30%;
+}
+#right-lower-back{
+    left: 56%;
+    top: 34%;
+}
+#right-glute{
+    left: 54%;
+    top: 48%;
+}
+#right-thigh-back{
+    left: 54%;
+    top: 58%;
+}
+#right-calf{
+    left: 54%;
+    top: 76%;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Muscular System Part 2 Voluntary Muscles</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome Link: -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="images/" type="image/x-icon" />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="content">
+        <div class="screen">
+          <h1 class="heading" id="myHeading">
+            The Muscular System Part 2 Voluntary Muscles
+          </h1>
+          <div class="activity">
+            <!-- Info -->
+            <div class="column">
+              <div class="instruction">
+                <p>Select a muscle to make the teacher extend at the ankles.</p>
+                <button id="next">Next</button>
+              </div>
+              <button class="toggle-body">Show body from back</button>
+            </div>
+            <!-- Body parts -->
+            <div class="column">
+              <div class="human">
+                <!-- Points -->
+                <div class="front-side">
+                  <!-- Right side: -->
+                  <div class="point" id="right-shoulder"></div>
+                  <div class="point" id="right-chest"></div>
+                  <div class="point" id="right-bicep"></div>
+                  <div class="point" id="right-thigh"></div>
+                  <!-- Abs -->
+                  <div class="point" id="abs"></div>
+                  <!-- Left side: -->
+                  <div class="point" id="left-shoulder"></div>
+                  <div class="point" id="left-chest"></div>
+                  <div class="point" id="left-bicep"></div>
+                  <div class="point" id="left-thigh"></div>
+                </div>
+                <div class="back-side">
+                  <!-- Left side -->
+                  <div class="point" id="left-upper-back"></div>
+                  <div class="point" id="left-shoulder-back"></div>
+                  <div class="point" id="left-tricep"></div>
+                  <div class="point" id="left-lower-back"></div>
+                  <div class="point" id="left-glute"></div>
+                  <div class="point" id="left-thigh-back"></div>
+                  <div class="point" id="left-calf"></div>
+                  <!-- Right side -->
+                  <div class="point" id="right-upper-back"></div>
+                  <div class="point" id="right-shoulder-back"></div>
+                  <div class="point" id="right-tricep"></div>
+                  <div class="point" id="right-lower-back"></div>
+                  <div class="point" id="right-glute"></div>
+                  <div class="point" id="right-thigh-back"></div>
+                  <div class="point" id="right-calf"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Video -->
+            <div class="column">
+              <div class="video">
+                <img src="images/teacher-sitting.png" alt="A teacher sitting" />
+              </div>
+            </div>
+            <div class="win-dialogue">
+                <p>Well done!</p><span id="close"><i class="fas fa-times"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="startPanel" id="startPanel">
+          <p>
+            Using your voodoo arts, you have gained control of this PE teacher's
+            body. Press on the correct muscles to bend her to your will! You can
+            switch between a back and front view of the body.
+          </p>
+          <p>Press <strong>start</strong> to begin.</p>
+          <button id="startButton">Start</button>
+        </div>
+        <div class="interface">
+          <div class="tooltip">
+            <button type="button" name="button" title="Help" id="helpButton">
+              <span class="tooltiptext" id="myToolTip">
+                For each instruction that appears on the left, press on the muscle that needs to contract to make the movement happen. A pin will appear in the muscle that you clicked, and a video clip of the movement will play. If you are correct, use the <strong>next</strong> button to proceed to the next question; if you are incorrect, use the <strong></strong>try again</strong> button and select a different muscle. Use the <strong></strong>reset</strong> button to restart the activity. 
+                </span
+              ><i class="fas fa-question"></i>
+            </button>
+          </div>
+          <button type="button" name="button" title="Reset" id="resetButton">
+            <i class="fas fa-rotate-left"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
