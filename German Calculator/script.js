@@ -19,10 +19,10 @@ function solve() {
     console.log('solve initiated');
 }
 
-// startButton.addEventListener("click", function () {
-//     startPanel.style.display = 'none';
-//     startButton.style.display = 'none';
-// })
+startButton.addEventListener("click", function () {
+    startPanel.style.display = 'none';
+    startButton.style.display = 'none';
+})
 // Bespoke functions_____________________________________
 var display = document.querySelector(".display");
 var numbers = document.querySelectorAll(".inputs");
@@ -31,6 +31,7 @@ var equals = document.querySelector(".equals");
 
 var expression = '';
 display.textContent = '0';
+var newCalculation = false;
 
 var germanNumbers = [
     // 1
@@ -57,6 +58,10 @@ var germanNumbers = [
 
 numbers.forEach((item) => {
     item.addEventListener("click", function (e) {
+        if(newCalculation === true){
+            expression = '';
+        }
+        newCalculation = false;
         let eventTarget = e.target;
         expression += eventTarget.textContent;
         display.textContent = expression;
@@ -69,7 +74,8 @@ clear.addEventListener("click", function () {
 });
 
 equals.addEventListener("click", function () { 
-    let result = eval(expression)   
+    newCalculation = true;
+    let result = eval(expression);   
     
     if (result <= 100) {
         display.innerHTML = germanNumbers[result];
