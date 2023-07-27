@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Translation Golf Game</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome Link: -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <link rel="shortcut icon" href="images/" type="image/x-icon">
+</head>
+
+<body>
+  <div class="main">
+    <div class="content">
+      <div class="screen">
+        <h1 class="heading" id="myHeading">Translation Golf Game</h1>
+        <div class="golf-course">
+          <div class="win-message">
+            Well done, you got a hole in <span id="result">1</span>.
+          </div>
+          <p class="info">Strokes: <span id="strokes">0</span></p>
+          <img src="images/flagtrans.gif" alt="A flag animation" id="flag" />
+          <div class="instruction">
+            <p>
+              Translate the ball
+              <input type="number" name="right" id="right" value="0" max="20" min="-20" />
+              right and
+              <input type="number" name="up" id="up" value="0" max="20" min="-20" />up
+            </p>
+            <button id="goBtn">Go</button>
+          </div>
+        </div>
+      </div>
+      <div class="interface">
+        <div class="tooltip">
+          <button type="button" name="button" title="Help" id="helpButton">
+            <span class="tooltiptext" id="myToolTip">
+
+            </span><i class="fas fa-question"></i>
+          </button>
+        </div>
+        <button type="button" name="button" title="Reset" id="resetButton"><i class="fas fa-rotate-left"></i></button>
+      </div>
+
+    </div>
+  </div>
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js'></script> -->
+  <script src="p5.min.js"></script>
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js'></script><script  src="./script.js"></script> -->
+  <script src="matter.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
