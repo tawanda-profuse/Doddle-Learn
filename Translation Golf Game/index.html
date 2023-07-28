@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="styles.css">
   <!-- Font Awesome Link: -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
-  <link rel="shortcut icon" href="images/" type="image/x-icon">
+  <link rel="shortcut icon" href="images/golf.png" type="image/x-icon">
 </head>
 
 <body>
@@ -18,11 +18,11 @@
       <div class="screen">
         <h1 class="heading" id="myHeading">Translation Golf Game</h1>
         <div class="golf-course">
+          <img src="images/flagtrans.gif" alt="A flag animation" id="flag" />
           <div class="win-message">
             Well done, you got a hole in <span id="result">1</span>.
           </div>
           <p class="info">Strokes: <span id="strokes">0</span></p>
-          <img src="images/flagtrans.gif" alt="A flag animation" id="flag" />
           <div class="instruction">
             <p>
               Translate the ball
@@ -38,7 +38,7 @@
         <div class="tooltip">
           <button type="button" name="button" title="Help" id="helpButton">
             <span class="tooltiptext" id="myToolTip">
-
+              Use the scrollers to set the translation each time. Press 'go' to move the ball. Press reset for a new hole. 
             </span><i class="fas fa-question"></i>
           </button>
         </div>
@@ -47,10 +47,8 @@
 
     </div>
   </div>
-  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js'></script> -->
-  <script src="p5.min.js"></script>
-  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js'></script><script  src="./script.js"></script> -->
-  <script src="matter.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script><script  src="./script.js"></script>
   <script src="script.js"></script>
 </body>
 
