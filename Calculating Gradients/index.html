@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculating Gradients</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome Link: -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="images/" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="content">
+        <div class="screen">
+          <h1 class="heading" id="myHeading">Calculating Gradients</h1>
+          <div class="gradient-area">
+            <canvas class="js-canvas" width="1000" height="400"></canvas>
+          </div>
+          <div class="video-area">
+            <video src="images/video.mp4" controls autoplay></video>
+          </div>
+        </div>
+        <div class="interface">
+          <button type="button" name="button" id="videoDemo">
+            <i class="fas fa-video"></i>
+          </button>
+          <button type="button" name="button" id="implement">
+            <i class="fas fa-tools"></i>
+          </button>
+          <div class="tooltip">
+            <button type="button" name="button" id="helpButton">
+              <span class="tooltiptext" id="myToolTip">
+                Use the video icon <i class="fas fa-video"></i> and the tools
+                icon <i class="fas fa-tools"></i> to switch between the interactions.
+                After clicking the tools icon:
+                <ul>
+                  <li>Click and drag on the points to change the gradient.</li>
+                </ul>
+                Press reset to start again. <i class="fas fa-rotate-left"></i>
+              </span>
+              <i class="fas fa-question"></i>
+            </button>
+          </div>
+          <button type="button" name="button" title="Reset" id="resetButton">
+            <i class="fas fa-rotate-left"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script src="fpsmeter.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
