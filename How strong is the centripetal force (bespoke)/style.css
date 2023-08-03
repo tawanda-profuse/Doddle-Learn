@@ -1,217 +1,295 @@
+:root {
+  /* Global variables */
+  --doddle-gray: #444444;
+  --doddle-font: "Roboto", sans-serif;
+  --doddle-orange: #ff6600;
+  --doddle-white: #ffffff;
+}
+
+
 body {
-    color: #444;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
+  color: var(--doddle-gray);
+  font-family: var(--doddle-font);
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+.main {
+  background-color: var(--doddle-gray);
+  border-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0 0 20px 0;
+  min-height: 100vh;
+}
+
+.content {
+  text-align: center;
+  position: relative;
+  padding: 10px;
+}
+
+.heading {
+  color: var(--doddle-gray);
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+}
+
+.interface button,
+.endGame button {
+  background-color: var(--doddle-orange);
+  border-radius: 10px;
+  border-style: none;
+  color: var(--doddle-white);
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 80px;
+  height: 50px;
+  margin-left: 10px;
+  margin-top: 10px;
+  transition: 0.1s;
+  box-shadow: 3px 3px 3px 3px black;
+}
+.endGame button {
+  width: 160px;
+}
+
+.interface button:hover,
+.endGame button:hover {
+  background-color: var(--doddle-gray);
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 0px;
+  border: 1px solid black;
+}
+
+.interface {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Help text */
+.tooltip {
+  position: relative;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 40vw;
+  background-color: var(--doddle-white);
+  border: 2px solid var(--doddle-gray);
+  color: var(--doddle-orange);
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  right: 15%;
+  margin-right: -55px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  box-shadow: 5px 5px 5px 5px black;
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: var(--doddle-font);
+}
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 15%;
+  margin-right: -3px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: var(--doddle-white) transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.screen {
+  background-color: var(--doddle-white);
+  border-radius: 10px;
+  padding: 50px 50px 25px 50px;
+  margin: 5px auto;
+}
+
+.startPanel {
+  background-color: var(--doddle-white);
+  border-radius: 5px;
+  border-color: navy;
+  border-width: 3px;
+  border-style: solid;
+  font-size: 1.5rem;
+  color: navy;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px 100px;
+  min-width: 40%;
+  box-shadow: 10px 10px 10px 0px black;
+}
+
+.startPanel,
+.sliders,
+.rotationDiv,
+.road,
+.endGame {
+  position: absolute;
+}
+
+.endGame {
+  background-color: #fff;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 3px;
+  font-size: 36px;
+  top: 50%;
+  left: 290px;
+  margin: -124px;
+  width: 400px;
+}
+
+.endGame button {
+  margin-bottom: 35px;
+}
+
+/* Content_________________________________________________________________ */
+.playground{
+  height: 100vh;
+  background-color: lawngreen;
+  position: relative;
+}
+.road {
+  height: 100%;
+  left: 0;
+}
+
+.rotationDiv {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 150px;
+  width: 240px;
+  left: 95px;
+  top: 290px;
+  transform-origin: 278px;
+}
+
+.myarrow {
+  position: relative;
+  left: 30px;
+  width: 14.8%;
+}
+
+.truck {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  left: 50px;
+  width: 80px;
+}
+
+.truck img {
+  width: 100%;
+}
+
+.myarrow,
+.truck {
+  display: inline-block;
+  margin: auto 10px;
+}
+
+.sliders {
+  background-color: #fff;
+  border-color: #444;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 3px;
+  top: 0;
+  right: 0;
+  width: 420px;
+}
+
+.slider {
+  text-align: center;
+}
+
+.slidebar {
+  background-color: #fff;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #444;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  margin: 40px auto 0;
+  height: 30px;
+  width: 380px;
+  position: relative;
+}
+
+.slider-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  width: 300px;
+}
+
+.slider-control button {
+  background-color: #ff6600;
+  border-radius: 30px;
+  border-style: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  height: 30px;
+  width: 30px;
+  transition: 0.1s;
+}
+
+.slider-control button:hover {
+  box-shadow: 0 0 0 3px #444;
+  cursor: pointer;
+}
+
+.slider-control p {
+  font-size: 24px;
+}
+
+.knob {
+  background-color: #444;
+  border-radius: 20px;
+  margin: auto 10px;
+  height: 20px;
+  width: 20px;
+}
+
+#radiusknob,
+#speedknob,
+#massknob {
+  position: absolute;
+  left: 170px;
+}
+
+.rotate {
+  animation: rotation 40s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
   }
 
-  .main {
-    background-color: #444444;
-    border-radius: 10px;
-    border-style: none;
-    height: 783px;
-    position: fixed;
-    width: 1280px;
+  to {
+    transform: rotate(359deg);
   }
-
-  .content {
-    margin: 10px;
-    text-align: center;
-    position: relative;
-  }
-
-  .heading {
-    color: #444;
-    left: 50%;
-    margin-left: -257px; /*change this value to half the width of the element*/
-    text-align: center;
-  }
-
-  .interface button, .endGame button{
-    background-color: #ff6600;
-    border-radius: 10px;
-    border-style: none;
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-    padding: 10px 15px;
-    margin-left: 10px;
-    transition: 0.1s;
-  }
-
-  .interface button:hover, .endGame button:hover {
-    background-color: #444444;
-    box-shadow: 0 0 0 3px #fff;
-    cursor: pointer;
-  }
-
-  .interface {
-    margin: 20px 10px 10px auto;
-    text-align: right;
-  }
-
-  .screen {
-    background-color: #b3cf99;
-    height: 680px;
-    margin: 5px;
-    width: 1250px;
-  }
-
-  .help-text {
-    background-color: #fff;
-    border-style: solid;
-    border-width: 3px;
-    border-color: #444;
-    border-radius: 5px;
-    top: 530px;
-    right: 22px;
-    padding: 10px;
-    width: 400px;
-  }
-  .intro {
-    background-color: #fff;
-    border-radius: 5px;
-    border-color: #444;
-    border-width: 3px;
-    border-style: solid;
-    font-size: 24px;
-    left: 50%;
-    margin: -200px 0 0 -400px;
-    top: 50%;
-    height: 400px;
-    width: 800px;
-  }
-
-  .intro p {
-    margin: 80px auto;
-    width: 100%;
-  }
-
-  .intro,.help-text,.heading,.sliders,.rotationDiv,.road, .endGame{
-    position: absolute;
-  }
-
-  .endGame{
-    background-color: #fff;
-    border-radius: 10px;
-    border-style: solid;
-    border-width:3px;
-    font-size: 36px;
-    top: 50%;
-    left: 290px;
-    margin: -124px;
-    width: 400px;
-  }
-  .endGame button{
-    margin-bottom: 35px;
-  }
-
-  /* Content_________________________________________________________________ */
-  .road{
-    height: 680px;
-    left: 5px;
-  }
-  .rotationDiv{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    height: 150px;
-    width: 240px;
-    left: 95px;
-    top:290px;
-    transform-origin: 278px;
-  }
-  .myarrow{
-    position: relative;
-    left: 30px;
-    width: 14.8%;
-  }
-  .truck{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    text-align: center;
-    left: 50px;
-    width: 80px;
-  }
-  .truck img{
-    width: 70px;
-  }
-  .myarrow,.truck{
-    display: inline-block;
-    margin: auto 10px;
-  }
-
-  .sliders{
-    background-color: #fff;
-    border-color: #444;
-    border-radius: 10px;
-    border-style: solid;
-    border-width: 3px;
-    top: 130px;
-    left: 780px;
-    width: 420px;
-  }
-  .slider{
-    text-align: center;
-  }
-  .slidebar{
-    background-color: #fff;
-    border-style: solid;
-    border-width: 3px;
-    border-color: #444;
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    margin: 40px auto 0;
-    height: 30px;
-    width:380px;
-    position: relative;
-  }
-  .slider-control{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: auto;
-    width: 300px;
-  }
-  .slider-control button{
-    background-color: #ff6600;
-    border-radius: 30px;
-    border-style: none;
-    color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-    height: 30px;
-    width: 30px;
-    transition: 0.1s;
-  }
-  .slider-control button:hover{
-    box-shadow: 0 0 0 3px #444;
-  }
-  .slider-control p{
-    font-size: 24px;
-  }
-  .knob{
-    background-color: #444;
-    border-radius: 20px;
-    margin:auto 10px;
-    height: 20px;
-    width: 20px;
-  }
-
-  #radiusknob, #speedknob, #massknob{
-    position: absolute;
-    left: 170px;
-  }
-
-  .rotate {
-    animation: rotation 40s infinite linear ;
-  }
-  @keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(359deg);
-    }
-  }
+}

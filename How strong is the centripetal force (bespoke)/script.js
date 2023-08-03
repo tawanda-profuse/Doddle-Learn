@@ -121,23 +121,22 @@ function checkArrowScale(){
 
 
 // General_____________________________________________
-function start() {
-  var y = document.getElementById("startPanel");
-  var yy = document.getElementById("startButton");
-  y.style.display = 'none';
-  yy.style.display = 'none';
-}
+var startPanel = document.getElementById("startPanel");
+var startButton = document.getElementById("startButton");
+var resetButton = document.getElementById("resetButton");
+var restart = document.getElementById("restart");
 
-function hideHelp() {
-  var x = document.getElementById("help-text");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
+startButton.addEventListener("click", function(){
+  startPanel.style.display = 'none';
+  startButton.style.display = 'none';
+});
 
-function resetAll() {
+resetButton.addEventListener("click", function() {
   window.location.reload();
   return false;
-}
+});
+
+restart.addEventListener("click", function() {
+  window.location.reload();
+  return false;
+});
