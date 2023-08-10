@@ -1,20 +1,20 @@
 // General_____________________________________________
-var checkButton = document.getElementById('checkButton');
-var solveButton = document.getElementById('solveButton');
-var resetButton = document.getElementById('resetButton');
+var checkButton = document.getElementById("checkButton");
+var solveButton = document.getElementById("solveButton");
+var resetButton = document.getElementById("resetButton");
 
 resetButton.addEventListener("click", function () {
-    window.location.reload();
-    // window.location.href = "";
-    return false;
-})
+  window.location.reload();
+  // window.location.href = "";
+  return false;
+});
 
 function check() {
-    console.log('check initiated');
+  console.log("check initiated");
 }
 
 function solve() {
-    console.log('solve initiated');
+  console.log("solve initiated");
 }
 // Bespoke functions_____________________________________
 var controlCircles = document.querySelectorAll(".control-circle");
@@ -69,12 +69,15 @@ var rightAngleLineSize = {
   L: { x: 641, y: 211 },
 };
 
-
-
 document.addEventListener("mousemove", function (ev) {
-    // Top left point
-    if (mouseTracking.circle1 === true) {
-    text[0].textContent = `${Math.floor((Number(controlCircles[1].getAttribute("cx")) - Number(controlCircles[0].getAttribute("cx"))) / 100)} cm`;
+  // Top left point
+  if (mouseTracking.circle1 === true) {
+    text[0].textContent = `${Math.floor(
+      (Number(controlCircles[1].getAttribute("cx")) -
+        Number(controlCircles[0].getAttribute("cx"))) /
+        100
+    )} cm`;
+
     controlCircles[0].setAttribute("cx", ev.x + 100);
     rightAngleLineSize.M.x = ev.x + 100;
     rightAngleLineSize.L.x = ev.x + 100 - 2;
@@ -92,7 +95,11 @@ document.addEventListener("mousemove", function (ev) {
   }
   // Top right point
   if (mouseTracking.circle2 === true) {
-    text[0].textContent = `${Math.floor((Number(controlCircles[1].getAttribute("cx")) - Number(controlCircles[0].getAttribute("cx"))) / 100)} cm`;
+    text[0].textContent = `${Math.floor(
+      (Number(controlCircles[1].getAttribute("cx")) -
+        Number(controlCircles[0].getAttribute("cx"))) /
+        100
+    )} cm`;
     controlCircles[1].setAttribute("cx", ev.x + 200);
     text[0].setAttribute("x", ev.x + 100);
     trapezoidSize.L2.x = ev.x + 200;
@@ -103,7 +110,11 @@ document.addEventListener("mousemove", function (ev) {
   }
   // Bottom right point
   if (mouseTracking.circle3 === true) {
-    text[2].textContent = `${Math.floor((Number(controlCircles[2].getAttribute("cx")) - Number(controlCircles[1].getAttribute("cx"))) / 100 + 4)} cm`;
+    text[2].textContent = `${Math.floor(
+      (Number(controlCircles[2].getAttribute("cx")) -
+        Number(controlCircles[3].getAttribute("cx"))) /
+        100
+    )} cm`;
     controlCircles[2].setAttribute("cx", ev.x + 300);
     text[2].setAttribute("x", ev.x);
     trapezoidSize.L3.x = ev.x + 300;
@@ -114,7 +125,11 @@ document.addEventListener("mousemove", function (ev) {
   }
   // Bottom left point
   if (mouseTracking.circle4 === true) {
-    text[2].textContent = `${Math.floor((Number(controlCircles[2].getAttribute("cx")) - Number(controlCircles[1].getAttribute("cx"))) / 100 + 4)} cm`; // ???
+    text[2].textContent = `${Math.floor(
+      (Number(controlCircles[2].getAttribute("cx")) -
+        Number(controlCircles[3].getAttribute("cx"))) /
+        100
+    )} cm`;
     controlCircles[3].setAttribute("cx", ev.x);
     text[2].setAttribute("x", ev.x + 300);
     trapezoidSize.M.x = ev.x;
@@ -125,6 +140,11 @@ document.addEventListener("mousemove", function (ev) {
   }
   // Top orange dotted line
   if (mouseTracking.dottedLine1 === true) {
+    text[1].textContent = `${Math.floor(
+      (controlCircles[3].getAttribute("cy") -
+        controlCircles[0].getAttribute("cy")) /
+        100
+    )} cm`;
     topDottedLine.setAttribute("d", `M 10 ${ev.y + 100} L 1556 ${ev.y + 100}`);
     controlCircles[0].setAttribute("cy", ev.y + 100);
     controlCircles[1].setAttribute("cy", ev.y + 100);
@@ -144,6 +164,11 @@ document.addEventListener("mousemove", function (ev) {
   }
   // Bottom orange dotted line
   if (mouseTracking.dottedLine2 === true) {
+    text[1].textContent = `${Math.floor(
+      (controlCircles[3].getAttribute("cy") -
+        controlCircles[0].getAttribute("cy")) /
+        100
+    )} cm`;
     bottomDottedLine.setAttribute(
       "d",
       `M 10 ${ev.y + 250} L 1556 ${ev.y + 250}`
@@ -151,8 +176,9 @@ document.addEventListener("mousemove", function (ev) {
     controlCircles[2].setAttribute("cy", ev.y + 250);
     controlCircles[3].setAttribute("cy", ev.y + 250);
     rightAngleLineSize.M.y = ev.y + 200;
-    rightAngleLine.setAttribute("d", 
-    `M ${rightAngleLineSize.M.x} ${rightAngleLineSize.M.y} L ${rightAngleLineSize.L.x} ${rightAngleLineSize.L.y}`
+    rightAngleLine.setAttribute(
+      "d",
+      `M ${rightAngleLineSize.M.x} ${rightAngleLineSize.M.y} L ${rightAngleLineSize.L.x} ${rightAngleLineSize.L.y}`
     );
     rightAngleSquare.setAttribute("y", ev.y + 200);
     trapezoidSize.M.y = ev.y + 250;
@@ -174,33 +200,3 @@ document.addEventListener("mouseup", function () {
   mouseTracking.dottedLine1 = false;
   mouseTracking.dottedLine2 = false;
 });
-
-// test
-function getNumericStyleProperty(style, prop) {
-  return parseInt(style.getPropertyValue(prop), 10);
-}
-
-function element_position(e) {
-  var x = 0,
-    y = 0;
-  var inner = true;
-  do {
-    x += e.offsetLeft;
-    y += e.offsetTop;
-    var style = getComputedStyle(e, null);
-    var borderTop = getNumericStyleProperty(style, "border-top-width");
-    var borderLeft = getNumericStyleProperty(style, "border-left-width");
-    y += borderTop;
-    x += borderLeft;
-    if (inner) {
-      var paddingTop = getNumericStyleProperty(style, "padding-top");
-      var paddingLeft = getNumericStyleProperty(style, "padding-left");
-      y += paddingTop;
-      x += paddingLeft;
-    }
-    inner = false;
-  } while ((e = e.offsetParent));
-  return { x: x, y: y };
-}
-
-// test
