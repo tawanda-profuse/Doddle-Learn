@@ -160,27 +160,13 @@ html {
 }
 
 /* Content_________________________________________________________________ */
-.gradient-area {
-    background-color: rgba(152, 251, 152, 0.132);
-    text-align: center;
+.container{
+    width: 70vw;
+    margin: auto;
 }
-
-canvas {
-    border: 3px solid navy;
+.circle-point{
     cursor: pointer;
 }
-.video-area{
-    display: none;
-    /* border: 3px solid navy; */
-}
-.video-area video{
-    width: 80%;
-    object-fit: contain;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
-
-#notelet {
-    display: none;
+text{
+    user-select: none;
 }
