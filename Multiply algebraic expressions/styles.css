@@ -155,6 +155,11 @@ html {
 }
 
 /* Content_________________________________________________________________ */
+.boundary{
+  padding: 20px 10px 50px;
+  border: 10px solid navy;
+  border-radius: 8px;
+}
 table {
   margin: 3% auto 0;
   width: 80%;
