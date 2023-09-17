@@ -65,7 +65,7 @@ html {
 
 .interface {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .screen {
@@ -283,6 +283,7 @@ sub,
     font-size: 3.5em;
     font-weight: bold;
     color: black;
+    user-select: none;
 }
 
 .honeycomb-cell-content:hover {

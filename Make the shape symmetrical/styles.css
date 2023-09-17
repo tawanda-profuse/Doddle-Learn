@@ -1,4 +1,3 @@
-/* Credit: https://alvaromontoro.com/blog/67993/building-a-coordinate-system-with-html-and-css#what-next */
 :root {
     /* Global variables */
     --doddle-gray: #444444;
@@ -155,42 +154,27 @@ html {
 }
 
 /* Content_________________________________________________________________ */
-.game-area {
-    margin: auto;
-}
-svg{
+svg {
     width: 70vw;
 }
-#red-up-arrow-1,
-#red-up-arrow-2, 
-#red-down-arrow-1, 
-#red-down-arrow-2, 
-#blue-up-arrow-1,
-#blue-up-arrow-2, 
-#blue-down-arrow-1, 
-#blue-down-arrow-2,
-#red-ball, 
-#blue-ball {
-    cursor: pointer;
-} 
 
-#red-up-arrow-1:hover,
-#red-up-arrow-2:hover, 
-#red-down-arrow-1:hover, 
-#red-down-arrow-2:hover, 
-#blue-up-arrow-1:hover,
-#blue-up-arrow-2:hover, 
-#blue-down-arrow-1:hover, 
-#blue-down-arrow-2:hover{
-    opacity: 0.4;
+#button-1,
+#button-2,
+#button-3,
+#button-4,
+.draggable-points
+{
+    cursor: pointer;
 }
-#display-message{
-    visibility: hidden;
-}
-text{
+
+#button-1 text,
+#button-2 text,
+#button-3 text,
+#button-4 text {
     user-select: none;
 }
-.ball{
-    visibility: hidden;
-}
 
+#horizontal-line, #diagonal-line{
+    visibility: hidden;
+    color: #32cd32;
+}

@@ -84,7 +84,7 @@ let answers = [
 
 cells.forEach((cell, index) => {
     cell.addEventListener("click", function () {
-        cell.style.backgroundColor = 'plum'
+        cell.style.backgroundColor = "plum";
         questionContainer.innerHTML = questions[index]
         currentCell = index
         answerContent.innerHTML = answers[index]
@@ -104,11 +104,4 @@ showAnswerButton.addEventListener("click", function () {
     answerContent.style.display = 'block'
 })
 
-function manageCells() {
-    $('.honeycomb-cell-content').click(function () {
-        $('.honeycomb-cell-content').css('background-color', 'plum');
-        $('.honeycomb-cell-content').not(this).css('background-color', 'white');
-    });
-}
 
-// manageCells();
