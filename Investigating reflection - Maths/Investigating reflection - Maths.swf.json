@@ -1,0 +1,52 @@
+™{
+  "target": {
+    "convertExternalSWF": false,
+    "htmlTemplate": "",
+    "copyOriginalSWF": true,
+    "enableBuild": true,
+    "minify": false,
+    "exportDataInZIP": false,
+    "renderType": 0,
+    "html5ProjectPath": "C:\\Users\\TawandaMsengezi\\Desktop\\Test\\Example1"
+  },
+  "parameters": {
+    "appWidth": 738,
+    "align": 0,
+    "scaleMode": 0,
+    "backgroundColor": "0xffffff",
+    "fillScreen": true,
+    "frameRate": 12,
+    "appHeight": 450
+  },
+  "source": {
+    "mainClass": "",
+    "swfFile": "C:\\Users\\TawandaMsengezi\\Documents\\Bespoke SWF Files\\Incomplete\\Make a trapezium and find its area - Maths\\5 area of a trapezium.swf",
+    "preloaderFile": "C:\\Users\\TawandaMsengezi\\Documents\\Bespoke SWF Files\\Incomplete\\Make a trapezium and find its area - Maths\\5 area of a trapezium.swf",
+    "projectName": "Trapezium",
+    "flaFile": "",
+    "sourceCodePath": ""
+  },
+  "settings": {
+    "sdkPath": ""
+  },
+  "resources": {
+    "exportCodeEmbed": true,
+    "exportDebugTextures": true,
+    "exportResources": true,
+    "exportSounds": true,
+    "shapeScale": 100,
+    "imageQuality": 80,
+    "scaleMargin": 5,
+    "shapeBigScale": true,
+    "compressDigits": 3,
+    "exportFonts": true,
+    "texturePowerBig": 11,
+    "exportCode": true,
+    "texturePowerMax": 11,
+    "shapeScaleMin": 90,
+    "shapeBorder": 2,
+    "texturePowerMin": 5,
+    "exportCodeTokens": true,
+    "exportCodeTree": true
+  }
+}
