@@ -23,6 +23,30 @@ const projects = [
         title: "Fractions Blocks Game",
         url: "https://fractions-blocks-game.netlify.app/"
     },
+    {
+        title: "Building 3D Shapes",
+        url: "https://building-3d-shapes.netlify.app/"
+    },
+    {
+        title: "Calculating Gradients",
+        url: "https://calculating-gradients.netlify.app/"
+    },
+    {
+        title: "Changing Sectors of a Pie Chart",
+        url: "https://changing-sectors-of-a-pie-chart.netlify.app/"
+    },
+    {
+        title: "Circle Circumference and Diameter",
+        url: "https://circle-circumference-diameter.netlify.app/"
+    },
+    {
+        title: "Coordinates Game",
+        url: "https://coordinates-game.netlify.app/"
+    },
+    {
+        title: "Fraction Counter",
+        url: "https://fraction-counter.netlify.app/"
+    },
 ]
 
 module.exports = projects
