@@ -47,6 +47,18 @@ const projects = [
         title: "Fraction Counter",
         url: "https://fraction-counter.netlify.app/"
     },
+    {
+        title: "How Strong is the Centripetal Force?",
+        url: "https://centripetal-force.netlify.app/"
+    },
+    {
+        title: "Investigating Reflection",
+        url: "https://investigating-reflection.netlify.app/"
+    },
+    {
+        title: "Making Symmetrical Shapes",
+        url: "https://making-symmetrical-shapes.netlify.app/"
+    },
 ]
 
 module.exports = projects
