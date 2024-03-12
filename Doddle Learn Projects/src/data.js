@@ -59,6 +59,42 @@ const projects = [
         title: "Making Symmetrical Shapes",
         url: "https://making-symmetrical-shapes.netlify.app/"
     },
+    {
+        title: "Multiplying Algebraic Expressions",
+        url: "https://multiplying-algebraic-expressions.netlify.app/"
+    },
+    {
+        title: "Noughts and Crosses Game",
+        url: "https://crosses-and-o.netlify.app/"
+    },
+    {
+        title: "Reading Journals",
+        url: "https://reading-journals.netlify.app/"
+    },
+    {
+        title: "Reflect the Shape",
+        url: "https://reflect-the-shape.netlify.app/"
+    },
+    {
+        title: "The Muscular System",
+        url: "https://muscular-system.netlify.app/"
+    },
+    {
+        title: "Translation Golf Game",
+        url: "https://translation-golf-game.netlify.app/"
+    },
+    {
+        title: "Transverse and Longitudinal Waves",
+        url: "https://transverse-and-longitudinal-waves.netlify.app/"
+    },
+    {
+        title: "Walk the Turtle",
+        url: "https://walk-the-turtle.netlify.app/"
+    },
+    {
+        title: "Where is Spanish Spoken?",
+        url: "https://where-is-spanish-spoken.netlify.app/"
+    },
 ]
 
 module.exports = projects
