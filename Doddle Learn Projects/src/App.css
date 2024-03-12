@@ -26,7 +26,7 @@ h4{
     display: grid;
 }
 
-a{
+a:not(.link){
     text-decoration: none;
     color: inherit;
     color: var(--doddle-white);
@@ -36,9 +36,17 @@ a{
     width: 100%;
 }
 
-a:hover{
+a:hover:not(.link){
     translate: 2% 0;
     cursor: pointer;
     font-weight: bold;
     background-color: var(--doddle-purple);
+}
+
+.link{
+    color: lawngreen;
+    text-decoration: none;
+}
+.link:hover{
+    text-decoration: underline;
 }
