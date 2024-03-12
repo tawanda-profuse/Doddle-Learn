@@ -11,6 +11,14 @@ const projects = [
         title: "Addition Pyramid",
         url: "https://addition-pyramid.netlify.app/"
     },
+    {
+        title: "Addition Square",
+        url: "https://addition-square.netlify.app/"
+    },
+    {
+        title: "Area of a Trapezium",
+        url: "https://trapezium-area.netlify.app/"
+    },
 ]
 
 module.exports = projects
