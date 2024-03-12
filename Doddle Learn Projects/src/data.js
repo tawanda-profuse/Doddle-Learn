@@ -19,6 +19,10 @@ const projects = [
         title: "Area of a Trapezium",
         url: "https://trapezium-area.netlify.app/"
     },
+    {
+        title: "Fractions Blocks Game",
+        url: "https://fractions-blocks-game.netlify.app/"
+    },
 ]
 
 module.exports = projects
