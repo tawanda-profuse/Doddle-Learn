@@ -1,0 +1,44 @@
+.wrapper{
+    background-color: var(--doddle-orange);
+    border-radius: 1rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: center;
+    padding: 2rem;
+}
+
+h1{
+    color: var(--doddle-white);
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: var(--doddle-purple);
+    text-decoration-style: wavy;
+}
+
+h4{
+    color: var(--doddle-gray);
+    margin-top: 4rem;
+}
+
+.project-list{
+    list-style-type: none;
+    margin: 4rem auto;
+    display: grid;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    color: var(--doddle-white);
+    transition: 0.2s ease all;
+    padding: 2rem 0;
+    border-bottom: 0.2rem solid var(--doddle-white);
+    width: 100%;
+}
+
+a:hover{
+    translate: 2% 0;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--doddle-purple);
+}
