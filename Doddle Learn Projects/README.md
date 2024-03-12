@@ -1,6 +1,6 @@
 # Doddle Learn Projects
 
-This single page web application showcases all the projects I was involved in from Doddle Learn. The Doddle Learn platform was discontinued, however I felt it necessary to show the projects I was involved in.
+This single-page web application showcases all the projects I was involved in from Doddle Learn. The Doddle Learn platform was discontinued, however I felt it necessary to show the projects I was involved in.
 
 ## Project List
 
