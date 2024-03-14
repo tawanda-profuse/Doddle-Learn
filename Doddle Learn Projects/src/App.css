@@ -29,18 +29,28 @@ h4{
 a:not(.link){
     text-decoration: none;
     color: inherit;
+}
+span:not(.link){
     color: var(--doddle-white);
     transition: 0.2s ease all;
     padding: 2rem 0;
     border-bottom: 0.2rem solid var(--doddle-white);
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-a:hover:not(.link){
+span:hover:not(.link){
     translate: 2% 0;
     cursor: pointer;
     font-weight: bold;
     background-color: var(--doddle-purple);
+}
+
+.category{
+    padding: 0.2rem 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.2rem 0.1rem black;
 }
 
 .link{

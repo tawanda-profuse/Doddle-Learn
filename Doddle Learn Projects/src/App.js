@@ -15,15 +15,30 @@ function App() {
     }
     return 0;
   });
+
+  const chooseColor = (category)=>{
+    switch (category) {
+      case "Math":
+        return "blue"
+      case "Languages":
+        return "green"
+      case "Biology":
+        return "red"
+      case "Physics":
+        return "hotpink"
+      default:
+        return "gray"
+    }
+  }
   
   return (
     <div className='wrapper'>
       <h1>Doddle Learn Projects</h1>
-      <h4>A List of Projects <span className='link'>I contributed</span> to the discontinuted Doddle Learn Platform.</h4>
+      <h4>A list of projects I contributed to the discontinued Doddle Learn Platform.</h4>
       <a href="https://andrewtech.onrender.com/#about" target="_blank" rel="noreferrer" className='link'>About Me <i className="fas fa-external-link"></i></a>
       <div className='project-list'>
         {sortedProjects.map((project) => (
-          <a href={project.url} target="_blank" rel="noreferrer">{project.title} <i className="fas fa-external-link"></i></a>
+          <span><a href={project.url} target="_blank" rel="noreferrer">{project.title} <i className="fas fa-external-link"></i></a> <strong className='category' style={{backgroundColor: chooseColor(project.category)}}>{project.category}</strong></span>
         ))}
       </div>
     </div>
