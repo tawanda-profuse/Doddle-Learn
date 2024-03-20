@@ -35,7 +35,7 @@ function App() {
     <div className='wrapper'>
       <h1>Doddle Learn Projects</h1>
       <h4>A list of projects I contributed to the discontinued Doddle Learn Platform.</h4>
-      <a href="https://andrewtech.onrender.com/#about" target="_blank" rel="noreferrer" className='link'>About Me <i className="fas fa-external-link"></i></a>
+      <a href="https://tawanda-dev.netlify.app/#about" target="_blank" rel="noreferrer" className='link'>About Me <i className="fas fa-external-link"></i></a>
       <div className='project-list'>
         {sortedProjects.map((project) => (
           <span><a href={project.url} target="_blank" rel="noreferrer">{project.title} <i className="fas fa-external-link"></i></a> <strong className='category' style={{backgroundColor: chooseColor(project.category)}}>{project.category}</strong></span>
