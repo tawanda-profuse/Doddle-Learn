@@ -47,9 +47,11 @@ function App() {
         About Me <i className="fas fa-external-link"></i>
       </a>
       <div className="project-list">
-        {sortedProjects.map((project) => (
-          <a href={project.url} target="_blank" rel="noreferrer">
-              <span>{project.title} <i className="fas fa-external-link"></i></span>
+        {sortedProjects.map((project, index) => (
+          <a key={index} href={project.url} target="_blank" rel="noreferrer">
+            <span>
+              {project.title} <i className="fas fa-external-link"></i>
+            </span>
             <strong
               className="category"
               style={{ backgroundColor: chooseColor(project.category) }}
