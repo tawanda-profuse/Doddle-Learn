@@ -6,7 +6,7 @@ The UI template wrapper used for the interactive activities is inside the [Inter
 
 ## 1. 24 Hour Clock Activity
 
-A math exercise that also helps with learning French numbers. It allows the user to adjust the hands of a clock and displays the translation of the time into French. 
+A math exercise that also helps with learning French numbers. It allows the user to adjust the hands of a clock and displays the translation of the time into French.
 
 > [Project Files](/24-hour%20Clock%20Activity/).
 
@@ -48,7 +48,7 @@ This is a math exercise that uses an SVG element to display a graph. The user dr
 
 ## 8. Changing Sectors of a Pie Chart
 
-In this project, a pie chart with different colored sections is shown. The user can press and drag the division marks on the pie chart or click and drag the little circle to change the size of the sectors. The plus and minus icons in the table at the bottom can also adjust the size of the sectors of the pie chart. This project uses jQuery and a custom library called *Draggable Pie chart*.
+In this project, a pie chart with different colored sections is shown. The user can press and drag the division marks on the pie chart or click and drag the little circle to change the size of the sectors. The plus and minus icons in the table at the bottom can also adjust the size of the sectors of the pie chart. This project uses jQuery and a custom library called _Draggable Pie chart_.
 
 > [Project Files](/Changing%20sectors%20of%20a%20pie%20chart/)
 
@@ -130,6 +130,24 @@ This is a science/biology lesson that studies the human muscle system. An instru
 
 ## 21. Translation Golf Game
 
-This is a mini-golf simulation that teaches math and coordinates. The user can select the amount they wish to move the ball by in both X and Y directions. Clicking on the "GO" button moves the ball to simulate a golf stroke. The boundaries of the page handle collision detection ensuring that the golf ball does not go off the screen. This project uses P5.js and Matter.js for physics.
+This is a mini-golf simulation that teaches math and coordinates. The user can select the amount they wish to move the ball by in both X and Y directions. Clicking on the "GO" button moves the ball to simulate a golf stroke. The boundaries of the page handle collision detection ensuring that the golf ball does not go off the screen. This project uses P5.js and [Matter.js](https://brm.io/matter-js/) for physics.
 
 > [Project Files](/Translation%20Golf%20Game/)
+
+## 22. Transverse & Longitudinal Waves
+
+A physics lesson that teaches two fundamental types of waves that differ in how the particles move and allows the user to select a type of wave to simulate. Transverse waves move vertically while longitudinal waves move horizontally although their individual particles may not. The page for each type of wave allows the user to adjust values such as amplitude, wave length, and frequency to see the how the waves behave under different conditions.
+
+> [Project Files](/Transverse%20and%20Longitudinal%20Waves/)
+
+## 23. Walk The Turtle
+
+This interactive activity allows the user to move a tortoise based on its surroundings. In this case, the tortoise can be made to move 1 meter away from a tree, equally from two plants, or along the fence.
+
+> [Project Files](/Walk%20the%20Turtle/)
+
+## 24. Where is Spanish Spoken
+
+This project teaches learners about the different parts of the world where the Spanish language is spoken. A world map is rendered and the countries that speak Spanish are highlighted in yellow. This project uses [amCharts](https://www.amcharts.com/) for rendering the world map.
+
+> [Project Files](/Where%20is%20Spanish%20Spoken/)
