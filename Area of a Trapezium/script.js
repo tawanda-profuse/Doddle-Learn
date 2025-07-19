@@ -5,7 +5,6 @@ var resetButton = document.getElementById("resetButton");
 
 resetButton.addEventListener("click", function () {
   window.location.reload();
-  // window.location.href = "";
   return false;
 });
 

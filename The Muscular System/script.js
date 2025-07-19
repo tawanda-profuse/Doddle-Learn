@@ -7,7 +7,6 @@ var startPanel = document.getElementById('startPanel');
 
 resetButton.addEventListener("click", function () {
     window.location.reload();
-    // window.location.href = "";
     return false;
 })
 

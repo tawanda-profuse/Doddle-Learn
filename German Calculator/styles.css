@@ -165,28 +165,25 @@ html {
 }
 
 /* Content_________________________________________________________________ */
-.classroom{
+.classroom {
     padding: 20px;
     border: 3px solid navy;
-    /* background: url(images/wood-background-pattern-02_wpahdy.jpg); */
     background: url(images/wooden-table.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.calculator{
-    /* height: 100%; */
+.calculator {
     width: 30%;
     margin: auto;
     background-color: var(--doddle-gray);
     border-radius: 50px 50px 25px 25px;
     padding: 20px;
-    /* padding: 10px; */
     border: 5px solid black;
 }
 
-.display{
+.display {
     background-color: rgb(0, 255, 128);
     margin: 20px auto 0 auto;
     padding: 20px;
@@ -197,15 +194,17 @@ html {
     text-align: right;
 }
 
-.row{
+.row {
     display: flex;
     justify-content: space-between;
     margin: 10px auto;
 }
 
-.invisible{visibility: hidden;}
+.invisible {
+    visibility: hidden;
+}
 
-.row span{
+.row span {
     background-color: #999999;
     border: 2px solid #111111;
     padding: 5px 10px;
@@ -218,7 +217,13 @@ html {
     user-select: none;
 }
 
-.row span:hover{
+.row span:hover {
     cursor: pointer;
     background-color: var(--doddle-orange);
+}
+
+@media screen and (max-width: 749px) {
+    .calculator {
+        width: 90%;
+    }
 }

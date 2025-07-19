@@ -80,7 +80,7 @@ html {
   border-width: 3px;
   border-color: var(--doddle-gray);
   border-radius: 5px;
-  bottom: 50vh;
+  bottom: 20vh;
   right: 5vw;
   width: 25rem;
   box-shadow: 5px 5px 5px 5px black;

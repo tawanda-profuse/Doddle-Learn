@@ -15,7 +15,6 @@ function hideHelp() {
 
 function resetAll() {
     window.location.reload();
-    // window.location.href = "";
     return false;
 }
 
