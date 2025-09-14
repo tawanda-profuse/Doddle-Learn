@@ -1,6 +1,6 @@
 # About Doddle Learn
 
-Doddle is a discontinued education technology platform. It was an online teaching, homework and assessment resource, containing thousands of ready-made, self-marking resources across all subjects at KS3 and KS4. These are some of the projects I worked on:
+Doddle is a discontinued education technology platform. It was an online teaching, homework and assessment resource, containing thousands of ready-made, self-marking resources across all subjects at KS3 and KS4. Below are some of the projects I worked on.
 
 The UI template wrapper used for the interactive activities is inside the [Interactive Template folder](/Interactive%20Template/). This template has replaceable placeholders and a link to the URL of Font Awesome CSS which is used for rendering the icons at the bottom of the page.
 
@@ -12,7 +12,7 @@ A math exercise that also helps with learning French numbers. It allows the user
 
 ## 2. Addition Pyramid
 
-This is a math exercise that teaches basic addition by using a pyramid. The user can click on a note to reveal a number. Numbers that are adjacent to each other determine the value of the number above them. The numbers are generate using the JavaScript `Math.random` function.
+This is a math exercise that teaches basic addition by using a pyramid. The user can click on a note to reveal a number. Numbers that are adjacent to each other determine the value of the number above them. The numbers are generated using the JavaScript `Math.random` function.
 
 > [Project Files](/Addition%20Pyramid/)
 
@@ -48,7 +48,7 @@ This is a math exercise that uses an SVG element to display a graph. The user dr
 
 ## 8. Changing Sectors of a Pie Chart
 
-In this project, a pie chart with different colored sections is shown. The user can press and drag the division marks on the pie chart or click and drag the little circle to change the size of the sectors. The plus and minus icons in the table at the bottom can also adjust the size of the sectors of the pie chart. This project uses jQuery and a custom library called _Draggable Pie chart_.
+In this project, a pie chart with different colored sections is shown. The user can press and drag the division marks on the pie chart or click and drag the little circle to change the size of the sectors. The plus and minus icons in the table at the bottom can also adjust the size of the sectors of the pie chart. This project uses jQuery and a custom library called Draggable Pie chart.
 
 > [Project Files](/Changing%20sectors%20of%20a%20pie%20chart/)
 
@@ -78,7 +78,7 @@ This activity shows a calculator, allowing the user to enter a numeric expressio
 
 ## 13. How Strong is the Centripetal Force
 
-This activity allows a user to adjust the speed, mass, and radius for a truck that moves in a circular motion. Changing each of these has an impact of the movement of the truck e.g. increasing the mass slows it down.
+This activity allows a user to adjust the speed, mass, and radius for a truck that moves in a circular motion. Changing each of these values has an impact on the movement of the truck e.g. increasing the mass slows it down.
 
 > [Project Files](/How%20Strong%20is%20the%20Centripetal%20Force/)
 
