@@ -1,3 +1,23 @@
+:root {
+    /* Global variables */
+    --doddle-gray: #444444;
+    --doddle-font: "Roboto", sans-serif;
+    --doddle-orange: #ff6600;
+    --doddle-white: #ffffff;
+    --doddle-purple: #630560;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--doddle-font);
+    background-color: var(--doddle-purple);
+    overflow: hidden;
+}
+
 .wrapper {
     background-color: var(--doddle-orange);
     border-radius: 1rem;
@@ -76,12 +96,14 @@ a:hover:not(.link) {
     .wrapper {
         width: 80vw;
     }
+
     a:not(.link) {
         flex-direction: column;
-        align-items:center;
+        align-items: center;
         gap: 2rem;
     }
-    h1{
-    line-height: 2;
+
+    h1 {
+        line-height: 2;
     }
 }
